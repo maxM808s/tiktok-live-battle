@@ -1,5 +1,7 @@
 # Technical notes
 
+**Connector update:** TikFinity Desktop is now selected; see [current setup](TIKFINITY.md). The S2E investigation below is historical. The operator later confirmed an S2E HTTP POST/JSON preset via screenshot, but switched providers before its variables/replay behavior were established. No S2E connector was built.
+
 For setup and everyday controls, see [README](../README.md).
 
 ## S2E research and boundary
@@ -45,6 +47,6 @@ Not verified: real S2E gift traffic, S2E reconnect schema, Windows LIVE Studio c
 - **Prefer uploaded images:** uploaded raster images and bundled gifts stay in browser storage or this site's assets. Optional remote HTTPS images contact their host and reveal the requesting device's IP address, even with referrer sharing disabled. Imported SVG data images and executable URL schemes are rejected.
 - **Respect import limits:** JSON import files must be under 4,000,000 bytes. The custom catalog supports up to 1,000 gifts; each competitor supports up to 100 mappings. Uploads must be no larger than 10 MB and decoded images no larger than 40 million pixels. Images are resized to at most 800 pixels on their longest side. Other text, storage and replay limits also apply. Keep backups: malformed or oversized saved settings can fall back to defaults, and clearing browser data deletes local state.
 - **Browser isolation matters:** GitHub Pages projects under the same host share an origin. Other scripts hosted under `maxm808s.github.io` may access this browser storage; do not host untrusted code on that origin. The content policy blocks inline scripts and plugins, but GitHub Pages does not provide this project with configurable headers for full clickjacking protection.
-- **Future connectors need a separate review:** there is no working S2E receiver or remote relay in this release. Any future adapter must authenticate event/control access, validate actual gift IDs and replay identifiers, and protect credentials. Remote connections need encrypted transport. An unprotected local bridge must not be exposed to the internet.
+- **Future connectors need a separate review:** there is no working S2E receiver or remote relay in this release; the separate TikFinity local client is documented in the current setup guide. Any future adapter must authenticate event/control access, validate actual gift IDs and replay identifiers, and protect credentials. Remote connections need encrypted transport. An unprotected local bridge must not be exposed to the internet.
 
 See [SECURITY.md](../SECURITY.md) for the fixes, tested cases and remaining boundaries. Security tests are recorded in [tests/security-results.json](../tests/security-results.json); browser regression results are in [tests/results.json](../tests/results.json). These checks do not certify the app or a future connector as risk-free.

@@ -2,7 +2,7 @@
 
 A customizable English/Hebrew battle display with a mobile-friendly control room. Built with HTML, CSS and vanilla JavaScript; hosted on GitHub Pages.
 
-**Status:** manual scoring and gift simulation work. Automatic S2E gift detection is not connected.
+**Status:** manual scoring, gift simulation and a TikFinity Desktop connector are implemented. The connector is mock-tested; real LIVE gifts still need verification on your PC.
 
 [Open dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html) · [Open game](https://maxm808s.github.io/tiktok-live-battle/)
 
@@ -16,6 +16,10 @@ A customizable English/Hebrew battle display with a mobile-friendly control room
 6. Click **Start battle**, then use **Simulate gift** or add points manually. **Pause** stops gift scoring; **Declare winner** ends the battle.
 
 Save matchups as presets. Settings and scores persist in your browser; export settings for backup. Presets are not included in that export.
+
+## Connect TikFinity
+
+Run TikFinity Desktop on the broadcast PC. In the dashboard, open **LIVE**, set a stream session label, click **Connect TikFinity**, then **Start battle**. Streak gifts score when they finish. See the [setup and troubleshooting guide](docs/TIKFINITY.md).
 
 ## Broadcast with LIVE Studio
 
@@ -31,12 +35,12 @@ Keep both windows open. LIVE Studio's separate **Link** source will not synchron
 - Keep passwords, tokens and private backups out of the public repository. Backups include portraits and recent sender names.
 - Import trusted files and prefer uploaded images; remote image hosts can see your IP address.
 - The 15 bundled gift entries use authentic artwork. Confirm current IDs, availability and prices for your region.
-- S2E requires a supported event output and a reviewed adapter before automatic scoring can work. No live connector is supplied.
+- TikFinity Desktop must run on the same PC. Browser local-network permissions may be required. S2E is no longer the selected connector.
 
 ## Documentation
 
 - [Security fixes and boundaries](SECURITY.md)
-- [S2E research, catalog sources, import limits and test details](docs/TECHNICAL.md)
+- [Earlier S2E research, catalog sources and operating limits](docs/TECHNICAL.md)
 - [Deployment instructions](DEPLOY.md)
 - [Browser test results](tests/results.json) · [Security test results](tests/security-results.json)
 

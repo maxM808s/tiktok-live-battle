@@ -1,6 +1,6 @@
 # Security review
 
-Reviewed 2026-11-11. This static application has no server-side accounts, API keys, payment processing, or network event receiver.
+Reviewed 2026-11-11. This static application has no server-side accounts, API keys, payment processing, or public network event receiver.
 
 ## Fixed
 
@@ -20,10 +20,16 @@ Remote HTTPS images are optional and still reveal the viewer's IP to their host.
 
 GitHub Pages does not let this project set arbitrary HTTP response headers. A meta CSP cannot enforce frame-ancestors, so clickjacking protection is not claimed. Browser extensions, compromised GitHub accounts and malicious code on the same origin are outside these fixes. Malformed/oversized legacy settings may fall back to defaults; keep exported backups before changing configurations.
 
-Real S2E ingestion remains unconnected. No claims are made about authentication or security of an unimplemented connector. Review any future adapter before enabling it.
+TikFinity is now the selected connector. S2E ingestion remains unimplemented. TikFinity messages are untrusted input: only gift envelopes with bounded identifiers, supported gift types and valid quantities reach the existing scoring engine. Actual LIVE traffic remains unverified.
 
 ## Tests
 
 `tests/security.mjs` verifies malicious events, style/image injection, malformed storage, prototype-related keys, invalid scores and resource limits. `tests/browser.cjs` checks normal game flows and includes actual malicious backup import, literal HTML name rendering and CSP inline-script blocking. These are development tests and do not add a runtime server dependency.
 
 Appearance controls use validated size ranges, hexadecimal colors, approved system-font choices and boolean visibility flags. Older settings receive default appearance values without changing scores.
+
+## TikFinity local connection
+
+The admin page can connect only to the documented `ws://localhost:21213/` endpoint, in addition to same-origin fetches. It sends no commands or credentials; it reads events only after an explicit Connect action. Browser local-network/mixed-content policies still apply. Do not disable them or expose the local endpoint to the internet. This app does not authenticate TikFinity's local service; another local program impersonating that service could supply false events. Only use a trusted PC.
+
+A Web Locks lease permits one connected dashboard per origin. It prevents ordinary duplicate scoring tabs; it is not access control against other scripts or users of the same profile. Session labels stay stable across reconnects for replay protection. The connector rejects gifts without a stable message ID, finishes streaks before scoring and uses supplied streak IDs when available. Incoming sender names are stored locally in recent events/backups. Socket connectivity does not establish the health of the upstream TikTok connection.

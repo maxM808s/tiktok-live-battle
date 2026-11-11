@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-11T19:04:39.091Z",
+  "checks": [
+    "Ignore unfinished gift streaks",
+    "Score completed streak once",
+    "Deduplicate final streak updates with different message IDs",
+    "Preserve replay protection after reload",
+    "Map actual gift ID to the other competitor",
+    "Reject missing or unsafe message IDs",
+    "Reject invalid quantities and unknown streak types",
+    "Ignore chat and non-gift messages",
+    "Process socket envelope and reject malformed JSON",
+    "Reconnect automatically and stop on disconnect"
+  ],
+  "actualTikFinityEvents": false
+}

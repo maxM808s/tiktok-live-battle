@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-11T19:04:27.676Z",
+  "checks": [
+    "Connect to documented local endpoint",
+    "Partial streak does not score",
+    "Completed mock gift reaches display",
+    "Duplicate final gift cannot double-score",
+    "Second dashboard cannot open another scoring connection",
+    "Paused battle rejects live gift",
+    "Manual reconnect opens a fresh socket",
+    "Disconnect unlocks session field",
+    "No script errors"
+  ],
+  "errors": [],
+  "source": "Mock TikFinity WebSocket envelopes; no real LIVE traffic"
+}
