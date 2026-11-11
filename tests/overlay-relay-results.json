@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-11T19:34:31.350Z",
+  "checks": [
+    "Generate a cryptographic writer key",
+    "Unauthenticated client cannot get overlay link",
+    "Read and write keys are separate",
+    "Writer key is not accepted as viewer key",
+    "Read-only overlay key cannot edit state",
+    "Reject foreign origins",
+    "Reject alternate host headers",
+    "Static allowlist rejects /Start-Overlay.ps1",
+    "Static allowlist rejects /.git/config",
+    "Static allowlist rejects /tests/results.json",
+    "Static allowlist rejects /..%2fREADME.md",
+    "Do not grant cross-origin access",
+    "Allow overlay document embedding while keeping snapshot API authenticated",
+    "Prevent embedding of the local editing dashboard",
+    "Remove writer key from address bar after authorization",
+    "Overlay works with separate application storage",
+    "Synchronize names and scores across independent browser contexts",
+    "Synchronize Hebrew direction without shared storage",
+    "Do not transmit replay history or stream session label",
+    "Hide sender data from snapshot when event display is disabled",
+    "State snapshots contain no relay credentials",
+    "Launcher output does not log private links or keys",
+    "Overlay without private key reveals no battle",
+    "No script errors in local admin or private overlay",
+    "Restart rotates private keys",
+    "Old overlay link is revoked on restart"
+  ],
+  "runtime": "PowerShell 7 on Linux + Chromium; Windows PowerShell 5.1 and LIVE Studio still need PC verification",
+  "errors": []
+}

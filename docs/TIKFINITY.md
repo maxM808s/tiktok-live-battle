@@ -1,6 +1,6 @@
 # Connect TikFinity Desktop
 
-The JavaScript connector uses TikFinity's documented local Event API at `ws://localhost:21213/`. No HTTP bridge, Node.js, npm, backend server or paid hosting is required by this game.
+The JavaScript connector uses TikFinity's documented local Event API at `ws://localhost:21213/`. No HTTP gift bridge, Node.js, npm or paid hosting is required. Private LIVE Studio Link mode optionally uses the [local PowerShell overlay relay](OVERLAY.md).
 
 **Verification:** adapter and browser tests use simulated TikFinity messages. Real TikFinity Desktop traffic and Windows LIVE Studio remain unverified until tested on your broadcast PC.
 
@@ -11,7 +11,7 @@ The JavaScript connector uses TikFinity's documented local Event API at `ws://lo
 3. Under **TikFinity LIVE connection**, choose a stream session label, such as `my-channel-live-1`. Keep it unchanged for reconnects/reloads of the same stream. Use a new label only for a genuinely new broadcast after old events can no longer be replayed.
 4. Click **Connect TikFinity**. If the browser requests local-network permission, allow access only for this trusted game. A connected socket means the desktop endpoint is reachable; it does not prove TikTok is LIVE.
 5. Click **Start battle**. Send a small mapped gift and confirm the gift ID, quantity and points in **Recent gift events** and on the display. For a streakable gift, finish the streak before expecting points.
-6. Use **Open display window** in the same browser profile, then capture that Chrome window in LIVE Studio. A separate LIVE Studio Link source and a phone do not share the dashboard's storage.
+6. For a LIVE Studio **Link** source, use the [private local overlay mode](OVERLAY.md), which synchronizes across application storage. Alternatively, use **Open display window** in the same browser profile and capture that window. A plain GitHub Pages display link and a phone do not share dashboard storage.
 7. Disconnect when finished. Refreshing the dashboard does not automatically reconnect. Keep one scoring dashboard tab open; a browser lock prevents a second tab from opening another connector.
 
 ## Scoring and replay protection

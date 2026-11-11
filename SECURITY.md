@@ -1,6 +1,6 @@
 # Security review
 
-Reviewed 2026-11-11. This static application has no server-side accounts, API keys, payment processing, or public network event receiver.
+Reviewed 2026-11-11. The hosted application has no server-side accounts, payment processing or public gift-event receiver. Optional private-overlay mode adds a local-only relay with separate ephemeral viewer/writer keys.
 
 ## Fixed
 
@@ -14,7 +14,7 @@ Reviewed 2026-11-11. This static application has no server-side accounts, API ke
 
 ## Boundaries
 
-Anyone can open the public admin page, but controls modify only that visitor's browser storage. There is no shared server state for other visitors to administer. This is not authentication: anyone with access to the same browser profile can change its battle. GitHub Pages project paths on the same host share an origin/storage boundary; avoid hosting untrusted scripts under that origin. A future remote relay needs real authorization, encrypted transport and authenticated event ingestion.
+Anyone can open the public hosted admin page, but its controls modify only that visitor's browser storage. Optional private-overlay mode runs a separate authenticated local relay on the broadcast PC. This is not authentication: anyone with access to the same browser profile can change its battle. GitHub Pages project paths on the same host share an origin/storage boundary; avoid hosting untrusted scripts under that origin. A future remote relay needs real authorization, encrypted transport and authenticated event ingestion.
 
 Remote HTTPS images are optional and still reveal the viewer's IP to their host. Upload images instead for local assets. Do not place secrets or private information in public repository files, image URLs or exported backups. Backups contain portraits, configuration and recent sender names and should be handled accordingly.
 
@@ -45,3 +45,9 @@ A Web Locks lease permits one connected dashboard per origin. It prevents ordina
 Private backup filenames, environment files and common private-key formats are listed in `.gitignore` to reduce accidental commits. This does not redact Git history or prevent force-adding files or uploading them through GitHub's web interface.
 
 Recent events are limited to 40 entries, but retained streak keys can also contain older sender identifiers used for replay protection. Hiding the sender on the display does not erase that local history or remove it from an exported backup. Keep exports private.
+
+## Private local overlay relay
+
+See [setup and access model](docs/OVERLAY.md). The relay binds IPv4 loopback only, uses independent 256-bit viewer/writer keys, rejects cross-origin requests and alternate Host headers, serves only allowlisted application files, bounds request sizes/timeouts, and disables caching/referrer sharing. Viewer credentials authorize reads only. Keys stay outside settings/backups, and restarting revokes existing URLs. The local admin also gets frame-embedding protection from HTTP headers.
+
+The publisher removes replay history, stream labels, unused custom gifts and hidden event data from snapshots. The display validates every snapshot before rendering. Raw relay writes require the writer key; local code/OS administrators with that key remain trusted. API data is not end-to-end encrypted against privileged software on the same PC. No public relay or remote-phone mode is supplied. Actual Windows/LIVE Studio behavior remains to be verified.

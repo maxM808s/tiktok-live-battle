@@ -21,17 +21,19 @@ Save matchups as presets. Settings and scores persist in your browser; export se
 
 Run TikFinity Desktop on the broadcast PC. In the dashboard, open **LIVE**, set a stream session label, click **Connect TikFinity**, then **Start battle**. Streak gifts score when they finish. See the [setup and troubleshooting guide](docs/TIKFINITY.md).
 
-## Broadcast with LIVE Studio
+## LIVE Studio: paste a private overlay link
 
-1. In the dashboard, click **Open display window** using the same Chrome profile.
-2. Add that window as a **Window capture** source in LIVE Studio.
-3. Crop browser controls and fit the game to a 9:16 scene, ideally 1080 × 1920.
+1. [Download and extract the Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip).
+2. Double-click **Start-Overlay.cmd** and use the local dashboard it opens. Import an existing settings backup if needed.
+3. Click **Copy private overlay link**, then paste it into a LIVE Studio **Link** source at 1080 × 1920.
 
-Keep both windows open. LIVE Studio's separate **Link** source will not synchronize with Chrome. Phone controls also have separate local state; remote control requires an additional relay. Windows LIVE Studio capture remains unverified.
+Keep the launcher and local dashboard open. The relay synchronizes across apps without sharing a window. Its private read-only link works only on your PC and expires when the relay restarts. No Node.js or paid service is needed. [Setup and privacy details](docs/OVERLAY.md).
+
+Windows/LIVE Studio verification is still pending. Window capture remains available as a fallback. Phone control is not connected to this local relay.
 
 ## Important limits and safety
 
-- The public admin page controls only its visitor's browser, not a shared broadcast. Use one admin tab.
+- The hosted admin uses browser-local state. Private Link mode uses the local relay; use one local dashboard.
 - If scores cannot be saved, the LIVE connection stops; resolve the storage error before reconnecting.
 - Keep passwords, tokens and private backups out of the public repository. Backups include portraits and viewer identifiers.
 - Import trusted files and prefer uploaded images; remote image hosts can see your IP address.
@@ -40,9 +42,10 @@ Keep both windows open. LIVE Studio's separate **Link** source will not synchron
 
 ## Documentation
 
+- [Private overlay setup](docs/OVERLAY.md)
 - [Security fixes and boundaries](SECURITY.md)
 - [Earlier S2E research, catalog sources and operating limits](docs/TECHNICAL.md)
 - [Deployment instructions](DEPLOY.md)
 - [Browser test results](tests/results.json) · [Security test results](tests/security-results.json)
 
-No build step or runtime server is required. Serve over HTTPS; opening files directly with `file://` is unsupported.
+No build step is required. Hosted mode uses HTTPS; private Link mode uses the local PowerShell relay. Opening files directly with `file://` is unsupported.
