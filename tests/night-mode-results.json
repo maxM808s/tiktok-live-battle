@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "Moon toggle",
+    "Black dashboard background",
+    "Theme persists on reload",
+    "Mobile fits",
+    "Light mode restores",
+    "Last valid game survives temporary 503 with unchanged revision"
+  ],
+  "errors": []
+}

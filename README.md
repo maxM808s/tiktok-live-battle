@@ -13,6 +13,8 @@ Browser, simulated-gift and local-overlay tests passed. Real TikFinity gifts, Wi
 
 ## Tutorial 1: Use the dashboard
 
+Use **☾ Night mode** at the top for a black-and-white dashboard. The choice stays in this browser and does not change the broadcast. For a monochrome game, choose **Text & style → Black & White**.
+
 For a private LIVE Studio link, use the **local dashboard opened by Start-Overlay.cmd**. Use one dashboard at a time. Edits save automatically; watch the save indicator.
 
 Expand the section you need:
@@ -148,3 +150,5 @@ Follow these steps in order on your broadcast PC.
 **Quick fixes:** missing controls usually mean an old package/tab; disabled Copy link means the local launcher/dashboard is not ready; a frozen picture needs a sync/status check; no points needs an active LIVE, connected Desktop, started battle, mapped ID and finished streak. Close another scoring dashboard if it owns the connection. Read storage/launcher errors before continuing; do not change system-wide security settings, expose local ports or use administrator access merely to bypass a restriction.
 
 Keep private links/backups private. The viewing link works on this PC and expires on restart, not when your public IP changes. Backups can include viewer identifiers. The repository/browser code remain inspectable; private overlays do not hide the software. More details: [Safety notes](SECURITY.md).
+
+**TikTok “low quality content” warning:** the 10 minutes shown is the restriction duration. The notice names black, blank, static or blurry scenes; it does not identify the gift connector as the cause. Check the actual LIVE Studio output for freezing, blank sources and scaling/bitrate issues. A battle graphic by itself may be treated as static content. Use the graphic alongside meaningful live commentary, camera or gameplay, and appeal in TikTok if the restriction is mistaken. Hiding the notice, dark mode or decorative motion cannot remove a TikTok restriction.
