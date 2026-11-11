@@ -43,3 +43,5 @@ A Web Locks lease permits one connected dashboard per origin. It prevents ordina
 - A pattern scan of current public files and reachable main-branch history found no credential-pattern matches or secret-file paths. See [scan scope and results](tests/leak-review.json). This is a scoped check, not proof that every kind of private data or secret is absent.
 
 Private backup filenames, environment files and common private-key formats are listed in `.gitignore` to reduce accidental commits. This does not redact Git history or prevent force-adding files or uploading them through GitHub's web interface.
+
+Recent events are limited to 40 entries, but retained streak keys can also contain older sender identifiers used for replay protection. Hiding the sender on the display does not erase that local history or remove it from an exported backup. Keep exports private.

@@ -33,7 +33,7 @@ Keep both windows open. LIVE Studio's separate **Link** source will not synchron
 
 - The public admin page controls only its visitor's browser, not a shared broadcast. Use one admin tab.
 - If scores cannot be saved, the LIVE connection stops; resolve the storage error before reconnecting.
-- Keep passwords, tokens and private backups out of the public repository. Backups include portraits and recent sender names.
+- Keep passwords, tokens and private backups out of the public repository. Backups include portraits and viewer identifiers.
 - Import trusted files and prefer uploaded images; remote image hosts can see your IP address.
 - The 15 bundled gift entries use authentic artwork. Confirm current IDs, availability and prices for your region.
 - TikFinity Desktop must run on the same PC. Browser local-network permissions may be required. S2E is no longer the selected connector.
