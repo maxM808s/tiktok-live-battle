@@ -18,5 +18,5 @@ let s=c.defaults();s.running=true;let e={giftId:'5655',eventId:'one',sessionId:'
 let malformed={...e,eventId:{x:1}};assert.equal(c.ingest(s,malformed).ok,false);checks.push('Reject structured event identifiers');
 let withPrototype=JSON.parse(JSON.stringify(c.defaults()));withPrototype.combos=JSON.parse('{"__proto__":1}');let normalized=c.validateState(withPrototype);assert.equal(Object.getPrototypeOf(normalized.combos),null);assert.equal({}.polluted,undefined);checks.push('Normalize streak dictionary without a prototype');
 globalThis.localStorage={getItem:()=>JSON.stringify({version:1,teams:[]})};assert.equal(c.load().teams.length,2);checks.push('Recover safely from malformed browser storage');
-localStorage.getItem=()=>JSON.stringify({'__proto__':c.defaults().teams});assert.equal(Object.getPrototypeOf(c.loadPresets()),null);checks.push('Use prototype-free preset dictionaries');
+localStorage.getItem=()=>'{"__proto__":'+JSON.stringify(c.defaults().teams)+'}';let presets=c.loadPresets();assert.equal(Object.getPrototypeOf(presets),null);assert.equal(Object.hasOwn(presets,'__proto__'),true);checks.push('Use prototype-free preset dictionaries');
 console.log('PASS',checks.length,'security checks');fs.writeFileSync(new URL('security-results.json',import.meta.url),JSON.stringify({checks,date:new Date().toISOString()},null,2));
