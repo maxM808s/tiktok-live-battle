@@ -29,7 +29,7 @@ Your own title, branding and instructions are not automatically translated.
 - Under **Typography & sizes**, choose font/weight and adjust sliders or exact values for branding, title, names, scores, instructions, gift values, labels, logo and portraits. Sizes scale with the vertical display; long text can shrink to fit. **↺** resets one size.
 - Under **Text colors & background**, choose individual text, background/glow and left/right panel colors.
 - **Use appearance colors for competitor panels:** on uses these panel colors; off uses the competitors' saved gradients.
-- Under **Show / hide elements**, choose which branding, title, instructions, subtitles and sender information appear.
+- Under **Show / hide elements**, choose which branding, title, instructions, subtitles, sender information, gift mappings and Points labels appear.
 - **Reset appearance** resets design settings while preserving scores, competitors and gift mappings.
 
 **3. Competitors — names, photos and presets**
@@ -53,7 +53,7 @@ Already assigned gifts are unavailable in this picker. To move a gift, remove it
 
 Coin value is a catalog reference, not your scoring rule. A gift mapped to 10 points with quantity 3 adds 30 points. Verify regional IDs and current prices in TikTok/TikFinity; similar names can have different IDs.
 
-**Expand library / import catalog** accepts a trusted compatible catalog file. To upload one gift yourself, enter its actual ID/name, optionally its observed coin value, upload authentic artwork, and click **Add uploaded gift**. Then assign it from the gallery. Do not guess IDs or use private credentials in image URLs.
+**Expand library / import catalog** accepts a trusted compatible catalog file. To upload one gift yourself, enter its actual ID/name, optionally its observed coin value, upload authentic artwork, and click **Add uploaded gift**. Then assign it from the gallery. Do not guess IDs or use private credentials in image URLs. The bundled library now has 80 gift entries; values remain a reference snapshot.
 
 **5. LIVE — connection and received gifts**
 
@@ -148,7 +148,7 @@ Declare the winner or pause, disconnect TikFinity in the game, and export settin
 
 Run the launcher and use the new local dashboard. Settings normally remain with the same browser/profile and local address. Copy its new private overlay link into LIVE Studio: restarting the launcher expires the old link. Load your matchup, reset scores as needed, then follow steps 7–9.
 
-To update the game package, export settings, stop the old launcher, download/extract the latest package and run its launcher. Check settings and restore the backup if needed. Always use the latest copied overlay link after restarting.
+**Do I need to download again?** Yes for app updates to your downloaded Windows copy. No for changing names, colors, gifts or points inside the dashboard. The downloaded files do not update automatically. To update the game package, export settings, stop the old launcher, download/extract the latest package and run its launcher. Check settings and restore the backup if needed. Always use the latest copied overlay link after restarting.
 
 **If something does not work**
 
@@ -158,5 +158,7 @@ To update the game package, export settings, stop the old launcher, download/ext
 - No gift points: verify TikTok is LIVE, TikFinity Desktop is connected, Start battle is active, the actual gift ID is mapped, and the streak has finished.
 - Another dashboard owns the connection: disconnect/close that tab first.
 - Storage, launcher or permission error: keep a backup and read the message. Do not change system-wide security settings, expose local ports or run as administrator merely to bypass a restriction.
+
+Visibility controls are presentation choices, not a way to guarantee TikTok reach or bypass moderation. Follow current TikTok LIVE rules; if reach or eligibility changes, check your account notices rather than relying on an overlay setting.
 
 Keep private links and backups private. The link is PC-only and expires on launcher restart; it is not tied to your public internet IP. Backups can contain portraits and viewer identifiers. Do not upload them or credentials to this public repository. The repository and browser code remain inspectable. More safety details are in [SECURITY.md](SECURITY.md).

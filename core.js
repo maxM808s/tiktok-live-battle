@@ -10,7 +10,7 @@ export const designFields={
  logoSize:{label:'Logo height',min:24,max:140,value:54},
  portraitSize:{label:'Portrait diameter',min:260,max:400,value:367}
 };
-export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),panelA:'#087dff',panelB:'#ad46ff',panelColors:false,font:'system',weight:900,background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true});
+export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),panelA:'#087dff',panelB:'#ad46ff',panelColors:false,font:'system',weight:900,background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true,showGifts:true,showPointLabels:true});
 export const designThemes={original:{background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff'},electric:{background:'#110923',glow:'#572382',brandColor:'#d4b6ff',titleColor:'#f2e5ff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#e1ccff'},midnight:{background:'#050e16',glow:'#114c55',brandColor:'#8fe9e5',titleColor:'#d9fffc',nameColor:'#ffffff',scoreColor:'#aefbf1',instructionColor:'#d9fffc'}};
 export const themeLabels={original:'Original',electric:'Electric',midnight:'Midnight',blackYellow:'Black & Yellow',orangeBlack:'Orange & Black',crimson:'Crimson',emerald:'Emerald',ice:'Ice Blue',roseGold:'Rose Gold',monochrome:'Black & White',blueYellow:'Blue & Yellow'};
 Object.assign(designThemes.original,{panelColors:true,panelA:'#087dff',panelB:'#ad46ff'});
@@ -31,7 +31,7 @@ export function validateAppearance(v){
  if(!record(v))throw Error('Invalid appearance settings');
  for(let [k,f]of Object.entries(designFields))if(v[k]!==undefined)out[k]=numberValue(v[k],f.min,f.max,true);
  for(let k of ['background','glow','brandColor','titleColor','nameColor','scoreColor','instructionColor','panelA','panelB'])if(v[k]!==undefined){if(typeof v[k]!=='string'||!/^#[0-9a-f]{6}$/i.test(v[k]))throw Error('Invalid design color');out[k]=v[k]}
- for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents','panelColors'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
+ for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents','showGifts','showPointLabels','panelColors'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
  if(v.font!==undefined){if(!['system','rounded','serif'].includes(v.font))throw Error('Invalid font');out.font=v.font}
  if(v.weight!==undefined){if(![600,700,800,900].includes(v.weight))throw Error('Invalid font weight');out.weight=v.weight}
  return out;
@@ -99,3 +99,5 @@ export function validateState(v){
  return s;
 }
 export function loadPresets(){try{let raw=localStorage.getItem('battle-presets');if(!raw)return Object.create(null);if(raw.length>MAX_IMPORT_BYTES)throw Error('Presets too large');let v=JSON.parse(raw);if(!record(v)||Object.keys(v).length>50)throw Error('Invalid presets');let out=Object.create(null);for(let[k,t]of Object.entries(v)){textValue(k,80);if(t.length!==2)throw Error('Invalid preset');out[k]=validateTeams(t)}return out}catch{return Object.create(null)}}
+
+export const mergeCatalog=(base,custom)=>[...new Map([...base,...custom].map(g=>[String(g.id),g])).values()];
