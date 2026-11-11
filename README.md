@@ -9,10 +9,11 @@ A customizable English/Hebrew battle display with a mobile-friendly control room
 ## Quick start
 
 1. Open the dashboard and choose English or עברית.
-2. Enter competitor names, upload portraits, and adjust colors and cropping. Optional translated names override the common name.
-3. Search gifts by name or ID, select a competitor, set points, then click a gift. Remove a mapping before assigning that gift to the other competitor.
-4. Set starting scores and click **Reset scores** to apply them.
-5. Click **Start battle**, then use **Simulate gift** or add points manually. **Pause** stops gift scoring; **Declare winner** ends the battle.
+2. Use **Text & style** to change text sizes, fonts, colors, logo/portrait sizes and visibility. Changes save automatically; **Reset appearance** preserves scores.
+3. Enter competitor names, upload portraits, and adjust colors and cropping. Optional translated names override the common name.
+4. Search gifts by name or ID, select a competitor, set points, then click a gift. Remove a mapping before assigning that gift to the other competitor.
+5. Set starting scores and click **Reset scores** to apply them.
+6. Click **Start battle**, then use **Simulate gift** or add points manually. **Pause** stops gift scoring; **Declare winner** ends the battle.
 
 Save matchups as presets. Settings and scores persist in your browser; export settings for backup. Presets are not included in that export.
 

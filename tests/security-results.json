@@ -9,6 +9,10 @@
     "Reject duplicate competitor IDs",
     "Bound replay storage",
     "Reject credentials in remote image URLs",
+    "Reject out-of-range text sizes",
+    "Reject appearance CSS injection",
+    "Reject unapproved font values",
+    "Reject nonboolean design visibility",
     "Keep uploaded and bundled images supported",
     "Allowlist event fields and escape text",
     "Reject structured event identifiers",
@@ -16,5 +20,5 @@
     "Recover safely from malformed browser storage",
     "Use prototype-free preset dictionaries"
   ],
-  "date": "2026-11-11T18:29:02.285Z"
+  "date": "2026-11-11T18:41:09.316Z"
 }

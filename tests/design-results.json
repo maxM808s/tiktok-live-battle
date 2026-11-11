@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-11T18:41:11.869Z",
+  "checks": [
+    "slider synchronizes exact size and display",
+    "exact value synchronizes slider output",
+    "font style updates live",
+    "headline weight updates live",
+    "branding color updates live",
+    "visibility controls update live",
+    "theme preset saved",
+    "theme preserves battle scores",
+    "individual size reset",
+    "reset appearance preserves scores",
+    "large text fits within vertical Hebrew scene",
+    "long title names and counters do not overflow horizontally",
+    "design persists on reload",
+    "legacy settings receive appearance defaults",
+    "legacy score survives appearance migration",
+    "mobile editor has no horizontal overflow",
+    "no editor or display script errors"
+  ],
+  "errors": []
+}

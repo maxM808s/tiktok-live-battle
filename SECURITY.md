@@ -25,3 +25,5 @@ Real S2E ingestion remains unconnected. No claims are made about authentication 
 ## Tests
 
 `tests/security.mjs` verifies malicious events, style/image injection, malformed storage, prototype-related keys, invalid scores and resource limits. `tests/browser.cjs` checks normal game flows and includes actual malicious backup import, literal HTML name rendering and CSP inline-script blocking. These are development tests and do not add a runtime server dependency.
+
+Appearance controls use validated size ranges, hexadecimal colors, approved system-font choices and boolean visibility flags. Older settings receive default appearance values without changing scores.

@@ -1,5 +1,30 @@
+// Design values use pixels on the 1080px-wide broadcast canvas.
+export const designFields={
+ brandSize:{label:'Branding text',min:12,max:60,value:27},
+ titleSize:{label:'Game title',min:36,max:130,value:86},
+ nameSize:{label:'Competitor names',min:20,max:66,value:43},
+ scoreSize:{label:'Score counters',min:48,max:120,value:86},
+ instructionSize:{label:'Voting instructions',min:20,max:66,value:43},
+ giftSize:{label:'Gift point values',min:18,max:46,value:29},
+ labelSize:{label:'Points labels',min:16,max:40,value:28},
+ logoSize:{label:'Logo height',min:24,max:140,value:54},
+ portraitSize:{label:'Portrait diameter',min:260,max:400,value:367}
+};
+export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),font:'system',weight:900,background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true});
+export const designThemes={original:{background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff'},electric:{background:'#110923',glow:'#572382',brandColor:'#d4b6ff',titleColor:'#f2e5ff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#e1ccff'},midnight:{background:'#050e16',glow:'#114c55',brandColor:'#8fe9e5',titleColor:'#d9fffc',nameColor:'#ffffff',scoreColor:'#aefbf1',instructionColor:'#d9fffc'}};
+export function validateAppearance(v){
+ let out=appearanceDefaults();if(v===undefined)return out;
+ if(!record(v))throw Error('Invalid appearance settings');
+ for(let [k,f]of Object.entries(designFields))if(v[k]!==undefined)out[k]=numberValue(v[k],f.min,f.max,true);
+ for(let k of ['background','glow','brandColor','titleColor','nameColor','scoreColor','instructionColor'])if(v[k]!==undefined){if(typeof v[k]!=='string'||!/^#[0-9a-f]{6}$/i.test(v[k]))throw Error('Invalid design color');out[k]=v[k]}
+ for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
+ if(v.font!==undefined){if(!['system','rounded','serif'].includes(v.font))throw Error('Invalid font');out.font=v.font}
+ if(v.weight!==undefined){if(![600,700,800,900].includes(v.weight))throw Error('Invalid font weight');out.weight=v.weight}
+ return out;
+}
+
 export const KEY='live-battle-v1';
-export const defaults=()=>({version:1,lang:'en',title:'',brand:'BATTLE ARENA',instructions:'',logo:'',animations:true,running:false,finished:false,teams:[{id:'a',name:'',en:'',he:'',photo:'',color:'#087dff',color2:'#073bb5',x:50,y:50,zoom:1,start:0,score:0,gifts:[{id:'5655',points:1}]},{id:'b',name:'',en:'',he:'',photo:'',color:'#ad46ff',color2:'#4a16a6',x:50,y:50,zoom:1,start:0,score:0,gifts:[{id:'5269',points:1}]}],custom:[],events:[],seen:[],combos:{}});
+export const defaults=()=>({version:1,appearance:appearanceDefaults(),lang:'en',title:'',brand:'BATTLE ARENA',instructions:'',logo:'',animations:true,running:false,finished:false,teams:[{id:'a',name:'',en:'',he:'',photo:'',color:'#087dff',color2:'#073bb5',x:50,y:50,zoom:1,start:0,score:0,gifts:[{id:'5655',points:1}]},{id:'b',name:'',en:'',he:'',photo:'',color:'#ad46ff',color2:'#4a16a6',x:50,y:50,zoom:1,start:0,score:0,gifts:[{id:'5269',points:1}]}],custom:[],events:[],seen:[],combos:{}});
 export function load(){try{let raw=localStorage.getItem(KEY);if(!raw)return defaults();if(raw.length>MAX_IMPORT_BYTES)throw Error('Settings too large');return validateState(JSON.parse(raw))}catch{return defaults()}}
 export function save(s){let data=JSON.stringify(validateState(s));if(data.length>MAX_IMPORT_BYTES)throw Error('Settings exceed 4 MB');localStorage.setItem(KEY,data);window.dispatchEvent(new Event('battle-update'))}
 export const words={en:{title:'Vote LIVE',a:'Team A',b:'Team B',points:'Points',send:'Send a gift to vote',leading:'Leading',winner:'Winner',paused:'PAUSED',live:'LIVE',ready:'READY',coins:'Coins'},he:{title:'הצבעה בלייב',a:'קבוצה א׳',b:'קבוצה ב׳',points:'נקודות',send:'שלחו מתנה כדי להצביע',leading:'מוביל',winner:'מנצח',paused:'מושהה',live:'בשידור חי',ready:'מוכן',coins:'מטבעות'}};
@@ -50,7 +75,7 @@ export function validateTeams(teams){
 export function validateState(v){
  if(!record(v)||v.version!==1||!['en','he'].includes(v.lang)||v.teams?.length!==2||!record(v.combos))throw Error('Invalid settings file');
  for(let k of ['animations','running','finished'])if(typeof v[k]!=='boolean')throw Error('Invalid battle flags');
- let s={version:1,lang:v.lang,title:textValue(v.title,300),brand:textValue(v.brand,200),instructions:textValue(v.instructions,500),logo:textValue(v.logo,1_500_000),animations:v.animations,running:v.running,finished:v.finished,teams:validateTeams(v.teams),custom:list(v.custom,1000).map(validateGift),events:[],seen:list(v.seen,20000).map(k=>textValue(k,1100)),combos:Object.create(null)};
+ let s={version:1,appearance:validateAppearance(v.appearance),lang:v.lang,title:textValue(v.title,300),brand:textValue(v.brand,200),instructions:textValue(v.instructions,500),logo:textValue(v.logo,1_500_000),animations:v.animations,running:v.running,finished:v.finished,teams:validateTeams(v.teams),custom:list(v.custom,1000).map(validateGift),events:[],seen:list(v.seen,20000).map(k=>textValue(k,1100)),combos:Object.create(null)};
  if(s.logo&&!safeImage(s.logo))throw Error('Invalid logo');
  if(new Set(s.custom.map(g=>g.id)).size!==s.custom.length)throw Error('Duplicate catalog ID');
  s.events=list(v.events,40).map(e=>{if(!record(e)||!/^\d{1,20}$/.test(e.giftId))throw Error('Invalid gift event');return{giftId:e.giftId,sender:textValue(e.sender??'',200),delta:numberValue(e.delta,0,100000,true),points:numberValue(e.points,0,1e14,true),team:e.team==null?undefined:(['a','b'].includes(e.team)?e.team:undefined),time:numberValue(e.time,0,Number.MAX_SAFE_INTEGER,true),simulated:e.simulated===true}});
