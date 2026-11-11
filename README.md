@@ -64,3 +64,7 @@ Expand the catalog via JSON import or upload authentic artwork and actual IDs. N
 See tests/results.json and screenshots. Browser tests cover language/direction, names, uploaded portrait, gift searching/assignment, scoring, percentages, crown, cumulative streaks, duplicate events, pause, reset, persistence, presets, swap, mobile width, image loading and browser errors. Node/Playwright was used only as an external development test tool; the delivered runtime is static JavaScript.
 
 Not verified: real S2E gift traffic, S2E reconnect schema, Windows LIVE Studio capture. No reference screenshot was attached in the received conversation, so the visual composition follows the written reference instead of a pixel comparison. Admin controls use English; the game display translates English/Hebrew. No claim of an official complete TikTok catalog or fully connected LIVE product is made.
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for the import/XSS fixes, browser policy, regression tests, and static-hosting security boundaries. Backups contain local settings and recent sender names; avoid sharing private backups publicly.

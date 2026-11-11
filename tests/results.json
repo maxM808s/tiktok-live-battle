@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T18:09:00.341Z",
+  "date": "2026-11-11T18:27:42.579Z",
   "checks": [
     "custom names + cross-window synchronization",
     "Hebrew RTL translation",
@@ -18,20 +18,16 @@
     "preset saved and loaded",
     "swap sides",
     "all authentic catalog images render",
+    "malicious backup rejected without executing HTML",
+    "HTML in names renders as literal text",
+    "CSP blocks inline script execution",
+    "referrer privacy policy present",
     "mobile dashboard has no horizontal overflow",
     "no browser script errors"
   ],
   "errors": [],
   "limitations": [
     "S2E actual events unavailable",
-    "GitHub Pages not deployed",
     "LIVE Studio Windows runtime unavailable"
-  ],
-  "additionalCoreChecks": [
-    "zero-score tie gives 50/50",
-    "leader crossover",
-    "language preserves scores",
-    "invalid quantities rejected",
-    "replay protection persists through serialization"
   ]
 }

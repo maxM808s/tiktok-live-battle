@@ -1,0 +1,20 @@
+{
+  "checks": [
+    "Reject imported event HTML in numeric fields",
+    "Reject portrait style injection",
+    "Reject arbitrary CSS colors",
+    "Reject executable image schemes",
+    "Reject SVG data imports",
+    "Reject nonfinite scores",
+    "Reject duplicate competitor IDs",
+    "Bound replay storage",
+    "Reject credentials in remote image URLs",
+    "Keep uploaded and bundled images supported",
+    "Allowlist event fields and escape text",
+    "Reject structured event identifiers",
+    "Normalize streak dictionary without a prototype",
+    "Recover safely from malformed browser storage",
+    "Use prototype-free preset dictionaries"
+  ],
+  "date": "2026-11-11T18:27:15.986Z"
+}
