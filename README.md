@@ -1,267 +1,162 @@
-# TikTok LIVE Battle — User Guide
+# TikTok LIVE Battle
 
-Set up your competitors, choose gifts, customize the display, and show the game in TikTok LIVE Studio using a private Link source.
+[Download the latest Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip)
 
-[Open hosted dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html) · [Download Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip)
+There are two tutorials below. **First time? Start with Tutorial 2**, then use Tutorial 1 when you need help with a dashboard control.
 
-**Test status:** browser, simulated-gift and private-overlay synchronization tests passed. Real TikFinity gift traffic, Windows PowerShell execution and actual LIVE Studio Link-source behavior still need verification on the broadcast PC. This guide describes the implemented controls; it does not claim those remaining tests have passed.
+- [Tutorial 1: Use the dashboard](#tutorial-1-use-the-dashboard)
+- [Tutorial 2: First setup and going LIVE](#tutorial-2-first-setup-and-going-live)
 
-## Contents
+Browser and simulated-event tests passed. Real TikFinity gifts, Windows launcher execution and LIVE Studio Link behavior still need verification on the broadcast PC.
 
-- [What you need](#what-you-need)
-- [First-time Windows setup](#first-time-windows-setup)
-- [Dashboard guide](#dashboard-guide)
-- [Connect TikFinity](#connect-tikfinity)
-- [Add the game to LIVE Studio](#add-the-game-to-live-studio)
-- [Test before a real battle](#test-before-a-real-battle)
-- [Everyday streaming routine](#everyday-streaming-routine)
-- [Troubleshooting](#troubleshooting)
-- [Updates and safety](#updates-and-safety)
+## Tutorial 1: Use the dashboard
 
-## What you need
+Use the **local dashboard opened by Start-Overlay.cmd** for your private LIVE Studio overlay. Changes save automatically; check the save indicator. Use one dashboard at a time.
 
-- A Windows broadcast PC with TikTok LIVE Studio and permission to go LIVE on your TikTok account.
-- TikFinity **Desktop** installed on that same PC. Its browser-only version is not enough for this game's connection.
-- A current Chrome or Edge browser is recommended for the dashboard.
-- The extracted game package, including its launcher and assets.
+**1. General — language, title and branding**
 
-No Node.js, npm, Python installation, VPS or paid hosting is needed for this setup. TikFinity has its own plan limits and terms; check those in your account.
+- **Display language:** choose English or עברית. This changes the game text and Hebrew text direction without resetting scores. The dashboard controls remain in English.
+- **Custom title:** enter a heading, or leave blank for the translated default.
+- **Branding:** enter the text shown at the top. Upload a **Brand logo** if wanted; **Remove logo** removes it.
+- **Voting instructions:** enter bottom text, or leave blank for the translated default.
+- **Enable animations:** turn effects on/off.
 
-## First-time Windows setup
+Your own title, branding and instructions are not automatically translated.
 
-1. Download the [Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip).
-2. Right-click the downloaded ZIP and choose **Extract All**. Open the extracted `tiktok-live-battle-main` folder. Do not run the launcher from inside the ZIP.
-3. Double-click **Start-Overlay.cmd**. Keep the console window open during use.
-4. The launcher opens your **local dashboard**. Use this dashboard when you want a LIVE Studio Link source. The hosted GitHub dashboard is useful for editing/testing, but its ordinary display URL does not synchronize with LIVE Studio by itself.
-5. If you configured the hosted dashboard already, export its settings from **Backup & synchronization**, then restore that file in the local dashboard. Disconnect TikFinity before restoring. Saved matchup presets are not included in the export; load the matchup you want before exporting it.
-6. Watch the overlay status at the top. When ready, **Copy private overlay link** becomes available.
-7. Configure the sections below, connect TikFinity, and add the copied link to LIVE Studio.
+**2. Text & style — sizes and colors**
 
-Settings stay in the browser profile and address you use. Changing browsers, clearing browser data or changing the local address can give you a separate configuration. Keep a private backup.
+- Click a preset: Original, Electric, Midnight, Black & Yellow, Orange & Black, Blue & Yellow, Crimson, Emerald, Ice Blue, Rose Gold, or Black & White. Presets recolor the portrait rings, panels and coordinated display elements.
+- Under **Typography & sizes**, choose font/weight and adjust sliders or exact values for branding, title, names, scores, instructions, gift values, labels, logo and portraits. Sizes scale with the vertical display; long text can shrink to fit. **↺** resets one size.
+- Under **Text colors & background**, choose individual text, background/glow and left/right panel colors.
+- **Use appearance colors for competitor panels:** on uses these panel colors; off uses the competitors' saved gradients.
+- Under **Show / hide elements**, choose which branding, title, instructions, subtitles and sender information appear.
+- **Reset appearance** resets design settings while preserving scores, competitors and gift mappings.
 
-## Dashboard guide
+**3. Competitors — names, photos and presets**
 
-Use the navigation buttons at the top to jump to **Overlay link**, **General**, **Text & style**, **Competitors**, **Gifts**, **LIVE**, **Battle**, or **Preview**. Most edits save automatically; check the **Saved in this browser** indicator and any error message.
+1. Enter each competitor's **Name**. Optional English/Hebrew names override the main name for that language.
+2. Upload a portrait. Adjust **Horizontal crop**, **Vertical crop** and **Portrait zoom** while watching the preview. Remove the photo with its Remove button.
+3. Set **Gradient start/end**. Turn off appearance panel colors if you want to see these gradients.
+4. Enter a **Starting score**. Use **Reset scores** in Battle controls to apply it.
+5. **Swap sides** moves the competitors with their photos, scores and gifts.
 
-### Private LIVE Studio overlay
+To save a matchup, enter a preset name and click **Save preset**. The same name overwrites that preset. Choose one and click **Load matchup** to restore it: loading applies starting scores and pauses the battle. **Delete preset** removes only the saved entry. Presets do not include all general/appearance settings and are not included in settings exports.
 
-This section connects the game display to LIVE Studio without capturing a window.
+**4. Gifts — add more than one gift to each character**
 
-| Control | How to use it |
+1. Under the desired competitor, click **＋ Add gift**.
+2. Search by gift name or ID, then set **Points per gift**.
+3. Click an available gift. It adds another gift slot without replacing existing gifts.
+4. Repeat for another gift on either competitor. Close with **×** or **Esc** to cancel.
+
+Already assigned gifts are unavailable in this picker. To move a gift, remove its old mapping first. Edit its points box to change its value, or click **×** on the mapping to remove it. The shared gallery below is another way to assign gifts: choose the side, set points and click a tile.
+
+Coin value is a catalog reference, not your scoring rule. A gift mapped to 10 points with quantity 3 adds 30 points. Verify regional IDs and current prices in TikTok/TikFinity; similar names can have different IDs.
+
+**Expand library / import catalog** accepts a trusted compatible catalog file. To upload one gift yourself, enter its actual ID/name, optionally its observed coin value, upload authentic artwork, and click **Add uploaded gift**. Then assign it from the gallery. Do not guess IDs or use private credentials in image URLs.
+
+**5. LIVE — connection and received gifts**
+
+- Set a **Stream session label** for this broadcast. Keep it unchanged during reconnects; change it only for a genuinely new broadcast while disconnected.
+- **Connect TikFinity** connects to Desktop on this PC. **Reconnect** retries; **Disconnect** stops receiving events.
+- A connected status confirms the desktop endpoint is reachable, not that TikTok is actually LIVE.
+- **Recent gift events** shows gift IDs, quantities, points and competitors. Test events are marked TEST; unmapped gifts award no points.
+- Streak gifts score when they finish. Completed events received during Pause remain ignored if replayed. A streak finishing after resume can include earlier gifts, so finish streaks before changing battle state when you need a clean boundary.
+
+Normal use does not need **Adapter input / diagnostics**. Use Simulate gift instead. Do not clear duplicate-protection history or change session labels to force points.
+
+**6. Battle — start, pause, correct and reset**
+
+| Button | Use |
 |---|---|
-| Download Windows package | Download the current package and extract it before launching. |
-| Copy private overlay link | In the local dashboard, copy the generated viewing link and paste it into a LIVE Studio Link source. If automatic copying is unavailable, select/copy the link shown by the dashboard. |
-| Retry overlay sync | After fixing a relay/launcher problem, send the current settings and scores again. |
-| Overlay status | Confirm that the overlay is ready or synchronized. A sync error means the display may be showing an older picture. |
+| Start battle | Start/resume gift scoring. Existing scores stay. |
+| Pause | Stop scoring completed gift events. Start battle resumes. |
+| Declare winner | Stop scoring and show the leading competitor as winner. Ties have no leading crown. |
+| Reset scores | Apply each competitor's starting score. Pause first if you do not want incoming gifts during the reset. Mappings and duplicate protection stay. |
+| Add points | Select a competitor and enter a positive manual addition. This also works while paused. |
+| Simulate gift | Select a mapped gift and quantity to test scoring. Start the battle first. This does not prove real TikFinity traffic works. |
 
-Keep the launcher and local dashboard open. The viewing link works only on your PC, permits viewing rather than editing, and expires when the launcher restarts. After a restart, close the old dashboard, use the new one, and replace the Link source URL.
+The crown follows the lead. The percentage bar follows the score ratio; zero versus zero starts at 50% / 50%.
 
-### General
+**7. Preview, backups and overlay controls**
 
-| Setting | What it changes |
-|---|---|
-| Display language | Switch the game between English and עברית. Hebrew uses right-to-left text layout. Scores and settings remain. Dashboard controls themselves remain in English. |
-| Custom title | Enter your own heading. Leave blank to use the translated default title. |
-| Branding | Set the branding text at the top of the game. |
-| Voting instructions | Set your own bottom instruction text. Leave blank to use the translated default. |
-| Brand logo | Upload a logo; use **Remove logo** to remove it. |
-| Enable animations | Turn game animations on or off. |
+- **Preview** shows the current game. **Full-screen preview** enlarges it; Esc exits.
+- **Open display window** opens an ordinary browser view for checking or window capture. It is not the private Link URL.
+- **Export settings** downloads the current configuration, scores, images and event/replay history. Store it privately.
+- **Restore settings** replaces the current configuration. Export first if needed, disconnect TikFinity, restore, inspect scores, then reconnect. The preset list is not included.
+- **Copy private overlay link** copies the viewing URL from the local dashboard. **Retry overlay sync** sends the latest state again after a relay problem is fixed.
 
-Custom title, branding and instruction text remain as you entered them; language selection does not translate your own writing. Competitor names have separate optional translations in the Competitors section.
+Different browsers/profiles and hosted/local addresses have separate settings. A phone is not connected as a remote controller. If saving or capacity errors appear, stop and resolve them before continuing; unsaved gifts are not automatically recovered.
 
-### Text and appearance
+## Tutorial 2: First setup and going LIVE
 
-Watch the live preview while changing these settings.
+**First-time setup: steps 1–6**
 
-**Color presets:** choose Original, Electric, Midnight, Black & Yellow, Orange & Black, Blue & Yellow, Crimson, Emerald, Ice Blue, Rose Gold, or Black & White. Every preset also recolors the character portrait rings, panels, progress bar and VS badge.
+**1. Get the required apps**
 
-**Typography & sizes:**
+Use a Windows broadcast PC with TikTok LIVE Studio and LIVE access on your TikTok account. Install [TikFinity Desktop from its official site](https://tikfinity.zerody.one/landing/). Use current Chrome or Edge for the game dashboard. No Node.js installation or paid hosting is needed by this game.
 
-- Choose a font style and headline weight.
-- Use a slider or its exact-value box for branding text, game title, competitor names, scores, instructions, gift values and points labels.
-- Adjust logo height and portrait diameter in the same section.
-- Sizes describe the 1080 × 1920 game canvas and scale with the preview. Long text may automatically shrink to fit.
-- Use a control's **↺** button to reset that individual size.
+**2. Download and start the game**
 
-**Text colors & background:** choose branding, title, name, score and instruction colors, plus the background, glow and left/right panel colors.
+Download the Windows package using the link at the top. Right-click the ZIP, choose **Extract All**, then open the extracted folder and double-click **Start-Overlay.cmd**. Keep the launcher window open.
 
-**Use appearance colors for competitor panels** controls which panel colors you see. Turn it on for the appearance section's panel colors. Turn it off to show each competitor's own saved gradient from the Competitors section. Appearance presets preserve those saved competitor gradients.
+Use the **local dashboard it opens**, not an older `github.io` tab. If you already configured that hosted dashboard, export settings there and restore them in the local dashboard once. Load the desired saved matchup before exporting, because presets are not included.
 
-**Show / hide elements:** choose whether branding/logo, title, instructions, decorative subtitles and recent gift sender appear on the game. Hiding the sender does not erase stored gift history or remove it from your settings backup.
+**3. Configure and test the dashboard**
 
-**Reset appearance** restores the design settings. It does not reset scores or erase competitor names, portraits or gift mappings.
+Follow Tutorial 1 to set names/photos, appearance and gift mappings. Set starting scores, click Pause then Reset scores, and Start battle. Simulate a gift for each side and check its points, icons, bar and crown. Clear the test scores before the real battle.
 
-### Competitors
+**4. Prepare TikFinity Desktop**
 
-Configure the left and right competitor independently.
+Open TikFinity Desktop and sign in to your TikFinity account. In its setup, enter your TikTok **@handle**, not your display name, and save it. Its LIVE connection needs your broadcast to be active; offline preparation and game simulation can be done first.
 
-1. Enter the main **Name** for each competitor.
-2. Optionally fill **English name** and **Hebrew name**. The selected language's name takes priority; otherwise the main name is used. A default team label appears if all relevant names are blank.
-3. Upload a **Portrait**. It appears in the circular frame; remove it with its Remove button if needed.
-4. Adjust **Horizontal crop**, **Vertical crop**, and **Portrait zoom** while looking at the preview. Adjust overall portrait diameter under Text & style.
-5. Choose **Gradient start** and **Gradient end**. If they seem to have no effect, turn off **Use appearance colors for competitor panels**.
-6. Set each **Starting score**. This value is applied when you use **Reset scores**; entering it does not immediately replace the current score.
+Keep Desktop open on this same PC. Do not enter TikTok passwords, session cookies or stream keys into the game. Gifts are assigned in the game's Gifts section; you do not need a separate TikFinity Action for each mapping.
 
-**Swap sides** moves the competitors with their names, portraits, scores and assigned gifts.
+**5. Add the private link to LIVE Studio**
 
-#### Save and load matchups
+In the local dashboard, wait for overlay ready/synchronized, then click **Copy private overlay link**.
 
-- Enter a preset name and click **Save preset**. Reusing the same name replaces that saved matchup.
-- Choose a saved matchup and click **Load matchup**. Loading restores its competitors and gift mappings, applies their starting scores, and pauses the battle. Click Start battle when ready.
-- **Delete preset** removes the selected saved entry; it does not delete the current on-screen battle.
+In LIVE Studio, choose your scene, open **Sources → + / Add source → Link**, and paste that copied URL. Give the source a name such as Battle Game. Labels may vary by LIVE Studio version.
 
-Matchup presets are separate from a full settings backup. They do not represent a backup of all appearance/general settings, and the settings export does not include the preset list.
+If width and height fields appear, enter **1080 × 1920** once. Otherwise fit the source to the vertical scene using its controls. Check the full game is visible. Do not paste the dashboard URL or ordinary display URL, and do not edit the private URL to set dimensions.
 
-### TikTok gifts
+**6. Check synchronization before streaming**
 
-#### Assign a gift
+Change a competitor name or simulate a mapped gift in the dashboard. Confirm it changes inside LIVE Studio. Then pause/reset the test scores and leave the battle paused until ready.
 
-1. Click **＋ Add gift** beneath the competitor you want. This opens that competitor's gift picker.
-2. Search by gift name or numeric ID.
-3. Enter **Points per gift**.
-4. Click an available gift tile. A new gift slot appears beneath that competitor, with its authentic image and point value. Existing gifts stay assigned.
-5. Repeat **Add gift** for a second, third or additional gift on either competitor. Close the picker with × or Esc to cancel without adding anything.
+Keep the local dashboard and launcher open. If LIVE Studio rejects the URL, first test it in another browser on this PC and note the exact error. Do not disable browser security.
 
-Gifts already assigned to either competitor are disabled in this picker. You can also use the shared gallery below: choose a side under **Assign selected gift to**, set points, then click a gift.
+**Going LIVE: steps 7–9**
 
-One gift ID can be assigned to only one competitor. To move it, remove its existing mapping first. Similar gift names can have different regional IDs; match the actual ID rather than relying only on the name.
+**7. Start the broadcast and connect TikFinity**
 
-In the assigned-gifts list, edit the points box to change its value. Click **×** to remove that mapping. Changing mappings does not retroactively recalculate existing scores.
+When ready, start your broadcast using LIVE Studio. In TikFinity Desktop, use **Connect to TikTok LIVE** and confirm it is attached to your active channel. Its [official setup guide](https://blog.tikfinity.com/tikfinity-setup/) covers handle/account setup if its interface differs.
 
-**Coins and points are different:** the catalog's coin value is a reference, while Points per gift is your game rule. If you set a gift to 10 points and simulate a quantity of 3, that competitor receives 30 points. Current regional availability and coin prices must be checked in TikTok/TikFinity.
+In the game's local dashboard, open **LIVE**, set the stream session label and click **Connect TikFinity**. If the browser requests local-network permission, allow it only for this trusted game. Keep one scoring dashboard open.
 
-#### Expand the library
+**8. Start and verify the battle**
 
-Open **Expand library / import catalog**:
+Click **Start battle**. During a controlled LIVE test, check a small real mapped gift in Recent gift events and confirm its actual quantity and points. Wait for a streak to finish. A socket connection or simulated gift alone does not verify this real-gift step.
 
-- **Import catalog JSON:** select a compatible catalog file from a trusted source. Invalid files are rejected. Do not put credentials or private information in catalog files or image URLs.
-- **Add uploaded gift:** enter its actual TikTok gift ID and name, optionally its observed coin value, then upload authentic artwork and click **Add uploaded gift**. After adding it, find it in the gallery and assign it normally.
+Keep all four open: **LIVE Studio, TikFinity Desktop, the game launcher and the local dashboard**. Use Pause for interruptions and Reconnect if needed, keeping the same session label for the same broadcast.
 
-The bundled library has 15 gift entries. The game does not automatically download every gift from TikFinity. Never guess an ID or price. Uploaded images are preferable to remote image URLs for reliability and privacy.
+**9. End the session**
 
-### TikFinity LIVE connection
+Declare the winner or pause, disconnect TikFinity in the game, and export settings if wanted. End your LIVE broadcast when ready. Close the launcher after you have finished displaying the game.
 
-This section links the game to TikFinity Desktop. Complete the [TikFinity setup](#connect-tikfinity) below first.
+**Next time you stream**
 
-| Control | How to use it |
-|---|---|
-| Stream session label | Use one label for the current broadcast. Keep it unchanged for reconnects/reloads of that broadcast. Set a new label only for a genuinely new broadcast, while disconnected. |
-| Connect TikFinity | Open the connection to TikFinity Desktop on this PC. |
-| Reconnect | Retry an interrupted connection. Keep your current session label. |
-| Disconnect | Stop receiving gift events. Refreshing the dashboard does not automatically reconnect. |
-| Connection status | Read whether the desktop connection is reachable, retrying, or blocked. Connected alone does not prove TikTok is LIVE. |
-| Recent gift events | Check the sender, gift ID, received quantity, awarded points and competitor. Simulated events are marked TEST. Unmapped gifts award no points. |
+Run the launcher and use the new local dashboard. Settings normally remain with the same browser/profile and local address. Copy its new private overlay link into LIVE Studio: restarting the launcher expires the old link. Load your matchup, reset scores as needed, then follow steps 7–9.
 
-Completed gift streaks are counted when they finish. Replayed duplicate events are not awarded again. Completed gift events received while the game is paused are ignored and will not score if replayed after resuming. Pause applies when the completed event arrives: a streak that finishes after you resume can include gifts sent earlier in that streak. Let streaks finish before changing battle state if you need a clean boundary.
+To update the game package, export settings, stop the old launcher, download/extract the latest package and run its launcher. Check settings and restore the backup if needed. Always use the latest copied overlay link after restarting.
 
-Keep one scoring dashboard open. If another dashboard owns the connection, disconnect or close it first. The **Adapter input / diagnostics** area is an advanced manual test tool; normal setup does not require it. Use Simulate gift for routine testing instead.
-
-### Battle controls
+**If something does not work**
 
-| Control | Effect |
-|---|---|
-| Start battle | Start or resume gift scoring. It does not reset existing scores. |
-| Pause | Stop scoring completed gift events. Resume with Start battle. Completed events received during the pause are not saved up for later points; see the streak timing note above. |
-| Declare winner | Stop gift scoring and show the winning label/crown for the leading competitor. A tie has no leading crown. |
-| Reset scores | Apply the configured starting scores. It does not clear gift mappings or duplicate protection. Pause first if you do not want gifts arriving during the reset. |
-| Add points | Select a competitor, enter a positive amount, and apply a manual correction. Manual additions also work while paused. |
-| Simulate gift | Select a gift and positive quantity, then send a local test event. Start the battle first and choose a mapped gift if you want points awarded. |
+- Missing new buttons/colors: confirm you extracted the latest package and are using its local dashboard, not an older hosted page or old extracted folder.
+- Copy link disabled: use the dashboard opened by the running launcher. If another launcher is running, stop it first.
+- Old picture or waiting message: keep the dashboard open, check sync status, then Retry overlay sync after resolving the connection issue.
+- No gift points: verify TikTok is LIVE, TikFinity Desktop is connected, Start battle is active, the actual gift ID is mapped, and the streak has finished.
+- Another dashboard owns the connection: disconnect/close that tab first.
+- Storage, launcher or permission error: keep a backup and read the message. Do not change system-wide security settings, expose local ports or run as administrator merely to bypass a restriction.
 
-The percentage bar follows the score ratio. At zero versus zero it starts at 50% / 50%. The crown changes when another competitor takes the lead.
-
-### Backup and synchronization
-
-- Click **Export settings** to download your current settings, scores, portraits, mappings and local event/replay history.
-- To restore, disconnect TikFinity, select the backup under **Restore settings**, and verify the restored scores before reconnecting. Restoring replaces the current battle configuration; export it first if you want to keep it.
-- Backups contain viewer identifiers and personal images. Store them privately and never upload them to the public repository.
-- The preview and ordinary display window share your browser's state. The private Link source uses the local launcher to reach LIVE Studio's separate browser.
-- A phone or another browser/profile does not automatically control your current battle. Remote phone control is not implemented.
-
-There are safety limits on imports, images, gift mappings and replay history. If an error says a limit or storage capacity was reached, export a backup, stop the connection and resolve it before continuing. Reset scores does not clear replay history; do not delete that history to force events to count.
-
-### Preview and display window
-
-The preview shows the current 9:16 game. Edit names, photos, language and appearance while watching it.
-
-**Full-screen preview** enlarges that preview; press Esc to leave full screen. **Open display window** opens the ordinary display page in your browser. It is useful for checking the design or for window capture, but it is not the private URL to paste into LIVE Studio.
-
-## Connect TikFinity
-
-1. Install/open [TikFinity Desktop from its official site](https://tikfinity.zerody.one/landing/) on the broadcast PC. Use the desktop application for this game, not only TikFinity's web page or mobile app.
-2. Sign in to your TikFinity account. In its setup, enter your TikTok **@handle**, not your display name, and save it.
-3. Use TikFinity's **Connect to TikTok LIVE** control. Its upstream LIVE connection needs your TikTok broadcast to be running; you can prepare the game and simulate gifts before going LIVE.
-4. Keep TikFinity Desktop open. Do not enter TikTok passwords, session cookies or stream keys into the game dashboard.
-5. In the game's local dashboard, open **LIVE**, set your stream session label, and click **Connect TikFinity**.
-6. If your browser asks for local-network access, allow it only for this trusted game. If connection fails, read the status message; do not disable browser security.
-7. Click **Start battle** when you want gifts to count. During a controlled LIVE test, confirm a small mapped gift reaches Recent gift events and adds the expected points.
-
-You assign gifts in this game's Gifts section. You do not need to create a separate TikFinity Action for every mapped gift.
-
-TikFinity's own screens may change. Its [official setup guide](https://blog.tikfinity.com/tikfinity-setup/) explains account/handle setup and the desktop requirement. Free-plan limits and pricing belong to TikFinity; verify them in your account.
-
-## Add the game to LIVE Studio
-
-1. Start **Start-Overlay.cmd** and use the local dashboard it opens.
-2. Confirm the overlay status is ready/synchronized, then click **Copy private overlay link**. Copy it again if the launcher has restarted.
-3. Open TikTok LIVE Studio and choose the scene where you want the game.
-4. In **Sources**, click **+ / Add source**, choose **Link**, and paste the copied private URL. Give the source a recognizable name, such as Battle Game. Exact labels can vary by LIVE Studio version.
-5. If source width/height settings appear, enter **1080 × 1920** once. If the interface only provides resize handles, fit it to the vertical scene. Do not change the private URL to try to set dimensions.
-6. Arrange the game and any camera/other sources in your scene. Check the entire title, portraits, gifts, scores and bottom instructions are visible.
-7. Change a competitor name or simulate a mapped gift in the dashboard. Confirm the change appears in LIVE Studio. This is the essential cross-application test.
-8. Keep the local dashboard, launcher and TikFinity Desktop open during the stream.
-
-Use **Copy private overlay link**, not the hosted dashboard URL, ordinary display URL, or your local editing dashboard URL. Never share dashboard access or private links.
-
-The link is tied to this PC and launcher session, not your public internet IP. Restarting the launcher expires it; changing your public IP does not. A link opened on another PC does not access your machine.
-
-TikFinity's [LIVE Studio Link-source walkthrough](https://blog.tikfinity.com/tiktok-streamer-desktop/) documents the general Add source → Link workflow. This game's local Link-source compatibility still needs our Windows/LIVE Studio test. If LIVE Studio rejects the local URL, record the exact error rather than changing browser security settings.
-
-## Test before a real battle
-
-1. Set both starting scores to zero, click **Pause**, then **Reset scores**.
-2. Map at least one gift to each competitor with easily checked point values.
-3. Click **Start battle**. Simulate a gift with quantity 1, then a different quantity. Confirm the score, gift image, percentage bar and crown respond correctly.
-4. Test the other competitor, then switch English/Hebrew and check names and spacing.
-5. Change a color or text size and confirm the private Link source updates too.
-6. Pause, send a simulated gift, and confirm the score stays unchanged.
-7. Reset the test scores before the actual battle. Start/resume when ready.
-8. Once TikTok is actually LIVE and TikFinity is connected, test a small real mapped gift. Wait for a streak to finish. A simulation tests the game; it does not prove the real connection works.
-
-## Everyday streaming routine
-
-1. Open TikFinity Desktop and LIVE Studio on the broadcast PC.
-2. Run the game launcher and use its local dashboard. If it is a fresh launcher session, replace LIVE Studio's old overlay link with the newly copied one.
-3. Load your matchup, inspect names/photos/gift mappings, and set/reset starting scores if needed.
-4. Check the LIVE Studio preview using a simulated gift; clear those test scores afterward.
-5. Begin your broadcast when ready, connect TikFinity to the active LIVE, and connect the game dashboard.
-6. Click **Start battle**, monitor Recent gift events, and use Pause for interruptions.
-7. At the end, declare the winner or pause, disconnect TikFinity in the game, and export settings if you want a backup. Stop the launcher after you are finished displaying the game.
-
-## Troubleshooting
-
-| Problem | What to check |
-|---|---|
-| Copy private overlay link is disabled | Run the extracted Windows launcher and use the local dashboard it opens. The public hosted dashboard cannot generate your local private link by itself. |
-| Launcher closes or Windows blocks it | Extract the ZIP, read the console error and review the downloaded files/device policy. Do not change system-wide policy or use administrator access just to bypass a restriction. |
-| Another launcher is already running | Stop the earlier instance before opening another. |
-| Overlay says it is waiting | Keep the local dashboard open, inspect its sync status and use Retry overlay sync after fixing the launcher connection. |
-| Overlay key expired | Restart opened a new session. Copy its new private link and replace the LIVE Studio source URL. |
-| LIVE Studio shows an old picture | Keep the dashboard open and check overlay sync. Test the private URL in another browser on the same PC. A stopped publisher can leave the last picture visible. |
-| TikFinity connected but no points | Verify TikTok is actually LIVE, the battle is started, the gift ID is mapped, and the streak has finished. Check Recent gift events and diagnostics. |
-| Another dashboard owns the connection | Disconnect/close that dashboard before connecting here. Use one scoring dashboard. |
-| Wrong competitor gets points | Pause and inspect the selected competitor and actual gift ID mapping. Remove a gift from its old side before moving it. |
-| Competitor gradient does not change | Turn off Use appearance colors for competitor panels in Text & style. |
-| Name stays in the wrong language | Check the optional English/Hebrew name overrides. Your own custom text is not automatically translated. |
-| Settings seem missing | Check browser/profile and whether you are on the hosted or local dashboard. Restore a private backup if appropriate. |
-| Scores cannot be saved | The LIVE connection stops. Export existing settings, address browser storage/validation errors, inspect scores, then reconnect. Unsaved gifts are not automatically recovered. |
-| Private URL is rejected by LIVE Studio | Test it in another browser on this PC and share the exact Link-source error. Actual Windows compatibility remains unverified. |
-
-## Updates and safety
-
-To update the local package, export settings, disconnect TikFinity and stop the old launcher. Download/extract the latest package, run its launcher, and use the same browser profile. Check settings and restore your backup if needed, then copy the new private overlay link into LIVE Studio. Keep the previous package/backup privately until the new one is checked.
-
-Do not forward local ports or expose the local service to the internet. Import trusted files and prefer uploaded images: remote image hosts can see your device's IP address. Private overlays are not protection against a compromised PC or another person using your browser profile.
-
-Keep passwords, tokens, private links and backups out of this public repository. The repository, its history and browser-delivered source remain inspectable; a private overlay does not make the software itself private.
-
-[Safety notes](SECURITY.md) · [Private overlay help](docs/OVERLAY.md) · [TikFinity help](docs/TIKFINITY.md)
+Keep private links and backups private. The link is PC-only and expires on launcher restart; it is not tied to your public internet IP. Backups can contain portraits and viewer identifiers. Do not upload them or credentials to this public repository. The repository and browser code remain inspectable. More safety details are in [SECURITY.md](SECURITY.md).
