@@ -1,11 +1,8 @@
 {
-  "date": "2026-11-11T19:12:08.975Z",
-  "commits": 10,
-  "uniqueTextBlobs": 57,
+  "date": "2026-11-11T19:50:51.371Z",
+  "commits": 13,
+  "uniqueTextBlobs": 92,
   "suspiciousPaths": [],
   "credentialPatternMatches": [],
-  "scope": "Current files and all reachable main-branch history; pattern scan, not a guarantee that no secrets exist. No credential values are included.",
-  "historyAtCommit": "3a8753d106f442791bb4d4962783201aa9c3c9b5",
-  "localTextFilesChecked": 27,
-  "localCredentialPatternMatches": []
+  "scope": "Current files and all reachable main-branch history; pattern scan, not a guarantee that no secrets exist. No credential values are included."
 }

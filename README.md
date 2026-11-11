@@ -1,51 +1,30 @@
 # TikTok LIVE Battle
 
-A customizable English/Hebrew battle display with a mobile-friendly control room. Built with HTML, CSS and vanilla JavaScript; hosted on GitHub Pages.
+Customize a two-competitor battle with English/Hebrew display options, portraits, gifts and live scores.
 
-**Status:** manual scoring, gift simulation and a TikFinity Desktop connector are implemented. The connector is mock-tested; real LIVE gifts still need verification on your PC.
+[Open dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html)
 
-[Open dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html) · [Open game](https://maxm808s.github.io/tiktok-live-battle/)
+## Use the game
 
-## Quick start
+1. Choose competitors, photos, gifts and point values.
+2. Open **Text & style** to adjust the display.
+3. Run TikFinity Desktop on your broadcast PC and connect it from **LIVE**.
+4. Click **Start battle**. Streak gifts count when they finish.
 
-1. Open the dashboard and choose English or עברית.
-2. Use **Text & style** to change text sizes, fonts, colors, logo/portrait sizes and visibility. Changes save automatically; **Reset appearance** preserves scores.
-3. Enter competitor names, upload portraits, and adjust colors and cropping. Optional translated names override the common name.
-4. Search gifts by name or ID, select a competitor, set points, then click a gift. Remove a mapping before assigning that gift to the other competitor.
-5. Set starting scores and click **Reset scores** to apply them.
-6. Click **Start battle**, then use **Simulate gift** or add points manually. **Pause** ignores incoming gifts, including later replays; **Declare winner** ends the battle.
+## Add the private overlay
 
-Save matchups as presets. Settings and scores persist in your browser; export settings for backup. Presets are not included in that export.
+1. [Download the Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip) and extract it.
+2. Double-click **Start-Overlay.cmd** and use the dashboard it opens.
+3. Click **Copy private overlay link** and paste it into LIVE Studio's **Link** source. Use 1080 × 1920 if dimensions are requested.
 
-## Connect TikFinity
+Keep the launcher and local dashboard open. Import your existing settings backup when moving from the hosted dashboard. Presets are not included in that backup. [Full setup](docs/OVERLAY.md).
 
-Run TikFinity Desktop on the broadcast PC. In the dashboard, open **LIVE**, set a stream session label, click **Connect TikFinity**, then **Start battle**. Streak gifts score when they finish. See the [setup and troubleshooting guide](docs/TIKFINITY.md).
+## Privacy and status
 
-## LIVE Studio: paste a private overlay link
+- Private overlay links work only on your PC and expire when the launcher restarts. Keep them and your backups private.
+- Use one dashboard. Export settings before clearing browser data.
+- Never upload passwords, tokens or private backups to this public repository.
+- This public repository and browser-delivered code can be inspected; a private overlay link does not make the software itself private.
+- Browser and simulated-gift tests passed. Real TikFinity gifts, Windows execution and LIVE Studio Link behavior still need PC verification.
 
-1. [Download and extract the Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip).
-2. Double-click **Start-Overlay.cmd** and use the local dashboard it opens. Import an existing settings backup if needed.
-3. Click **Copy private overlay link**, then paste it into a LIVE Studio **Link** source at 1080 × 1920.
-
-Keep the launcher and local dashboard open. The relay synchronizes across apps without sharing a window. Its private read-only link works only on your PC and expires when the relay restarts. No Node.js or paid service is needed. [Setup and privacy details](docs/OVERLAY.md).
-
-Windows/LIVE Studio verification is still pending. Window capture remains available as a fallback. Phone control is not connected to this local relay.
-
-## Important limits and safety
-
-- The hosted admin uses browser-local state. Private Link mode uses the local relay; use one local dashboard.
-- If scores cannot be saved, the LIVE connection stops; resolve the storage error before reconnecting.
-- Keep passwords, tokens and private backups out of the public repository. Backups include portraits and viewer identifiers.
-- Import trusted files and prefer uploaded images; remote image hosts can see your IP address.
-- The 15 bundled gift entries use authentic artwork. Confirm current IDs, availability and prices for your region.
-- TikFinity Desktop must run on the same PC. Browser local-network permissions may be required. S2E is no longer the selected connector.
-
-## Documentation
-
-- [Private overlay setup](docs/OVERLAY.md)
-- [Security fixes and boundaries](SECURITY.md)
-- [Earlier S2E research, catalog sources and operating limits](docs/TECHNICAL.md)
-- [Deployment instructions](DEPLOY.md)
-- [Browser test results](tests/results.json) · [Security test results](tests/security-results.json)
-
-No build step is required. Hosted mode uses HTTPS; private Link mode uses the local PowerShell relay. Opening files directly with `file://` is unsupported.
+[Connection help](docs/TIKFINITY.md) · [Safety notes](SECURITY.md)
