@@ -1,6 +1,6 @@
 # Battle Studio
 
-A customizable TikTok LIVE battle game with a clean dashboard, glass-style display, English/Hebrew support and 80 gift entries.
+A customizable TikTok LIVE battle game with a clean dashboard, glass-style display, English/Hebrew support and 154 gift entries.
 
 **[Download Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip)** · [Open hosted dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html)
 
@@ -65,13 +65,13 @@ Presets do not contain all general/appearance settings and are not included in s
 <summary>4. Gifts — assign multiple gifts per character</summary>
 
 1. Click **＋ Add gift** beneath the desired competitor.
-2. Search by gift name or ID and enter **Points per gift**.
+2. Search by gift name, ID or coin value (`500` / `1k`) and enter **Points per gift**.
 3. Click an available tile. It adds another slot without replacing existing gifts.
 4. Repeat for more gifts. Close with × or Esc to cancel.
 
 Already assigned gifts are disabled in the picker. Remove a mapping first to move that gift. Edit its points box to change its value; × removes it. You can also use the shared gallery by choosing a side, setting points and clicking a tile.
 
-**Coins are not game points.** A gift mapped to 10 points with quantity 3 adds 30 points. The 80-entry catalog contains observed metadata; check regional IDs, availability and current prices in TikTok/TikFinity.
+**Coins are not game points.** A gift mapped to 10 points with quantity 3 adds 30 points. The 154-entry catalog contains observed metadata; check regional IDs, availability and current prices in TikTok/TikFinity.
 
 **Expand library / import catalog** accepts a trusted compatible file. To add one gift yourself, supply its actual ID/name, optional observed coin value and authentic artwork, then click **Add uploaded gift** and assign it from the gallery. Never guess IDs or put private credentials in image URLs.
 

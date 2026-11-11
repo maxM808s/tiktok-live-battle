@@ -1,8 +1,12 @@
 {
-  "date": "2026-11-11T23:11:46.093Z",
+  "date": "2026-11-11T23:20:46.291Z",
   "checks": [
-    "Expanded catalog has 80 gift entries",
-    "All 80 bundled authentic gift images render",
+    "Expanded catalog has 154 gift entries",
+    "All 154 bundled authentic gift images render",
+    "Search 500 finds every matching coin value",
+    "Search 1k finds every matching coin value",
+    "Additional slot coin search includes Glowing Jellyfish",
+    "Additional slot coin search includes Money Gun",
     "Search finds newly added gifts",
     "Newly added gift can be assigned and rendered",
     "New gift mapping awards configured points",
