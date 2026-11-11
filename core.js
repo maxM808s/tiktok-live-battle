@@ -10,14 +10,25 @@ export const designFields={
  logoSize:{label:'Logo height',min:24,max:140,value:54},
  portraitSize:{label:'Portrait diameter',min:260,max:400,value:367}
 };
-export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),font:'system',weight:900,background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true});
+export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),panelA:'#087dff',panelB:'#ad46ff',panelColors:false,font:'system',weight:900,background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true});
 export const designThemes={original:{background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff'},electric:{background:'#110923',glow:'#572382',brandColor:'#d4b6ff',titleColor:'#f2e5ff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#e1ccff'},midnight:{background:'#050e16',glow:'#114c55',brandColor:'#8fe9e5',titleColor:'#d9fffc',nameColor:'#ffffff',scoreColor:'#aefbf1',instructionColor:'#d9fffc'}};
+export const themeLabels={original:'Original',electric:'Electric',midnight:'Midnight',blackYellow:'Black & Yellow',orangeBlack:'Orange & Black',crimson:'Crimson',emerald:'Emerald',ice:'Ice Blue',roseGold:'Rose Gold',monochrome:'Black & White'};
+for(const theme of Object.values(designThemes))theme.panelColors=false;
+Object.assign(designThemes,{
+ blackYellow:{background:'#080808',glow:'#493b0a',brandColor:'#ffdb4d',titleColor:'#fff1aa',nameColor:'#ffffff',scoreColor:'#ffdc33',instructionColor:'#fff0ad',panelA:'#e2b818',panelB:'#515151',panelColors:true},
+ orangeBlack:{background:'#090909',glow:'#54200c',brandColor:'#ffb16a',titleColor:'#fff0df',nameColor:'#ffffff',scoreColor:'#ff9b39',instructionColor:'#ffd3ad',panelA:'#f17920',panelB:'#454545',panelColors:true},
+ crimson:{background:'#12070a',glow:'#68152c',brandColor:'#ffa0b6',titleColor:'#fff0f3',nameColor:'#ffffff',scoreColor:'#ff8da8',instructionColor:'#ffd2dd',panelA:'#d63b58',panelB:'#6c314b',panelColors:true},
+ emerald:{background:'#05110d',glow:'#11573c',brandColor:'#8ce8b8',titleColor:'#e8fff2',nameColor:'#ffffff',scoreColor:'#86efac',instructionColor:'#bdf5d5',panelA:'#20a46e',panelB:'#21645b',panelColors:true},
+ ice:{background:'#06111c',glow:'#174d73',brandColor:'#b0eaff',titleColor:'#eefbff',nameColor:'#ffffff',scoreColor:'#a5e8ff',instructionColor:'#d1f2ff',panelA:'#479dcc',panelB:'#4c72ad',panelColors:true},
+ roseGold:{background:'#170e0c',glow:'#633c31',brandColor:'#f6c4ac',titleColor:'#fff2e8',nameColor:'#ffffff',scoreColor:'#ffcfaa',instructionColor:'#f4d7c6',panelA:'#b56c58',panelB:'#997544',panelColors:true},
+ monochrome:{background:'#060606',glow:'#353535',brandColor:'#e0e0e0',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#dedede',panelA:'#858585',panelB:'#414141',panelColors:true}
+});
 export function validateAppearance(v){
  let out=appearanceDefaults();if(v===undefined)return out;
  if(!record(v))throw Error('Invalid appearance settings');
  for(let [k,f]of Object.entries(designFields))if(v[k]!==undefined)out[k]=numberValue(v[k],f.min,f.max,true);
- for(let k of ['background','glow','brandColor','titleColor','nameColor','scoreColor','instructionColor'])if(v[k]!==undefined){if(typeof v[k]!=='string'||!/^#[0-9a-f]{6}$/i.test(v[k]))throw Error('Invalid design color');out[k]=v[k]}
- for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
+ for(let k of ['background','glow','brandColor','titleColor','nameColor','scoreColor','instructionColor','panelA','panelB'])if(v[k]!==undefined){if(typeof v[k]!=='string'||!/^#[0-9a-f]{6}$/i.test(v[k]))throw Error('Invalid design color');out[k]=v[k]}
+ for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents','panelColors'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
  if(v.font!==undefined){if(!['system','rounded','serif'].includes(v.font))throw Error('Invalid font');out.font=v.font}
  if(v.weight!==undefined){if(![600,700,800,900].includes(v.weight))throw Error('Invalid font weight');out.weight=v.weight}
  return out;
