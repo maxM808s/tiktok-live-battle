@@ -13,7 +13,7 @@ A customizable English/Hebrew battle display with a mobile-friendly control room
 3. Enter competitor names, upload portraits, and adjust colors and cropping. Optional translated names override the common name.
 4. Search gifts by name or ID, select a competitor, set points, then click a gift. Remove a mapping before assigning that gift to the other competitor.
 5. Set starting scores and click **Reset scores** to apply them.
-6. Click **Start battle**, then use **Simulate gift** or add points manually. **Pause** stops gift scoring; **Declare winner** ends the battle.
+6. Click **Start battle**, then use **Simulate gift** or add points manually. **Pause** ignores incoming gifts, including later replays; **Declare winner** ends the battle.
 
 Save matchups as presets. Settings and scores persist in your browser; export settings for backup. Presets are not included in that export.
 
@@ -32,6 +32,7 @@ Keep both windows open. LIVE Studio's separate **Link** source will not synchron
 ## Important limits and safety
 
 - The public admin page controls only its visitor's browser, not a shared broadcast. Use one admin tab.
+- If scores cannot be saved, the LIVE connection stops; resolve the storage error before reconnecting.
 - Keep passwords, tokens and private backups out of the public repository. Backups include portraits and recent sender names.
 - Import trusted files and prefer uploaded images; remote image hosts can see your IP address.
 - The 15 bundled gift entries use authentic artwork. Confirm current IDs, availability and prices for your region.

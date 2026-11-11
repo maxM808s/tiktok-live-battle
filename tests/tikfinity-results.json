@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T19:04:39.091Z",
+  "date": "2026-11-11T19:13:23.426Z",
   "checks": [
     "Ignore unfinished gift streaks",
     "Score completed streak once",
@@ -10,7 +10,12 @@
     "Reject invalid quantities and unknown streak types",
     "Ignore chat and non-gift messages",
     "Process socket envelope and reject malformed JSON",
-    "Reconnect automatically and stop on disconnect"
+    "Reconnect automatically and stop on disconnect",
+    "A paused gift cannot score when replayed after resume",
+    "Reject unsafe gift/streak IDs and oversized sender IDs",
+    "Disconnect clears pending timers and ignores late messages",
+    "Processing failure disconnects instead of continuing scoring",
+    "Treat empty or zero group IDs as absent instead of merging unrelated streaks"
   ],
   "actualTikFinityEvents": false
 }

@@ -31,8 +31,7 @@ export const words={en:{title:'Vote LIVE',a:'Team A',b:'Team B',points:'Points',
 export const name=(t,s)=>t[s.lang]||t.name||words[s.lang][t.id];
 export const percent=s=>{let total=s.teams.reduce((a,t)=>a+t.score,0);return total?s.teams[0].score/total*100:50};
 export function ingest(s,e){
- if(!s.running)return {ok:false,reason:'Battle paused'};
- if(!e||typeof e!=='object'||!/^\d{1,20}$/.test(String(e.giftId))||typeof e.eventId!=='string'||!e.eventId||e.eventId.length>200||typeof e.sessionId!=='string'||!e.sessionId||e.sessionId.length>200||e.sender!=null&&(typeof e.sender!=='string'||e.sender.length>200)||e.comboId!=null&&(typeof e.comboId!=='string'||!e.comboId||e.comboId.length>200))return {ok:false,reason:'Invalid event fields'};
+ if(!e||typeof e!=='object'||!((typeof e.giftId==='string'&&/^\d{1,20}$/.test(e.giftId))||(typeof e.giftId==='number'&&Number.isSafeInteger(e.giftId)&&e.giftId>=0))||typeof e.eventId!=='string'||!e.eventId||e.eventId.length>200||typeof e.sessionId!=='string'||!e.sessionId||e.sessionId.length>200||e.sender!=null&&(typeof e.sender!=='string'||e.sender.length>200)||e.comboId!=null&&(typeof e.comboId!=='string'||!e.comboId||e.comboId.length>200))return {ok:false,reason:'Invalid event fields'};
  let key=JSON.stringify([e.sessionId,e.eventId]);
  // Recognize legacy keys too; never discard replay history silently.
  if(s.seen.includes(key)||s.seen.includes(e.sessionId+':'+e.eventId))return {ok:false,reason:'Duplicate event'};
@@ -41,6 +40,8 @@ export function ingest(s,e){
  if(s.seen.length>=20000||(k&&!Object.hasOwn(s.combos,k)&&Object.keys(s.combos).length>=10000))return {ok:false,reason:'Replay protection capacity reached. Export a backup before starting a new configuration.'};
  let delta=k?Math.max(0,n-(Object.hasOwn(s.combos,k)?s.combos[k]:0)):n;
  if(k)s.combos[k]=Math.max(n,Object.hasOwn(s.combos,k)?s.combos[k]:0);s.seen.push(key);
+ // Consume valid paused gifts so a later replay cannot award paused activity.
+ if(!s.running)return {ok:false,reason:'Battle paused'};
  let t=s.teams.find(t=>t.gifts.some(g=>g.id===String(e.giftId))),mapping=t?.gifts.find(g=>g.id===String(e.giftId));
  if(t&&delta)t.score=Math.min(Number.MAX_SAFE_INTEGER,t.score+mapping.points*delta);
  s.events.unshift({giftId:String(e.giftId),sender:e.sender||'',delta,points:mapping?mapping.points*delta:0,team:t?.id,time:Date.now(),simulated:e.simulated===true});s.events=s.events.slice(0,40);return {ok:true,delta,team:t?.id};

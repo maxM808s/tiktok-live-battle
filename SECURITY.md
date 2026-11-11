@@ -33,3 +33,13 @@ Appearance controls use validated size ranges, hexadecimal colors, approved syst
 The admin page can connect only to the documented `ws://localhost:21213/` endpoint, in addition to same-origin fetches. It sends no commands or credentials; it reads events only after an explicit Connect action. Browser local-network/mixed-content policies still apply. Do not disable them or expose the local endpoint to the internet. This app does not authenticate TikFinity's local service; another local program impersonating that service could supply false events. Only use a trusted PC.
 
 A Web Locks lease permits one connected dashboard per origin. It prevents ordinary duplicate scoring tabs; it is not access control against other scripts or users of the same profile. Session labels stay stable across reconnects for replay protection. The connector rejects gifts without a stable message ID, finishes streaks before scoring and uses supplied streak IDs when available. Incoming sender names are stored locally in recent events/backups. Socket connectivity does not establish the health of the upstream TikTok connection.
+
+## Follow-up connector review
+
+- Disconnect clears handshake and reconnect timers and invalidates late callbacks. Unexpected processing errors stop the connection.
+- Valid gift events received while paused are added to replay protection without awarding points, so a later replay cannot bypass the pause.
+- Failed score/history persistence stops LIVE ingestion and leaves a visible error rather than continuing with unsaved replay keys. Unsaved events require operator review; recovery is not promised.
+- Numeric gift/message/streak identifiers must be safe integers; long sender IDs are rejected. Empty/zero group IDs are not used to merge unrelated streaks.
+- A pattern scan of current public files and reachable main-branch history found no credential-pattern matches or secret-file paths. See [scan scope and results](tests/leak-review.json). This is a scoped check, not proof that every kind of private data or secret is absent.
+
+Private backup filenames, environment files and common private-key formats are listed in `.gitignore` to reduce accidental commits. This does not redact Git history or prevent force-adding files or uploading them through GitHub's web interface.

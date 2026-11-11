@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T19:04:27.676Z",
+  "date": "2026-11-11T19:14:11.819Z",
   "checks": [
     "Connect to documented local endpoint",
     "Partial streak does not score",
@@ -7,10 +7,17 @@
     "Duplicate final gift cannot double-score",
     "Second dashboard cannot open another scoring connection",
     "Paused battle rejects live gift",
+    "Paused gift stays ignored after resume and replay",
     "Manual reconnect opens a fresh socket",
     "Disconnect unlocks session field",
+    "Storage failure disconnects without publishing unsaved score",
+    "Storage failure remains visible",
+    "Default assets make no third-party HTTP requests",
     "No script errors"
   ],
   "errors": [],
+  "requestOrigins": [
+    "http://127.0.0.1:8082"
+  ],
   "source": "Mock TikFinity WebSocket envelopes; no real LIVE traffic"
 }

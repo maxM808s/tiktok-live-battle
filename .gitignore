@@ -1,0 +1,12 @@
+# Local credentials and private backup exports must not be committed.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+battle-settings*.json
+backups/
+*.log
+node_modules/
+.DS_Store

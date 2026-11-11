@@ -18,7 +18,7 @@ The JavaScript connector uses TikFinity's documented local Event API at `ws://lo
 
 The connector accepts `{ "event": "gift", "data": { ... } }` messages. It matches the actual `giftId`, requires `msgId` (or `common.msgId`), and reads `giftType` or `gift.type`. `repeatCount` must be a positive integer. Streakable gifts (type 1) count only when `repeatEnd` is true or 1. Other gift types score immediately.
 
-The existing scoring engine deduplicates stable message IDs and, when supplied with a sender and `groupId`, cumulative final streak counts. Missing stable IDs, unknown gift types and unsafe numeric identifiers are rejected with a diagnostic message; IDs are never invented. Do not clear history or change session labels to force an event to score. Replay limits remain in effect.
+The existing scoring engine deduplicates stable message IDs and, when supplied with a sender and a valid nonzero `groupId`, cumulative final streak counts. Missing stable IDs, unknown gift types and unsafe numeric identifiers are rejected with a diagnostic message; IDs are never invented. Do not clear history or change session labels to force an event to score. Replay limits remain in effect. Gifts received while paused are remembered as ignored, so replaying them after resume does not award points. Empty or zero group IDs are treated as absent, not as one shared streak.
 
 ## Troubleshooting
 
@@ -26,6 +26,7 @@ The existing scoring engine deduplicates stable message IDs and, when supplied w
 - **Local connection blocked:** check the browser's permission for local-network access. HTTPS-to-local-WebSocket behavior varies by browser/version. Share the exact error if blocked; do not disable browser security or forward port 21213 to the internet.
 - **Connected but no points:** start the battle, finish the streak, verify the actual regional gift ID is mapped, and check diagnostics for unsupported fields or replay duplicates. The dashboard's Simulate gift button tests game scoring independently of TikFinity.
 - **Another tab owns the connection:** disconnect/close that tab before connecting here. Current Chrome/Edge with the Web Locks API is required.
+- **Storage error:** the connector stops if points/replay history cannot be saved. Export your existing settings, free browser storage, and inspect scores before reconnecting. Unsaved gifts are not automatically recovered.
 - **Settings restore:** disconnect before restoring a backup. Changing the session label in another dashboard tab disconnects the active connector.
 
 ## Sources and plan limits
