@@ -10,7 +10,7 @@ Static HTML/CSS/vanilla JavaScript battle display and mobile control room. No bu
 
 ## GitHub Pages
 
-Repository Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/ (root)` → Save. The site will be at https://maxM808s.github.io/tiktok-live-battle/ after GitHub finishes deployment. Admin: append `admin.html`. `.nojekyll` disables Jekyll. No GitHub Actions build required.
+Repository Settings → Pages → Build and deployment → Deploy from a branch → `main` → `/ (root)` → Save. Published game: https://maxm808s.github.io/tiktok-live-battle/ . Admin: https://maxm808s.github.io/tiktok-live-battle/admin.html . `.nojekyll` disables Jekyll. No GitHub Actions build required.
 
 ## Configure your battle
 
@@ -51,7 +51,7 @@ The diagnostics panel accepts a manual JSON event (not a live connection):
 {"giftId":"5655","sessionId":"live-session-1","eventId":"unique-message-1","sender":"viewer","count":3,"comboId":"stable-streak-1"}
 ```
 
-`core.js` exports `ingest(state,event)`. Gift IDs match exactly. Without comboId, count is the quantity in one event. With comboId, count is the cumulative total; only increases score. Final repeats with the same count add zero. Stable sessionId/eventId prevent replay duplicates even after reload. A new streak must use a new comboId. Do not fabricate identifiers from usernames/timestamps in a production adapter. Scoring should have exactly one writer; concurrent admin tabs are not a transactional multiwriter system. Deduplication is retained locally and consumes storage over long sessions. Actual S2E events/reconnections remain unverified.
+`core.js` exports `ingest(state,event)`. Gift IDs match exactly. Without comboId, count is the quantity in one event. With comboId, count is the cumulative total; only increases score. Final repeats with the same count add zero. Stable sessionId/eventId prevent replay duplicates even after reload. A new streak must use a new comboId. Do not fabricate identifiers from usernames/timestamps in a production adapter. Scoring should have exactly one writer; concurrent admin tabs are not a transactional multiwriter system. Deduplication is retained locally with a limit of 20,000 event keys and 10,000 streak records. At capacity, new events are rejected instead of discarding replay protection. Export a backup and prepare a fresh configuration for a new session; do not clear replay history while an adapter could replay old events. Actual S2E events/reconnections remain unverified.
 
 ## Authentic gift library
 
@@ -65,6 +65,14 @@ See tests/results.json and screenshots. Browser tests cover language/direction, 
 
 Not verified: real S2E gift traffic, S2E reconnect schema, Windows LIVE Studio capture. No reference screenshot was attached in the received conversation, so the visual composition follows the written reference instead of a pixel comparison. Admin controls use English; the game display translates English/Hebrew. No claim of an official complete TikTok catalog or fully connected LIVE product is made.
 
-## Security
+## Safety and privacy
 
-See [SECURITY.md](SECURITY.md) for the import/XSS fixes, browser policy, regression tests, and static-hosting security boundaries. Backups contain local settings and recent sender names; avoid sharing private backups publicly.
+- **Public page, local controls:** anyone can open the admin URL, but each visitor controls their own browser state. There is no login or shared server administration. Anyone using your broadcast browser profile can change its battle. Use one admin tab to avoid conflicting score updates.
+- **Keep secrets out of the site:** never put TikTok passwords, session cookies, GitHub tokens or other credentials in settings, image URLs, screenshots, repository files or backups. All files committed to this public repository are public.
+- **Handle backups privately:** exports contain names, portraits, configuration, replay history and recent sender names. Store them privately and import only files from sources you trust. Validation reduces injection risks; it does not verify the accuracy or origin of imported content. Presets are not included in the settings export.
+- **Prefer uploaded images:** uploaded raster images and bundled gifts stay in browser storage or this site's assets. Optional remote HTTPS images contact their host and reveal the requesting device's IP address, even with referrer sharing disabled. Imported SVG data images and executable URL schemes are rejected.
+- **Respect import limits:** JSON import files must be under 4,000,000 bytes. The custom catalog supports up to 1,000 gifts; each competitor supports up to 100 mappings. Uploads must be no larger than 10 MB and decoded images no larger than 40 million pixels. Images are resized to at most 800 pixels on their longest side. Other text, storage and replay limits also apply. Keep backups: malformed or oversized saved settings can fall back to defaults, and clearing browser data deletes local state.
+- **Browser isolation matters:** GitHub Pages projects under the same host share an origin. Other scripts hosted under `maxm808s.github.io` may access this browser storage; do not host untrusted code on that origin. The content policy blocks inline scripts and plugins, but GitHub Pages does not provide this project with configurable headers for full clickjacking protection.
+- **Future connectors need a separate review:** there is no working S2E receiver or remote relay in this release. Any future adapter must authenticate event/control access, validate actual gift IDs and replay identifiers, and protect credentials. Remote connections need encrypted transport. An unprotected local bridge must not be exposed to the internet.
+
+See [SECURITY.md](SECURITY.md) for the fixes, tested cases and remaining boundaries. Security tests are recorded in [tests/security-results.json](tests/security-results.json); browser regression results are in [tests/results.json](tests/results.json). These checks do not certify the app or a future connector as risk-free.
