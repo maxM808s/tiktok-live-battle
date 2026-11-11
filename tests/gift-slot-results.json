@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-11T20:46:08.866Z",
+  "checks": [
+    "Add second gift to competitor 0 without replacing first",
+    "Add second gift to competitor 1 without replacing first",
+    "Both added authentic gift images appear in the game",
+    "Prevent assigning an already used gift to another slot",
+    "Cancel picker without creating an empty gift slot",
+    "Each extra gift uses its own points and competitor mapping",
+    "original changes both circular portrait frames",
+    "electric changes both circular portrait frames",
+    "midnight changes both circular portrait frames",
+    "blackYellow changes both circular portrait frames",
+    "orangeBlack changes both circular portrait frames",
+    "blueYellow changes both circular portrait frames",
+    "Extra gift assignments persist after reload",
+    "Gift picker fits mobile width",
+    "No browser script errors"
+  ],
+  "errors": []
+}

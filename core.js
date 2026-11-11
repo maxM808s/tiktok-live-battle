@@ -12,9 +12,12 @@ export const designFields={
 };
 export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),panelA:'#087dff',panelB:'#ad46ff',panelColors:false,font:'system',weight:900,background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true});
 export const designThemes={original:{background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff'},electric:{background:'#110923',glow:'#572382',brandColor:'#d4b6ff',titleColor:'#f2e5ff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#e1ccff'},midnight:{background:'#050e16',glow:'#114c55',brandColor:'#8fe9e5',titleColor:'#d9fffc',nameColor:'#ffffff',scoreColor:'#aefbf1',instructionColor:'#d9fffc'}};
-export const themeLabels={original:'Original',electric:'Electric',midnight:'Midnight',blackYellow:'Black & Yellow',orangeBlack:'Orange & Black',crimson:'Crimson',emerald:'Emerald',ice:'Ice Blue',roseGold:'Rose Gold',monochrome:'Black & White'};
-for(const theme of Object.values(designThemes))theme.panelColors=false;
+export const themeLabels={original:'Original',electric:'Electric',midnight:'Midnight',blackYellow:'Black & Yellow',orangeBlack:'Orange & Black',crimson:'Crimson',emerald:'Emerald',ice:'Ice Blue',roseGold:'Rose Gold',monochrome:'Black & White',blueYellow:'Blue & Yellow'};
+Object.assign(designThemes.original,{panelColors:true,panelA:'#087dff',panelB:'#ad46ff'});
+Object.assign(designThemes.electric,{panelColors:true,panelA:'#9453e6',panelB:'#d550b2'});
+Object.assign(designThemes.midnight,{panelColors:true,panelA:'#15a6a0',panelB:'#3b74c5'});
 Object.assign(designThemes,{
+ blueYellow:{background:'#070e24',glow:'#173c80',brandColor:'#ffe36b',titleColor:'#fff2b8',nameColor:'#ffffff',scoreColor:'#ffe04d',instructionColor:'#e2ecff',panelA:'#2877e4',panelB:'#e1ba26',panelColors:true},
  blackYellow:{background:'#080808',glow:'#493b0a',brandColor:'#ffdb4d',titleColor:'#fff1aa',nameColor:'#ffffff',scoreColor:'#ffdc33',instructionColor:'#fff0ad',panelA:'#e2b818',panelB:'#515151',panelColors:true},
  orangeBlack:{background:'#090909',glow:'#54200c',brandColor:'#ffb16a',titleColor:'#fff0df',nameColor:'#ffffff',scoreColor:'#ff9b39',instructionColor:'#ffd3ad',panelA:'#f17920',panelB:'#454545',panelColors:true},
  crimson:{background:'#12070a',glow:'#68152c',brandColor:'#ffa0b6',titleColor:'#fff0f3',nameColor:'#ffffff',scoreColor:'#ff8da8',instructionColor:'#ffd2dd',panelA:'#d63b58',panelB:'#6c314b',panelColors:true},

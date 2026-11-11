@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T20:26:40.212Z",
+  "date": "2026-11-11T20:43:32.984Z",
   "checks": [
     "slider synchronizes exact size and display",
     "exact value synchronizes slider output",
@@ -9,6 +9,7 @@
     "visibility controls update live",
     "theme preset saved",
     "theme preserves battle scores",
+    "blueYellow applies matching preview and selected state",
     "blackYellow applies matching preview and selected state",
     "orangeBlack applies matching preview and selected state",
     "crimson applies matching preview and selected state",
@@ -18,7 +19,7 @@
     "monochrome applies matching preview and selected state",
     "Color presets preserve saved competitor gradients",
     "New color presets preserve scores",
-    "Original theme restores competitor gradient colors",
+    "Original theme colors both character frames",
     "individual size reset",
     "reset appearance preserves scores",
     "large text fits within vertical Hebrew scene",

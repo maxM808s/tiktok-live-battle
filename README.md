@@ -73,7 +73,7 @@ Custom title, branding and instruction text remain as you entered them; language
 
 Watch the live preview while changing these settings.
 
-**Color presets:** choose Original, Electric, Midnight, Black & Yellow, Orange & Black, Crimson, Emerald, Ice Blue, Rose Gold, or Black & White. The newer coordinated palettes also style the panels, progress bar and VS badge.
+**Color presets:** choose Original, Electric, Midnight, Black & Yellow, Orange & Black, Blue & Yellow, Crimson, Emerald, Ice Blue, Rose Gold, or Black & White. Every preset also recolors the character portrait rings, panels, progress bar and VS badge.
 
 **Typography & sizes:**
 
@@ -116,11 +116,13 @@ Matchup presets are separate from a full settings backup. They do not represent 
 
 #### Assign a gift
 
-1. Search by gift name or numeric ID.
-2. Select the left or right competitor under **Assign selected gift to**.
+1. Click **＋ Add gift** beneath the competitor you want. This opens that competitor's gift picker.
+2. Search by gift name or numeric ID.
 3. Enter **Points per gift**.
-4. Click the gift tile. Its authentic image and configured point value appear beneath that competitor.
-5. Repeat to assign multiple gifts.
+4. Click an available gift tile. A new gift slot appears beneath that competitor, with its authentic image and point value. Existing gifts stay assigned.
+5. Repeat **Add gift** for a second, third or additional gift on either competitor. Close the picker with × or Esc to cancel without adding anything.
+
+Gifts already assigned to either competitor are disabled in this picker. You can also use the shared gallery below: choose a side under **Assign selected gift to**, set points, then click a gift.
 
 One gift ID can be assigned to only one competitor. To move it, remove its existing mapping first. Similar gift names can have different regional IDs; match the actual ID rather than relying only on the name.
 
