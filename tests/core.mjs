@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync(new URL('../core.js',import.meta.url),'utf8');
+const {defaults,ingest,percent}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+let s=defaults();assert.equal(percent(s),50);s.running=true;
+const event=(giftId,eventId,count=1)=>({giftId,eventId,sessionId:'test',count});
+assert.equal(ingest(s,event('5655','1',10)).ok,true);assert.equal(percent(s),100);
+ingest(s,event('5269','2',30));assert.equal(percent(s),25);assert.equal(s.teams[1].score,30);
+s.lang='he';assert.equal(s.teams[0].score,10);assert.equal(s.teams[1].score,30);
+assert.equal(ingest(s,event('5269','2',30)).ok,false);assert.equal(s.teams[1].score,30);
+assert.equal(ingest(s,event('5269','invalid',-1)).ok,false);
+ingest(s,{...event('5655','c1',3),comboId:'streak'});ingest(s,{...event('5655','c2',7),comboId:'streak'});ingest(s,{...event('5655','c3',7),comboId:'streak'});assert.equal(s.teams[0].score,17);
+s=JSON.parse(JSON.stringify(s));assert.equal(ingest(s,event('5269','2',30)).ok,false);
+console.log('PASS: zero/tie ratio, leader crossover, Hebrew preserves scores, duplicate/reload replay, invalid count, cumulative streak');

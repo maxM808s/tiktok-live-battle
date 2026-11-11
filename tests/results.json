@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-11T18:09:00.341Z",
+  "checks": [
+    "custom names + cross-window synchronization",
+    "Hebrew RTL translation",
+    "English LTR translation",
+    "gift ID search",
+    "gift name search",
+    "gift assignment and points",
+    "simulation score calculation",
+    "percentage calculation",
+    "leader crown",
+    "deduplication and cumulative streaks",
+    "pause rejects gifts",
+    "reset to starting score",
+    "settings persisted",
+    "photo upload and display",
+    "preset saved and loaded",
+    "swap sides",
+    "all authentic catalog images render",
+    "mobile dashboard has no horizontal overflow",
+    "no browser script errors"
+  ],
+  "errors": [],
+  "limitations": [
+    "S2E actual events unavailable",
+    "GitHub Pages not deployed",
+    "LIVE Studio Windows runtime unavailable"
+  ],
+  "additionalCoreChecks": [
+    "zero-score tie gives 50/50",
+    "leader crossover",
+    "language preserves scores",
+    "invalid quantities rejected",
+    "replay protection persists through serialization"
+  ]
+}
