@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-12T11:33:10.306Z",
+  "checks": [
+    "Style gallery offers six looks (studio)",
+    "studio preserves competitors, scores, gifts and visibility",
+    "studio fits Hebrew display",
+    "Style gallery offers six looks (liveBattle)",
+    "liveBattle preserves competitors, scores, gifts and visibility",
+    "liveBattle fits Hebrew display",
+    "Style gallery offers six looks (neon)",
+    "neon preserves competitors, scores, gifts and visibility",
+    "neon fits Hebrew display",
+    "Style gallery offers six looks (gold)",
+    "gold preserves competitors, scores, gifts and visibility",
+    "gold fits Hebrew display",
+    "Style gallery offers six looks (sports)",
+    "sports preserves competitors, scores, gifts and visibility",
+    "sports fits Hebrew display",
+    "Style gallery offers six looks (minimal)",
+    "minimal preserves competitors, scores, gifts and visibility",
+    "minimal fits Hebrew display",
+    "Portrait frames remain circular",
+    "Reference style has a wide percentage bar",
+    "Style persists after reload",
+    "Mobile editor has no horizontal overflow",
+    "Mobile styles dialog has no horizontal overflow",
+    "Styles dialog fits vertically on mobile",
+    "Escape closes styles",
+    "No browser script errors"
+  ],
+  "errors": []
+}

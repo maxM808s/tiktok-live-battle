@@ -18,6 +18,8 @@ Use **☾ Night mode** at the top for a black-and-white dashboard. The choice st
 
 For a private LIVE Studio link, use the **local dashboard opened by Start-Overlay.cmd**. Use one dashboard at a time. Edits save automatically; watch the save indicator.
 
+Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battle (reference-inspired), Studio Glass, Neon Arcade, Golden Arena, Stadium or Mono Minimal. Styles set colors, fonts, sizes and VS appearance; competitors, photos, scores, gifts and visibility settings stay unchanged. Fine-tune afterward under Text & style.
+
 Expand the section you need:
 
 <details open>

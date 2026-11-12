@@ -13,6 +13,7 @@
     "Reject appearance CSS injection",
     "Reject unapproved font values",
     "Reject nonboolean design visibility",
+    "Reject unapproved display styles",
     "Reject VS color injection",
     "Reject unapproved VS shapes",
     "Bound VS label length",
@@ -26,5 +27,5 @@
     "Recover safely from malformed browser storage",
     "Use prototype-free preset dictionaries"
   ],
-  "date": "2026-11-12T11:09:36.970Z"
+  "date": "2026-11-12T11:31:08.943Z"
 }
