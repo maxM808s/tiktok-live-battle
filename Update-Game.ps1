@@ -15,16 +15,40 @@ function Copy-ManagedFile([string]$From,[string]$To) {
     [IO.Directory]::CreateDirectory([IO.Path]::GetDirectoryName($To)) | Out-Null
     [IO.File]::Copy($From,$To,$true)
 }
+function Test-TrustedUpdateUrl([string]$Url) {
+    try {
+        $uri = [Uri]$Url
+        if ($uri.Scheme -cne 'https' -or $uri.Port -ne 443 -or $uri.UserInfo -or $uri.Query -or $uri.Fragment) { return $false }
+        return ($Url -ceq 'https://api.github.com/repos/maxM808s/tiktok-live-battle/commits/main' -or $Url -cmatch '^https://github\.com/maxM808s/tiktok-live-battle/archive/[a-f0-9]{40}\.zip$' -or $Url -cmatch '^https://codeload\.github\.com/maxM808s/tiktok-live-battle/zip/[a-f0-9]{40}$')
+    } catch { return $false }
+}
+function Assert-NativeScriptsUnchanged([string]$Root,[string]$Stage) {
+    foreach ($file in @('Start-Overlay.cmd','Start-Overlay.ps1','Update-Game.cmd','Update-Game.ps1','Restore-Game.cmd')) {
+        $installed = Join-Path $Root $file; $downloaded = Join-Path $Stage $file
+        if (-not (Test-Path -LiteralPath $installed) -or (Get-FileHash -LiteralPath $installed -Algorithm SHA256).Hash -cne (Get-FileHash -LiteralPath $downloaded -Algorithm SHA256).Hash) {
+            throw 'This update changes Windows launch/update scripts. No files were installed. Review the GitHub changes and use a reviewed package for this update.'
+        }
+    }
+}
 function Save-TrustedDownload([string]$Url,[string]$Destination,[long]$Limit) {
+    if (-not (Test-TrustedUpdateUrl $Url)) { throw 'Untrusted update download address.' }
     Add-Type -AssemblyName System.Net.Http
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $client = [Net.Http.HttpClient]::new()
+    $handler = [Net.Http.HttpClientHandler]::new(); $handler.AllowAutoRedirect = $false
+    $client = [Net.Http.HttpClient]::new($handler)
     $client.Timeout = [TimeSpan]::FromSeconds(120)
     $client.DefaultRequestHeaders.UserAgent.ParseAdd('BattleStudio-Updater/1.0')
     $cancel = [Threading.CancellationTokenSource]::new(); $cancel.CancelAfter(120000)
     $response = $null; $inputStream = $null; $outputStream = $null
     try {
-        $response = $client.GetAsync($Url,[Net.Http.HttpCompletionOption]::ResponseHeadersRead,$cancel.Token).GetAwaiter().GetResult()
+        for ($hop = 0; $hop -le 3; $hop++) {
+            if (-not (Test-TrustedUpdateUrl $Url)) { throw 'Untrusted update redirect.' }
+            $response = $client.GetAsync($Url,[Net.Http.HttpCompletionOption]::ResponseHeadersRead,$cancel.Token).GetAwaiter().GetResult()
+            if ([int]$response.StatusCode -notin @(301,302,303,307,308)) { break }
+            if ($hop -eq 3 -or -not $response.Headers.Location) { throw 'Too many or invalid update redirects.' }
+            $Url = ([Uri]::new([Uri]$Url,$response.Headers.Location)).AbsoluteUri
+            $response.Dispose(); $response = $null
+        }
         $response.EnsureSuccessStatusCode() | Out-Null
         if ($response.Content.Headers.ContentLength -gt $Limit) { throw 'Download too large.' }
         $inputStream = $response.Content.ReadAsStreamAsync().GetAwaiter().GetResult()
@@ -110,6 +134,7 @@ function Invoke-GameUpdate([string]$Root,[bool]$RestoreBackup = $false) {
         $zip = Join-Path $work 'game.zip'; $stage = Join-Path $work 'stage'
         Save-TrustedDownload ('https://github.com/maxM808s/tiktok-live-battle/archive/' + $sha + '.zip') $zip 32000000
         $next = @(Expand-GameArchive $zip $stage $sha)
+        Assert-NativeScriptsUnchanged $Root $stage
         # Build a complete replacement backup before touching application files.
         $pending = Join-Path $work 'backup'
         [IO.Directory]::CreateDirectory($pending) | Out-Null

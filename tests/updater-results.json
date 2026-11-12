@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-12T11:08:56.6706452Z",
+  "date": "2026-11-12T11:15:33.5335317Z",
   "scope": "PowerShell 7 on Linux with synthetic GitHub archives and mocked downloads; Windows 5.1 and real updater HTTP still require broadcast-PC verification",
   "checks": [
     "Install downloaded application files in the same folder",
@@ -15,10 +15,20 @@
     "Running launcher/update lock prevents concurrent changes",
     "Reject ZIP path traversal before changing application files",
     "Unsafe archive preserves application and backup",
+    "Allow only the configured GitHub metadata endpoint",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP",
+    "Block changed native scripts before installation",
+    "Blocked native update leaves existing game unchanged",
     "Installation failure triggers rollback",
     "Rollback restores previous files",
     "Rollback restores previous version marker",
     "Temporary downloads cleaned after success and failure"
   ],
-  "realGitHubMetadataDownload": "Passed using the production PowerShell download function on Linux"
+  "realGitHubArchiveDownload": "Passed using restricted HTTPS redirect validation on Linux"
 }

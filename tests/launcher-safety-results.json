@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-12T11:16:32.315Z",
+  "scope": "Source review and targeted command-pattern checks of the listed scripts; not an antivirus scan, not proof of malware absence",
+  "files": [
+    "Start-Overlay.ps1",
+    "Update-Game.ps1",
+    "Start-Overlay.cmd",
+    "Update-Game.cmd",
+    "Restore-Game.cmd"
+  ],
+  "checks": [
+    "Start-Overlay.cmd uses the fixed Windows PowerShell path, no profiles, and a quoted local script path",
+    "Update-Game.cmd uses the fixed Windows PowerShell path, no profiles, and a quoted local script path",
+    "Restore-Game.cmd uses the fixed Windows PowerShell path, no profiles, and a quoted local script path",
+    "No known persistence, Defender-exclusion, encoded-command or download-and-evaluate commands in these scripts"
+  ],
+  "antivirusScanPerformed": false,
+  "windowsExecutionVerified": false
+}

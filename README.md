@@ -159,6 +159,8 @@ For future updates:
 3. Open **Start-Overlay.cmd** again. Check your names, photos, gifts and scores; restore your settings export only if needed.
 4. Copy the new private overlay link into LIVE Studio after restarting the launcher.
 
+**Safety stop:** routine game files update automatically, but changes to Windows CMD/PowerShell launch or update scripts are blocked. If that message appears, review the GitHub changes before downloading a replacement package. Keep Windows Security/Defender enabled; the updater never asks to disable it.
+
 The updater replaces known app files **in the same folder**. It leaves browser settings and unrelated files alone, cleans temporary downloads, and keeps only **one** previous app copy in **.battle-backup**. That recovery copy contains application files, not your browser settings. A failed download leaves the installed app unchanged.
 
 **Need to undo an update?** Close the dashboard/launcher and double-click **Restore-Game.cmd**. It restores the one previous app copy. Start normally and replace the overlay link again. An installation failure attempts rollback automatically. If an error persists, keep your settings export and report the message.

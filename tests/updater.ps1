@@ -56,6 +56,14 @@ try {
     $rejected=$false;try{Invoke-GameUpdate $install}catch{$rejected=$_.Exception.Message -like '*archive path*'}
     Check $rejected 'Reject ZIP path traversal before changing application files'
     Check ((Get-Content (Join-Path $install 'admin.html') -Raw) -ceq 'new-b') 'Unsafe archive preserves application and backup'
+    Check (Test-TrustedUpdateUrl 'https://api.github.com/repos/maxM808s/tiktok-live-battle/commits/main') 'Allow only the configured GitHub metadata endpoint'
+    foreach($url in @('http://github.com/maxM808s/tiktok-live-battle/archive/aaa.zip','https://evil.example/payload.exe','https://github.com/other/repo/archive/' + ('a'*40) + '.zip','https://user:password@api.github.com/repos/maxM808s/tiktok-live-battle/commits/main','https://api.github.com/repos/maxM808s/tiktok-live-battle/commits/main?token=secret')) { Check (-not (Test-TrustedUpdateUrl $url)) 'Reject unexpected hosts, repositories, credentials, queries and plaintext HTTP' }
+    $script:Sha = 'e' * 40; $script:SelectedZip = Make-Zip $script:Sha 'native-change'
+    $nativeZip=[IO.Compression.ZipFile]::Open($script:SelectedZip,[IO.Compression.ZipArchiveMode]::Update)
+    try { $entry=$nativeZip.GetEntry(('tiktok-live-battle-' + $script:Sha + '/Start-Overlay.cmd'));$entry.Delete();$entry=$nativeZip.CreateEntry(('tiktok-live-battle-' + $script:Sha + '/Start-Overlay.cmd'));$writer=[IO.StreamWriter]::new($entry.Open());try{$writer.Write('malicious-script-placeholder')}finally{$writer.Dispose()} } finally{$nativeZip.Dispose()}
+    $rejected=$false;try{Invoke-GameUpdate $install}catch{$rejected=$_.Exception.Message -like '*changes Windows launch/update scripts*'}
+    Check $rejected 'Block changed native scripts before installation'
+    Check ((Get-Content (Join-Path $install 'admin.html') -Raw) -ceq 'new-b') 'Blocked native update leaves existing game unchanged'
     $script:Sha = 'd' * 40; $script:SelectedZip = Make-Zip $script:Sha 'new-d'
     $script:FailOnce=$true; $originalCopy=${function:Copy-ManagedFile}
     function Copy-ManagedFile([string]$From,[string]$To) {
