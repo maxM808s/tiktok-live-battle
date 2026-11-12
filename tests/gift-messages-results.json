@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-12T13:06:55.393Z",
+  "checks": [
+    "VS moves gently by default",
+    "Reduced motion disables VS movement",
+    "Dedicated VS motion toggle works with diamond shape",
+    "Global animation switch disables badge movement",
+    "Test scores update without popup or sender message",
+    "Real gift banner and message include sender",
+    "Messages include authentic gift name and configured points",
+    "Untrusted sender is plain text",
+    "Simulation after a real gift does not replay its banner",
+    "Simulation preserves last real message",
+    "Hebrew gift message translated",
+    "Hidden sender stays out of real gift popup",
+    "Mobile dashboard fits",
+    "No script errors"
+  ],
+  "errors": []
+}

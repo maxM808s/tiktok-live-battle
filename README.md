@@ -44,8 +44,8 @@ Your custom writing is not automatically translated. Optional competitor transla
 - Presets coordinate portrait rings, panels, text and display accents while keeping scores and saved competitor gradients.
 - **Typography & sizes:** choose font/weight; use sliders or exact values for text, scores, gift values, labels, logo and portraits. **↺** resets one size. Long text can shrink to fit the vertical display.
 - **Text colors & background:** adjust individual colors, glow and panel colors. Turn **Use appearance colors for competitor panels** off to show each competitor's own saved gradient.
-- **VS badge & gift reactions:** choose Glass, Solid circle, Diamond or Minimal; edit its label, colors and text/badge sizes. Enable gift spotlights for a brief gift/quantity/points banner. The main animation switch and reduced-motion preference control motion.
-- **Last gift received:** shows the most recent real gift and time since receipt. Test gifts are labeled TEST and do not replace this indicator.
+- **VS badge & gift reactions:** choose Glass, Solid circle, Diamond or Minimal; edit its label, colors and text/badge sizes. Enable gift spotlights for a brief gift/quantity/points banner. Use **Gentle VS movement** for a subtle floating badge. The main animation switch and reduced-motion preference control motion.
+- **Last gift received:** shows the most recent real gift and time since receipt. Simulated gifts update scores but show no gift banner or sender message, and do not replace this indicator. Real gift messages show the sender when Recent gift sender is enabled.
 - **Fonts:** nine installed-font stacks with fallbacks; appearance can vary by PC, so preview English and Hebrew before LIVE.
 - **Show / hide elements:** control branding, title, instructions, subtitles, sender, gifts and Points labels.
 - **Reset appearance** resets the design without erasing scores, names, photos or gift mappings.

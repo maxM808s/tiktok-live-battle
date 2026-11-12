@@ -2,15 +2,16 @@
   "checks": [
     "Nine fonts available",
     "VS shape and custom label synchronize",
-    "Simulation reaction labeled TEST",
+    "Simulations score without a gift banner",
+    "Simulations show no sender message",
     "Simulation does not replace last real gift",
-    "Real gift reaction appears",
+    "Real gift messages include sender and gift",
     "Last gift relative time advances without rerender",
     "Hebrew last-gift translation",
     "Reload does not replay a saved reaction",
     "Font saved",
     "Mobile editor fits",
-    "Private overlay retains last real gift behind newer test",
+    "Private overlay excludes tests and retains last real gift",
     "No script errors"
   ],
   "errors": []

@@ -16,6 +16,7 @@ reject(s=>s.appearance.titleSize=10000,'Reject out-of-range text sizes');
 reject(s=>s.appearance.brandColor='red; background:url(https://example.com)','Reject appearance CSS injection');
 reject(s=>s.appearance.font='url(https://example.com)','Reject unapproved font values');
 reject(s=>s.appearance.showBrand='false','Reject nonboolean design visibility');
+reject(s=>s.appearance.vsMotion='true','Require boolean VS animation setting');
 reject(s=>s.appearance.layoutStyle='__proto__','Reject unapproved display styles');
 reject(s=>s.appearance.vsColor='#fff;url(x)','Reject VS color injection');
 reject(s=>s.appearance.vsStyle='__proto__','Reject unapproved VS shapes');

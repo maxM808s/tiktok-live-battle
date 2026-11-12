@@ -1,11 +1,11 @@
 {
-  "date": "2026-11-12T00:05:49.155Z",
+  "date": "2026-11-12T13:06:35.480Z",
   "checks": [
     "Hidden sender names stripped from outgoing snapshots",
     "Local history preserved",
     "Visible sender setting preserved",
     "All event features off removes overlay events",
-    "Last real gift preserved without viewer name",
+    "Last real gift preserved without viewer name; simulations excluded",
     "Replay identifiers and session removed",
     "VS labels remain plain data"
   ]

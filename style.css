@@ -66,3 +66,13 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 .game[data-look=sports] .team{border-radius:1cqw;border-top:1cqw solid var(--team)}.game[data-look=sports] .score{font-variant-numeric:tabular-nums;letter-spacing:.15cqw}.game[data-look=sports] .track{height:4cqw;border-radius:0}.game[data-look=sports] .portrait{border-radius:50%;border:.5cqw solid var(--team)}
 .game[data-look=minimal] .team{background:#ffffff04;border-color:#ffffff25;border-radius:2cqw;box-shadow:none;backdrop-filter:none}.game[data-look=minimal] .portrait{border:.25cqw solid #eee;box-shadow:none}.game[data-look=minimal] .orb{display:none}
 @media(max-width:600px){.styles-dialog{padding:18px}.styles-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mini-team i{width:40px}.mini-team b{font-size:13px}.mini-title{font-size:11px}.mini-vs{font-size:10px;padding:4px}.style-mini{padding:8px}.editor-nav>button{font-size:10px;padding:6px 8px}}
+
+/* Gentle badge movement uses a separate translate so diamond styling stays intact. */
+.game .vs-motion{animation:vs-drift 4s ease-in-out infinite}
+@keyframes vs-drift{0%,100%{translate:0 -.45cqw}50%{translate:0 .45cqw}}
+.game .gift-message{display:flex;align-items:center;justify-content:center;gap:1.5cqw;min-width:0;text-align:start;line-height:1.45;overflow-wrap:anywhere}
+.game .gift-message img{width:7cqw;height:7cqw;object-fit:contain;flex-shrink:0}
+.game .gift-message>div{min-width:0}.gift-sender,.gift-name{font-weight:750}.gift-sender{color:#c5e8ff}.gift-message small{display:block;font-size:.8em;color:#d1d5e2;margin-top:.3cqw}
+.game .event:not(:empty){padding:1.5cqw 2cqw;margin:1.5cqw auto 0;border:1px solid #ffffff20;border-radius:2cqw;background:#ffffff08;max-width:94%}
+.game .gift-burst{top:64%;font-size:3cqw}.game .gift-burst .gift-message img{width:8cqw;height:8cqw}
+@media(prefers-reduced-motion:reduce){.game .vs-motion{animation:none!important;translate:none}}
