@@ -10,3 +10,8 @@ backups/
 *.log
 node_modules/
 .DS_Store
+
+# Local updater metadata and the single recovery copy.
+.battle-backup/
+.battle-version
+.battle-operation.lock

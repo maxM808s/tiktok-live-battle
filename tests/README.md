@@ -4,6 +4,7 @@ These files are development checks, not application settings or private backups.
 
 | Area | Check |
 | --- | --- |
+| Local updates, cleanup and rollback | updater.ps1 |
 | Scoring and replay protection | core.mjs |
 | Import, appearance and privacy validation | security.mjs, privacy.mjs |
 | Gift assets, search and mappings | catalog-display.cjs, gift-slots.cjs |

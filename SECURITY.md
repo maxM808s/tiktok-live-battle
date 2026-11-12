@@ -6,6 +6,12 @@ Private overlay links are for use on your broadcast PC. They permit viewing, not
 
 Use the local dashboard opened by the launcher. Other visitors to the public hosted dashboard do not control your broadcast. Anyone with access to your browser profile or privileged access to your PC remains trusted; this is not protection against a compromised computer.
 
+## Local updates
+
+Run Update-Game.cmd only from your trusted game folder after closing the launcher/dashboard. The updater downloads this repository over HTTPS, pins the archive to the reported commit, validates paths and required assets, and replaces only known application files. It does not execute downloaded scripts during installation or need administrator access. GitHub/account integrity remains trusted; this is not an independently signed release system.
+
+One .battle-backup recovery copy and the installed-version marker remain locally. Temporary files are cleaned on normal completion/failure; a power loss or forced process termination may leave a temporary folder. Runtime and updater share a folder lock. Browser settings are not part of the recovery copy; keep a private settings export. Windows 5.1 execution still needs verification on the broadcast PC.
+
 ## Settings and backups
 
 - Never put TikTok passwords, session cookies, GitHub tokens or other secrets into the game, image URLs or repository.

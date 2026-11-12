@@ -121,6 +121,9 @@ function Handle-Request($Stream) {
     $types = @{'.html'='text/html; charset=utf-8';'.js'='application/javascript; charset=utf-8';'.css'='text/css; charset=utf-8';'.json'='application/json; charset=utf-8';'.webp'='image/webp'}
     Write-Reply $Stream 200 $types[[IO.Path]::GetExtension($file)] ([IO.File]::ReadAllBytes($file)) ($path -eq '/admin.html')
 }
+$operationLock = $null
+try { $operationLock = [IO.File]::Open((Join-Path $Root '.battle-operation.lock'),[IO.FileMode]::OpenOrCreate,[IO.FileAccess]::ReadWrite,[IO.FileShare]::None) }
+catch { throw 'An updater or another launcher is using this game folder. Close it and try again.' }
 $listener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback,$Port)
 try {
     $listener.Start()
@@ -135,4 +138,4 @@ try {
             try { Handle-Request $stream } catch { try { Reply-Text $stream 400 '{"error":"Request rejected"}' } catch {} }
         } finally { $client.Dispose() }
     }
-} finally { $listener.Stop(); $script:Snapshot = $null; $script:WriterKey = ''; $script:ViewerKey = '' }
+} finally { $listener.Stop(); $script:Snapshot = $null; $script:WriterKey = ''; $script:ViewerKey = ''; if ($operationLock) { $operationLock.Dispose() } }

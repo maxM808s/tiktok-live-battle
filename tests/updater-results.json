@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-12T11:08:56.6706452Z",
+  "scope": "PowerShell 7 on Linux with synthetic GitHub archives and mocked downloads; Windows 5.1 and real updater HTTP still require broadcast-PC verification",
+  "checks": [
+    "Install downloaded application files in the same folder",
+    "Preserve private settings exports",
+    "Preserve unrelated user files",
+    "Keep one previous application backup",
+    "Record the installed commit",
+    "Already-current update does not replace recovery backup",
+    "Manual restore returns previous application files",
+    "Next update replaces the single backup",
+    "No accumulating backup folders",
+    "Download failure leaves application unchanged",
+    "Running launcher/update lock prevents concurrent changes",
+    "Reject ZIP path traversal before changing application files",
+    "Unsafe archive preserves application and backup",
+    "Installation failure triggers rollback",
+    "Rollback restores previous files",
+    "Rollback restores previous version marker",
+    "Temporary downloads cleaned after success and failure"
+  ],
+  "realGitHubMetadataDownload": "Passed using the production PowerShell download function on Linux"
+}

@@ -148,7 +148,22 @@ Follow these steps in order on your broadcast PC.
 
 **10. Finish and return next time.** Declare the winner or pause, disconnect the game, export settings if wanted, and end the LIVE broadcast when ready. Stop the launcher after you finish displaying. Next time, run the launcher, use its new dashboard, load/check your matchup and repeat steps 8–9. **Replace LIVE Studio's old overlay URL after every launcher restart.**
 
-**Updating:** app updates require downloading/extracting the latest Windows package. Ordinary dashboard edits do not. Export a backup, disconnect and close the old dashboard/launcher, run the new package, check/restore settings if needed, then copy the new private overlay link. Settings normally remain with the same browser/profile and local address.
+**Updating your local copy — no repeated ZIP downloads**
+
+**Install the updater once:** if your folder does not contain **Update-Game.cmd**, export your settings, close the old launcher/dashboard, download the latest Windows package above and extract it once. Then use that folder from now on.
+
+For future updates:
+
+1. Finish the broadcast and export a private settings backup. Close the dashboard and launcher.
+2. Double-click **Update-Game.cmd** in your game folder. Wait for **Updated** or **Already up to date**. No administrator access is needed.
+3. Open **Start-Overlay.cmd** again. Check your names, photos, gifts and scores; restore your settings export only if needed.
+4. Copy the new private overlay link into LIVE Studio after restarting the launcher.
+
+The updater replaces known app files **in the same folder**. It leaves browser settings and unrelated files alone, cleans temporary downloads, and keeps only **one** previous app copy in **.battle-backup**. That recovery copy contains application files, not your browser settings. A failed download leaves the installed app unchanged.
+
+**Need to undo an update?** Close the dashboard/launcher and double-click **Restore-Game.cmd**. It restores the one previous app copy. Start normally and replace the overlay link again. An installation failure attempts rollback automatically. If an error persists, keep your settings export and report the message.
+
+The hosted github.io dashboard updates separately; refresh it. Ordinary settings edits do not require an app update.
 
 **Quick fixes:** missing controls usually mean an old package/tab; disabled Copy link means the local launcher/dashboard is not ready; a frozen picture needs a sync/status check; no points needs an active LIVE, connected Desktop, started battle, mapped ID and finished streak. Close another scoring dashboard if it owns the connection. Read storage/launcher errors before continuing; do not change system-wide security settings, expose local ports or use administrator access merely to bypass a restriction.
 
