@@ -168,19 +168,22 @@ Keep private links and backups private. Do not expose local ports or disable bro
 
 ## Tutorial 3: How to update
 
-**Install the updater once:** if your folder does not contain **Update-Game.cmd**, export your settings, close the old launcher/dashboard, download the latest Windows package above and extract it once. Then use that folder from now on.
+**Clone once, then update the same folder. No repeated ZIP downloads, VS Code or terminal commands needed.**
 
-For future updates:
+**One-time setup**
 
-1. Finish the broadcast and export a private settings backup. Close the dashboard and launcher.
-2. Double-click **Update-Game.cmd** in your game folder. Wait for **Updated** or **Already up to date**. No administrator access is needed.
-3. Open **Start-Overlay.cmd** again. Check your names, photos, gifts and scores; restore your settings export only if needed.
-4. Copy the new private overlay link into LIVE Studio after restarting the launcher.
+1. Install [GitHub Desktop](https://desktop.github.com/) and sign in.
+2. Choose **File → Clone repository → GitHub.com** and select **maxM808s/tiktok-live-battle**. If it is not listed, use the **URL** tab and enter `https://github.com/maxM808s/tiktok-live-battle`.
+3. Choose a new, empty folder on your PC and click **Clone**. Keep the branch set to **main**.
+4. Choose **Repository → Show in Explorer**. From now on, run **Start-Overlay.cmd** from this folder. Export settings from your old dashboard before switching; restore them in the new local dashboard if needed.
 
-**Safety stop:** routine game files update automatically, but changes to Windows CMD/PowerShell launch or update scripts are blocked. If that message appears, review the GitHub changes before downloading a replacement package. Keep Windows Security/Defender enabled; the updater never asks to disable it.
+**Every future update**
 
-The updater replaces known app files **in the same folder**. It leaves browser settings and unrelated files alone, cleans temporary downloads, and keeps only **one** previous app copy in **.battle-backup**. That recovery copy contains application files, not your browser settings. A failed download leaves the installed app unchanged.
+1. Finish the broadcast, export your settings, and close the dashboard and launcher.
+2. Open GitHub Desktop and select **tiktok-live-battle → main**.
+3. Click **Fetch origin**, then **Pull origin** if it appears. If there is nothing to pull, you are up to date.
+4. Open the same folder and run **Start-Overlay.cmd**. Check your settings and copy the new private overlay link into LIVE Studio.
 
-**Need to undo an update?** Close the dashboard/launcher and double-click **Restore-Game.cmd**. It restores the one previous app copy. Start normally and replace the overlay link again. An installation failure attempts rollback automatically. If an error persists, keep your settings export and report the message.
+**Important:** use GitHub Desktop for this folder, not Update-Game.cmd. If Desktop reports local changes or conflicts, stop and review them rather than discarding files blindly. Pulling includes Windows CMD/PowerShell scripts; review changes to those files in **History** before running them. Keep Windows Security enabled.
 
-The hosted github.io dashboard updates separately; refresh it. Ordinary settings edits do not require an app update.
+Changes must be published to **main** before you can pull them. Browser settings stay separate from Git; keep private exports outside the repository. The hosted github.io dashboard only needs a refresh.
