@@ -1,7 +1,7 @@
 import{validateState}from'./core.js';
 export function overlaySnapshot(state){
  const s=validateState(state),ids=new Set(s.teams.flatMap(t=>t.gifts.map(g=>g.id)));
- return {...s,connection:{session:'overlay'},seen:[],combos:{},custom:s.custom.filter(g=>ids.has(g.id)),events:s.appearance.showEvents?s.events.slice(0,1):[]};
+ return {...s,connection:{session:'overlay'},seen:[],combos:{},custom:s.custom.filter(g=>ids.has(g.id)),events:(s.appearance.showEvents||s.appearance.showLastGift||s.appearance.giftReactions)?s.events.filter((e,i)=>i===0||e===s.events.find(x=>!x.simulated&&x.delta>0)).slice(0,2):[]};
 }
 export class OverlayPublisher{
  constructor({onStatus=()=>{}}={}){this.onStatus=onStatus;this.key='';this.url='';this.pending=null;this.sending=false;this.stopped=false;this.waiters=[]}

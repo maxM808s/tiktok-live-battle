@@ -1,5 +1,8 @@
 // Design values use pixels on the 1080px-wide broadcast canvas.
+export const fontChoices={system:{label:'System · clean',css:'-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Noto Sans Hebrew", sans-serif'},rounded:{label:'Friendly · Trebuchet',css:'"Trebuchet MS", Arial, sans-serif'},serif:{label:'Classic · Georgia',css:'Georgia, "Times New Roman", serif'},arial:{label:'Arial · neutral',css:'Arial, "Noto Sans Hebrew", sans-serif'},verdana:{label:'Verdana · wide',css:'Verdana, Arial, sans-serif'},tahoma:{label:'Tahoma · compact / Hebrew',css:'Tahoma, Arial, sans-serif'},impact:{label:'Impact · bold display',css:'Impact, "Arial Black", Arial, sans-serif'},mono:{label:'Monospace · technical',css:'"Courier New", Courier, monospace'},times:{label:'Times · editorial',css:'"Times New Roman", Times, serif'}};
 export const designFields={
+ vsSize:{label:'VS text',min:16,max:70,value:38},
+ vsBadgeSize:{label:'VS badge',min:64,max:160,value:100},
  brandSize:{label:'Branding text',min:12,max:60,value:27},
  titleSize:{label:'Game title',min:36,max:130,value:86},
  nameSize:{label:'Competitor names',min:20,max:66,value:43},
@@ -10,7 +13,7 @@ export const designFields={
  logoSize:{label:'Logo height',min:24,max:140,value:54},
  portraitSize:{label:'Portrait diameter',min:260,max:400,value:367}
 };
-export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),panelA:'#087dff',panelB:'#ad46ff',panelColors:false,font:'system',weight:700,background:'#0b0d12',glow:'#202631',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true,showGifts:true,showPointLabels:true});
+export const appearanceDefaults=()=>({...Object.fromEntries(Object.entries(designFields).map(([k,v])=>[k,v.value])),panelA:'#087dff',panelB:'#ad46ff',panelColors:false,font:'system',weight:700,background:'#0b0d12',glow:'#202631',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff',showLastGift:true,giftReactions:true,vsStyle:'glass',vsText:'VS',vsColor:'#ffffff',vsBackgroundColor:'#454e75',showBrand:true,showTitle:true,showInstructions:true,showSubtitle:true,showEvents:true,showGifts:true,showPointLabels:true});
 export const designThemes={original:{background:'#050e29',glow:'#153d87',brandColor:'#ffffff',titleColor:'#ffffff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#ffffff'},electric:{background:'#110923',glow:'#572382',brandColor:'#d4b6ff',titleColor:'#f2e5ff',nameColor:'#ffffff',scoreColor:'#ffffff',instructionColor:'#e1ccff'},midnight:{background:'#050e16',glow:'#114c55',brandColor:'#8fe9e5',titleColor:'#d9fffc',nameColor:'#ffffff',scoreColor:'#aefbf1',instructionColor:'#d9fffc'}};
 export const themeLabels={studio:'Studio',original:'Original',electric:'Electric',midnight:'Midnight',blackYellow:'Black & Yellow',orangeBlack:'Orange & Black',crimson:'Crimson',emerald:'Emerald',ice:'Ice Blue',roseGold:'Rose Gold',monochrome:'Black & White',blueYellow:'Blue & Yellow'};
 Object.assign(designThemes.original,{panelColors:true,panelA:'#087dff',panelB:'#ad46ff'});
@@ -31,9 +34,11 @@ export function validateAppearance(v){
  let out=appearanceDefaults();if(v===undefined)return out;
  if(!record(v))throw Error('Invalid appearance settings');
  for(let [k,f]of Object.entries(designFields))if(v[k]!==undefined)out[k]=numberValue(v[k],f.min,f.max,true);
- for(let k of ['background','glow','brandColor','titleColor','nameColor','scoreColor','instructionColor','panelA','panelB'])if(v[k]!==undefined){if(typeof v[k]!=='string'||!/^#[0-9a-f]{6}$/i.test(v[k]))throw Error('Invalid design color');out[k]=v[k]}
- for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents','showGifts','showPointLabels','panelColors'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
- if(v.font!==undefined){if(!['system','rounded','serif'].includes(v.font))throw Error('Invalid font');out.font=v.font}
+ for(let k of ['background','glow','brandColor','titleColor','nameColor','scoreColor','instructionColor','panelA','panelB','vsColor','vsBackgroundColor'])if(v[k]!==undefined){if(typeof v[k]!=='string'||!/^#[0-9a-f]{6}$/i.test(v[k]))throw Error('Invalid design color');out[k]=v[k]}
+ for(let k of ['showBrand','showTitle','showInstructions','showSubtitle','showEvents','showGifts','showPointLabels','panelColors','showLastGift','giftReactions'])if(v[k]!==undefined){if(typeof v[k]!=='boolean')throw Error('Invalid visibility setting');out[k]=v[k]}
+ if(v.font!==undefined){if(!Object.hasOwn(fontChoices,v.font))throw Error('Invalid font');out.font=v.font}
+ if(v.vsStyle!==undefined){if(!['glass','circle','diamond','minimal'].includes(v.vsStyle))throw Error('Invalid VS style');out.vsStyle=v.vsStyle}
+ if(v.vsText!==undefined)out.vsText=textValue(v.vsText,12);
  if(v.weight!==undefined){if(![600,700,800,900].includes(v.weight))throw Error('Invalid font weight');out.weight=v.weight}
  return out;
 }
