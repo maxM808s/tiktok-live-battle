@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-12T13:13:46.393Z",
+  "checks": [
+    "Test menu lists only the two assigned gifts",
+    "Manual competitor label follows edits immediately",
+    "Test gift label includes configured competitor",
+    "Test menu follows updated points",
+    "At-a-glance battle status updates",
+    "Simulation feedback names points and competitor",
+    "Paused simulation explains why no points were added",
+    "Fullscreen failure gives feedback instead of an unhandled rejection",
+    "Backup section has a navigation shortcut",
+    "Preview explains source render resolution",
+    "No mappings disables simulation",
+    "Empty test menu explains next step",
+    "Mobile dashboard has no horizontal overflow",
+    "Summary stays present in night mode",
+    "No browser script errors"
+  ],
+  "errors": []
+}

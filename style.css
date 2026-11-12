@@ -76,3 +76,8 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 .game .event:not(:empty){padding:1.5cqw 2cqw;margin:1.5cqw auto 0;border:1px solid #ffffff20;border-radius:2cqw;background:#ffffff08;max-width:94%}
 .game .gift-burst{top:64%;font-size:3cqw}.game .gift-burst .gift-message img{width:8cqw;height:8cqw}
 @media(prefers-reduced-motion:reduce){.game .vs-motion{animation:none!important;translate:none}}
+
+/* At-a-glance controls without scrolling to connection panels. */
+.session-summary{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:-8px 0 24px;font-size:11px}.session-summary>span{border:1px solid var(--line);background:var(--surface);border-radius:30px;padding:8px 12px;color:var(--secondary)}.session-summary>span:before{content:'●';font-size:8px;margin-inline-end:7px;color:#9699a1}.session-summary>span[data-state=ready]:before{color:#25875e}.session-summary>a{margin-inline-start:auto;color:#0071e3;text-decoration:none;font-weight:600;padding:8px 0}.preview .muted{line-height:1.7}#backups{scroll-margin-top:110px}
+[data-dashboard-mode=dark] .session-summary>a{color:#d1d5e5}
+@media(max-width:600px){.session-summary{gap:6px}.session-summary>span{font-size:10px;padding:7px 9px}.session-summary>a{width:100%;margin:0;padding:4px;font-size:11px}}

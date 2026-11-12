@@ -9,6 +9,7 @@ These files are development checks, not application settings or private backups.
 | Scoring and replay protection | core.mjs |
 | Import, appearance and privacy validation | security.mjs, privacy.mjs |
 | Gift assets, search and mappings | catalog-display.cjs, gift-slots.cjs |
+| Dashboard labels, feedback and status summary | dashboard-ux.cjs |
 | Typography, themes, activity and VS controls | design.cjs, styles.cjs, engagement.cjs, gift-messages.cjs, night-mode.cjs |
 | Local relay authorization and synchronization | overlay-relay.cjs |
 | TikFinity normalization and mock connection | tikfinity.mjs, tikfinity-browser.cjs |

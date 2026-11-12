@@ -16,7 +16,7 @@ Browser and simulated-event tests passed. Verify real gifts and Windows/LIVE Stu
 
 Use **☾ Night mode** at the top for a black-and-white dashboard. The choice stays in this browser and does not change the broadcast. For a monochrome game, choose **Text & style → Black & White**.
 
-For a private LIVE Studio link, use the **local dashboard opened by Start-Overlay.cmd**. Use one dashboard at a time. Edits save automatically; watch the save indicator.
+For a private LIVE Studio link, use the **local dashboard opened by Start-Overlay.cmd**. Use one dashboard at a time. Edits save automatically; watch the save indicator. The summary strip shows battle, TikFinity socket and overlay status. Use its shortcut to reach battle controls, or **Backups** in the navigation to export settings. A connected socket still does not prove TikTok is LIVE.
 
 Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battle (reference-inspired), Studio Glass, Neon Arcade, Golden Arena, Stadium or Mono Minimal. Styles set colors, fonts, sizes and VS appearance; competitors, photos, scores, gifts and visibility settings stay unchanged. Fine-tune afterward under Text & style.
 
@@ -108,7 +108,7 @@ Normal use does not need Adapter input / diagnostics. Use Simulate gift. Do not 
 | Declare winner | Stop scoring and mark the leader. A tie has no leading crown. |
 | Reset scores | Apply starting scores. Pause first to avoid gifts during the reset. Mappings and duplicate protection stay. |
 | Add points | Select a competitor and add a positive amount manually, including while paused. |
-| Simulate gift | Select a mapped gift/quantity and test scoring. Start the battle first. |
+| Simulate gift | Choose an assigned gift and quantity; labels show its competitor and points. Start the battle first. Tests change scores silently on the display. |
 
 The bar follows the score ratio; zero versus zero starts at 50% / 50%. The crown follows the lead.
 
@@ -141,7 +141,7 @@ Follow these steps in order on your broadcast PC.
 
 **5. Prepare TikFinity.** Open Desktop, sign in to your TikFinity account, enter your TikTok **@handle** in its setup and save. Use your handle rather than display name. Keep Desktop on this PC. Its LIVE connection needs an active broadcast; game simulation works offline. Never enter TikTok passwords, cookies or stream keys into the game.
 
-**6. Add the private overlay to LIVE Studio.** In the local dashboard, wait for overlay ready/synchronized and click **Copy private overlay link**. In LIVE Studio choose your scene → Sources → + / Add source → **Link** → paste it. If dimension fields appear, enter **1080 × 1920** once; otherwise fit it to your vertical scene. Labels vary by version. Do not use the dashboard/ordinary display URL or edit the private URL.
+**6. Add the private overlay to LIVE Studio.** In the local dashboard, wait for overlay ready/synchronized and click **Copy private overlay link**. In LIVE Studio choose your scene → Sources → + / Add source → **Link** → paste it. If source/browser dimension fields appear, set the **render resolution to 1080 × 1920** once, then fit it to the vertical scene. Dragging a low-resolution source larger can make it blurry; if render-size fields are unavailable, inspect the source settings before stretching it. Labels vary by version. Do not use the dashboard/ordinary display URL or edit the private URL.
 
 **7. Verify the picture.** Change a name or simulate a mapped gift and check that LIVE Studio updates. Then Pause/Reset the test scores. If the URL is rejected, try it in another browser on this PC and record the exact error; do not disable browser security.
 
