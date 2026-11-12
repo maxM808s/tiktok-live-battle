@@ -4,12 +4,13 @@ A customizable TikTok LIVE battle game with a clean dashboard, glass-style displ
 
 **[Download Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip)** · [Open hosted dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html)
 
-**First time? Start with Tutorial 2.** Use Tutorial 1 as your dashboard reference.
+**First time? Start with Tutorial 2.** Use Tutorial 1 for dashboard controls and Tutorial 3 for updates.
 
 1. [Use the dashboard](#tutorial-1-use-the-dashboard)
 2. [First setup and going LIVE](#tutorial-2-first-setup-and-going-live)
+3. [How to update](#tutorial-3-how-to-update)
 
-Browser, simulated-gift and local-overlay tests passed. Real TikFinity gifts, Windows execution and LIVE Studio Link behavior still need the broadcast-PC test.
+Browser and simulated-event tests passed. Verify real gifts and Windows/LIVE Studio behavior on your broadcast PC.
 
 ## Tutorial 1: Use the dashboard
 
@@ -148,7 +149,24 @@ Follow these steps in order on your broadcast PC.
 
 **10. Finish and return next time.** Declare the winner or pause, disconnect the game, export settings if wanted, and end the LIVE broadcast when ready. Stop the launcher after you finish displaying. Next time, run the launcher, use its new dashboard, load/check your matchup and repeat steps 8–9. **Replace LIVE Studio's old overlay URL after every launcher restart.**
 
-**Updating your local copy — no repeated ZIP downloads**
+<details>
+<summary>Troubleshooting setup and LIVE</summary>
+
+| Problem | Check |
+|---|---|
+| Missing controls | Use the latest package and the local dashboard opened by its launcher. |
+| Copy link disabled | Keep the launcher open and wait for overlay ready. |
+| Frozen display | Check the launcher and sync status, then retry overlay sync. |
+| Gifts add no points | Confirm LIVE, TikFinity connection, Start battle, the mapped ID and completed streak. |
+| Another dashboard owns the connection | Disconnect/close the other scoring tab. |
+| Saving or capacity error | Stop scoring, export settings and resolve the reported error. |
+| TikTok low-quality warning | Check for static, blank or blurry broadcast output. The game cannot clear TikTok restrictions; appeal if mistaken. |
+
+Keep private links and backups private. Do not expose local ports or disable browser/Windows security. See [Safety notes](SECURITY.md).
+
+</details>
+
+## Tutorial 3: How to update
 
 **Install the updater once:** if your folder does not contain **Update-Game.cmd**, export your settings, close the old launcher/dashboard, download the latest Windows package above and extract it once. Then use that folder from now on.
 
@@ -166,9 +184,3 @@ The updater replaces known app files **in the same folder**. It leaves browser s
 **Need to undo an update?** Close the dashboard/launcher and double-click **Restore-Game.cmd**. It restores the one previous app copy. Start normally and replace the overlay link again. An installation failure attempts rollback automatically. If an error persists, keep your settings export and report the message.
 
 The hosted github.io dashboard updates separately; refresh it. Ordinary settings edits do not require an app update.
-
-**Quick fixes:** missing controls usually mean an old package/tab; disabled Copy link means the local launcher/dashboard is not ready; a frozen picture needs a sync/status check; no points needs an active LIVE, connected Desktop, started battle, mapped ID and finished streak. Close another scoring dashboard if it owns the connection. Read storage/launcher errors before continuing; do not change system-wide security settings, expose local ports or use administrator access merely to bypass a restriction.
-
-Keep private links/backups private. The viewing link works on this PC and expires on restart, not when your public IP changes. Backups can include viewer identifiers. The repository/browser code remain inspectable; private overlays do not hide the software. More details: [Safety notes](SECURITY.md).
-
-**TikTok “low quality content” warning:** the 10 minutes shown is the restriction duration. The notice names black, blank, static or blurry scenes; it does not identify the gift connector as the cause. Check the actual LIVE Studio output for freezing, blank sources and scaling/bitrate issues. A battle graphic by itself may be treated as static content. Use the graphic alongside meaningful live commentary, camera or gameplay, and appeal in TikTok if the restriction is mistaken. Hiding the notice, dark mode or decorative motion cannot remove a TikTok restriction.
