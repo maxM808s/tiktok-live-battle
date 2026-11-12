@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-12T16:54:47.889Z",
+  "checks": [
+    "Disabled chat voting shows no labels",
+    "Configured word appears under correct competitor",
+    "English label shows +1 point",
+    "Word label sits below gift icons",
+    "Hebrew +1 label translates",
+    "Configured word is escaped text",
+    "Visibility toggle hides word labels",
+    "Word visibility persists",
+    "Disabling chat removes labels",
+    "No script errors"
+  ],
+  "errors": []
+}

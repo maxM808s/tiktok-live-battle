@@ -1,7 +1,8 @@
 import{validateState}from'./core.js';
 export function overlaySnapshot(state){
  const s=validateState(state),ids=new Set(s.teams.flatMap(t=>t.gifts.map(g=>g.id)));
- return {...s,chatVoting:{enabled:false,words:{a:'',b:''},cooldown:10,seen:[],lastVotes:{},events:[]},connection:{session:'overlay'},seen:[],combos:{},custom:s.custom.filter(g=>ids.has(g.id)),events:(s.appearance.showEvents||s.appearance.showLastGift||s.appearance.giftReactions||s.appearance.giftRain)?s.events.filter(e=>!e.simulated&&e.delta>0).slice(0,1).map(e=>({...e,sender:s.appearance.showEvents?e.sender:''})):[]};
+ const showWords=s.chatVoting.enabled&&s.appearance.showChatWords;
+ return {...s,appearance:{...s.appearance,chatWordsEnabled:showWords,chatWordA:showWords?s.chatVoting.words.a:'',chatWordB:showWords?s.chatVoting.words.b:''},chatVoting:{enabled:false,words:{a:'',b:''},cooldown:10,seen:[],lastVotes:{},events:[]},connection:{session:'overlay'},seen:[],combos:{},custom:s.custom.filter(g=>ids.has(g.id)),events:(s.appearance.showEvents||s.appearance.showLastGift||s.appearance.giftReactions||s.appearance.giftRain)?s.events.filter(e=>!e.simulated&&e.delta>0).slice(0,1).map(e=>({...e,sender:s.appearance.showEvents?e.sender:''})):[]};
 }
 export class OverlayPublisher{
  constructor({onStatus=()=>{}}={}){this.onStatus=onStatus;this.key='';this.url='';this.pending=null;this.sending=false;this.stopped=false;this.waiters=[];this.matchSupport='unknown';this.lastPublished=null}

@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-12T16:47:13.138Z",
+  "date": "2026-11-12T16:54:30.893Z",
   "checks": [
     "Case-insensitive whole message adds exactly one point",
     "Repeated words inside a comment do not multiply votes",
@@ -10,6 +10,8 @@
     "Paused comment is not scored",
     "Paused comments cannot be awarded after resume",
     "Keyword mappings follow competitors when swapped",
+    "Only public voting words are projected to overlay appearance",
+    "Hidden words are removed from outgoing appearance data",
     "Chat identities and replay/cooldown logs are excluded from overlay",
     "Reject equivalent keywords for both competitors",
     "Validate keyword, cooldown, flag and dictionary bounds",

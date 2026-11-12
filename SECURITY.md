@@ -25,7 +25,7 @@ One .battle-backup recovery copy and the installed-version marker remain locally
 
 ## Chat voting
 
-Chat voting is opt-in. It matches entire normalized comments, awards one point, requires stable message/viewer IDs and applies a shared per-viewer cooldown. Paused and cooldown-blocked matching messages remain in replay protection. Viewer identifiers, chat vote logs and cooldown/replay tracking stay in local settings/backups and are removed from private overlay snapshots. Full comment text is not stored; only the configured matching keyword is logged. Raw chat text is never executed. Gifts and chat have separate replay limits. Real TikFinity chat behavior still needs verification on the broadcast PC.
+Chat voting is opt-in. It matches entire normalized comments, awards one point, requires stable message/viewer IDs and applies a shared per-viewer cooldown. Paused and cooldown-blocked matching messages remain in replay protection. Viewer identifiers, chat vote logs and cooldown/replay tracking stay in local settings/backups and are removed from private overlay snapshots. Enabled, visible voting keywords are projected into validated appearance fields for display below gift icons; hiding/disabling the labels removes those words from outgoing appearance snapshots. Full comment text is not stored; only the configured matching keyword is logged. Raw chat text is never executed. Gifts and chat have separate replay limits. Real TikFinity chat behavior still needs verification on the broadcast PC.
 
 ## What is public
 

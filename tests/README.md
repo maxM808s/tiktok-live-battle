@@ -8,7 +8,7 @@ These files are development checks, not application settings or private backups.
 | CMD/PowerShell source safety review | launcher-safety-results.json |
 | Round timing, series and localized display | modes.mjs, modes-browser.cjs, round-visibility.cjs |
 | Old-relay round support warnings | relay-compat.mjs |
-| Chat keywords, cooldowns and mock TikFinity feed | chat.mjs, chat-browser.cjs |
+| Chat keywords, cooldowns and mock TikFinity feed | chat.mjs, chat-browser.cjs, chat-labels.cjs |
 | Scoring and replay protection | core.mjs |
 | Import, appearance and privacy validation | security.mjs, privacy.mjs |
 | Gift assets, search and mappings | catalog-display.cjs, gift-slots.cjs |

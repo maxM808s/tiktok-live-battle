@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-12T16:45:46.264Z",
+  "date": "2026-11-12T16:54:59.463Z",
   "checks": [
     "Generate a cryptographic writer key",
     "Unauthenticated client cannot get overlay link",
@@ -26,6 +26,7 @@
     "Overlay without private key reveals no battle",
     "Relay preserves timed match state and deadline",
     "Round markers render across independent application storage",
+    "Private overlay shows configured chat word and +1 below gifts",
     "Chat +1 reaches private overlay without gift messages",
     "Private relay does not expose chat tracking or viewer identities",
     "No script errors in local admin or private overlay",
