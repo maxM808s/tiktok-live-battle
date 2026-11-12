@@ -23,6 +23,10 @@ One .battle-backup recovery copy and the installed-version marker remain locally
 - If points cannot be saved, LIVE ingestion stops. Resolve the error and inspect scores before reconnecting.
 - Private backups and common credential files are ignored by Git, but manual/forced uploads can still publish them.
 
+## Chat voting
+
+Chat voting is opt-in. It matches entire normalized comments, awards one point, requires stable message/viewer IDs and applies a shared per-viewer cooldown. Paused and cooldown-blocked matching messages remain in replay protection. Viewer identifiers, chat vote logs and cooldown/replay tracking stay in local settings/backups and are removed from private overlay snapshots. Full comment text is not stored; only the configured matching keyword is logged. Raw chat text is never executed. Gifts and chat have separate replay limits. Real TikFinity chat behavior still needs verification on the broadcast PC.
+
 ## What is public
 
 The repository, its history and the code delivered to browsers are inspectable. Simplifying documentation or using a private overlay URL does not prevent someone from studying or copying that code. No source-code confidentiality is claimed.

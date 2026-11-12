@@ -4,7 +4,7 @@ A customizable TikTok LIVE battle game with a clean dashboard, glass-style displ
 
 **[Download Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip)** · [Open hosted dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html)
 
-**First time? Start with Tutorial 2.** Use Tutorial 1 for dashboard controls and Tutorial 3 for updates.
+**First time? Start with Tutorial 2.** Use Tutorial 1 for dashboard controls.
 
 1. [Use the dashboard](#tutorial-1-use-the-dashboard)
 2. [First setup and going LIVE](#tutorial-2-first-setup-and-going-live)
@@ -86,7 +86,21 @@ Already assigned gifts are disabled in the picker. Remove a mapping first to mov
 </details>
 
 <details>
-<summary>5. LIVE — connect TikFinity and monitor gifts</summary>
+<summary>5. Chat +1 — choose voting words</summary>
+
+1. Open **Chat +1** and enter a different word or short phrase for each competitor. Leave one blank to disable that side's keyword.
+2. Check **Enable chat voting**, set the per-viewer cooldown (default **10 seconds**, shared across both competitors), and click **Apply chat voting**.
+3. Connect TikFinity and **Start battle**. A matching comment adds **exactly +1 point**. No separate TikFinity Action is needed.
+4. To advertise the words on the game, add them under **General → Voting instructions**.
+
+Matching ignores case and surrounding/repeated spaces, but the whole message must match: `blue` matches ` BLUE `; `blue blue` and `blue!` do not. A viewer can vote again after the cooldown. Repeated message IDs, paused comments and late timed-round comments are not awarded on replay. Keywords follow competitors when swapping sides; changing keywords does not reset scores or rounds.
+
+Expand **Test a chat vote** for a silent +1 simulation. It is labeled TEST in Recent chat votes, bypasses the real-viewer cooldown, and creates no gift message or shower. Real chat integration must be checked on your broadcast PC; events without stable message/viewer IDs are rejected. Replay/cooldown storage is bounded; export a private backup if a capacity error appears.
+
+</details>
+
+<details>
+<summary>6. LIVE — connect TikFinity and monitor gifts</summary>
 
 - Use one **Stream session label** for the current broadcast. Keep it during reconnects; change it only for a genuinely new broadcast while disconnected.
 - **Connect TikFinity** connects to Desktop on this PC. **Reconnect** retries; **Disconnect** stops receiving. Refreshing does not automatically reconnect.
@@ -99,7 +113,7 @@ Normal use does not need Adapter input / diagnostics. Use Simulate gift. Do not 
 </details>
 
 <details>
-<summary>6. Modes — timed rounds and best-of series</summary>
+<summary>7. Modes — timed rounds and best-of series</summary>
 
 Open **Modes** in the navigation. Choose **Untimed**, **Single timed round**, **Best of 3** (first to 2 wins) or **Best of 5** (first to 3 wins). Set 10–7,200 seconds per round, or use the 1/3/5/10-minute buttons. Click **Apply mode / reset match** to apply; this clears match scores and wins while preserving competitors, gifts and replay protection.
 
@@ -115,7 +129,7 @@ Keep the dashboard open to publish round results. The countdown survives reloads
 </details>
 
 <details>
-<summary>7. Battle — start, pause and reset</summary>
+<summary>8. Battle — start, pause and reset</summary>
 
 | Button | Effect |
 |---|---|
@@ -131,7 +145,7 @@ The bar follows the score ratio; zero versus zero starts at 50% / 50%. The crown
 </details>
 
 <details>
-<summary>8. Preview, overlay and backups</summary>
+<summary>9. Preview, overlay and backups</summary>
 
 - **Preview** shows the game; **Full-screen preview** enlarges it. Esc exits.
 - **Open display window** is for checking/window capture. It is not the private Link URL.

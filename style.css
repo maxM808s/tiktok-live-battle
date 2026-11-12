@@ -112,3 +112,5 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 .game.portrait-motion .team:nth-child(2) .portrait{animation-delay:calc(var(--motion-phase,0s) - 2s)}
 .game.gift-motion .pill:nth-child(even) img{animation-delay:calc(var(--motion-phase,0s) - 1.3s)}
 .game.ambient-motion .orb.two{animation-delay:calc(var(--motion-phase,0s) - 10s)}
+
+#chat-voting .event-list p{overflow-wrap:anywhere}#chat-voting{scroll-margin-top:110px}

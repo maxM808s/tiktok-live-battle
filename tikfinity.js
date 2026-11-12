@@ -25,14 +25,25 @@ export function normalizeTikFinity(message,session){
  }
  return {event};
 }
+// Chat envelope documented by TikFinity; content is the newer upstream field.
+export function normalizeTikFinityChat(message,session){
+ if(!message||message.event!=='chat')return{ignored:true};
+ const d=message.data;if(!d||typeof d!=='object'||Array.isArray(d))return{error:'Invalid chat payload'};
+ const comment=d.comment??d.content,msgId=d.msgId??d.common?.msgId,user=d.uniqueId??d.user?.uniqueId??d.user?.displayId??d.userId??d.user?.userId;
+ if(typeof comment!=='string'||!comment.trim()||comment.length>1000)return{error:'Invalid or oversized chat comment'};
+ if(!identifier(msgId)||!String(msgId).trim())return{error:'Chat has no stable msgId; vote not counted to prevent replay'};
+ if(!identifier(user)||!String(user).trim())return{error:'Chat has no stable viewer identifier; vote not counted'};
+ if(typeof session!=='string'||!session.trim()||session.length>100)return{error:'Set a stream session label first'};
+ return{event:{comment,eventId:String(msgId),sessionId:'tikfinity:'+session.trim(),sender:String(user)}};
+}
 export class TikFinityConnection{
  constructor({onStatus=()=>{},onMessage=()=>{},WebSocketClass=globalThis.WebSocket,setTimer=(fn,ms)=>globalThis.setTimeout(fn,ms),clearTimer=id=>globalThis.clearTimeout(id)}={}){this.onStatus=onStatus;this.onMessage=onMessage;this.Socket=WebSocketClass;this.setTimer=setTimer;this.clearTimer=clearTimer;this.active=false;this.attempt=0;this.timer=null;this.openTimer=null;this.socket=null;this.generation=0}
  connect(){this.disconnect(false);this.active=true;this.attempt=0;this.open()}
  open(){if(!this.active)return;const generation=++this.generation;this.onStatus('connecting','Connecting to TikFinity Desktop…');let socket;
   try{socket=new this.Socket(TIKFINITY_URL);this.socket=socket}catch{this.retry(generation);return}
   const timeout=this.openTimer=this.setTimer(()=>{if(generation===this.generation&&socket.readyState!==1){socket.close();this.retry(generation)}},8000);
-  socket.onopen=()=>{this.clearTimer(timeout);if(this.openTimer===timeout)this.openTimer=null;if(!this.active||generation!==this.generation){socket.close();return}this.attempt=0;this.onStatus('connected','Socket connected — waiting for TikFinity gift events')};
-  socket.onmessage=e=>{if(!this.active||generation!==this.generation)return;if(typeof e.data!=='string'||e.data.length>256000){this.onStatus('warning','Oversized or unsupported event ignored');return}let message;try{message=JSON.parse(e.data)}catch{this.onStatus('warning','Malformed event ignored');return}try{this.onMessage(message)}catch{this.disconnect(false);this.onStatus('error','Gift processing failed. Check settings before reconnecting.')}};
+  socket.onopen=()=>{this.clearTimer(timeout);if(this.openTimer===timeout)this.openTimer=null;if(!this.active||generation!==this.generation){socket.close();return}this.attempt=0;this.onStatus('connected','Socket connected — waiting for TikFinity events')};
+  socket.onmessage=e=>{if(!this.active||generation!==this.generation)return;if(typeof e.data!=='string'||e.data.length>256000){this.onStatus('warning','Oversized or unsupported event ignored');return}let message;try{message=JSON.parse(e.data)}catch{this.onStatus('warning','Malformed event ignored');return}try{this.onMessage(message)}catch{this.disconnect(false);this.onStatus('error','LIVE event processing failed. Check settings before reconnecting.')}};
   socket.onerror=()=>{if(generation===this.generation)this.onStatus('error','Cannot reach TikFinity. Open its Desktop app and check browser local-network permissions.')};
   socket.onclose=()=>{this.clearTimer(timeout);if(this.openTimer===timeout)this.openTimer=null;this.retry(generation)};
  }

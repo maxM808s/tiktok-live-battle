@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-12T16:44:08.480Z",
+  "checks": [
+    "Chat settings apply without resetting the battle",
+    "Mock chat awards +1 without gift effects",
+    "Per-viewer cooldown applies across teams",
+    "Newer chat payload scores the Hebrew keyword",
+    "Replayed chat does not score twice",
+    "Chat simulator stays silent on display",
+    "Chat simulator is identified in dashboard",
+    "Viewer names are escaped in chat log",
+    "Chat keywords persist on reload",
+    "Mobile chat settings fit",
+    "No script errors"
+  ],
+  "errors": [],
+  "actualTikFinityChatVerified": false
+}
