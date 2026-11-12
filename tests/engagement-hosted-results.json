@@ -1,0 +1,17 @@
+{
+  "checks": [
+    "Nine fonts available",
+    "VS shape and custom label synchronize",
+    "Simulation reaction labeled TEST",
+    "Simulation does not replace last real gift",
+    "Real gift reaction appears",
+    "Last gift relative time advances without rerender",
+    "Hebrew last-gift translation",
+    "Reload does not replay a saved reaction",
+    "Font saved",
+    "Mobile editor fits",
+    "Private overlay retains last real gift behind newer test",
+    "No script errors"
+  ],
+  "errors": []
+}
