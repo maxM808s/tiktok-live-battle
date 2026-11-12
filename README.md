@@ -8,7 +8,7 @@ A customizable TikTok LIVE battle game with a clean dashboard, glass-style displ
 
 1. [Use the dashboard](#tutorial-1-use-the-dashboard)
 2. [First setup and going LIVE](#tutorial-2-first-setup-and-going-live)
-3. [How to update](#tutorial-3-how-to-update)
+
 
 Browser and simulated-event tests passed. Verify real gifts and Windows/LIVE Studio behavior on your broadcast PC.
 
