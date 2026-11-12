@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-12T11:09:08.176Z",
+  "date": "2026-11-12T14:38:52.231Z",
   "checks": [
     "Generate a cryptographic writer key",
     "Unauthenticated client cannot get overlay link",
@@ -24,6 +24,8 @@
     "State snapshots contain no relay credentials",
     "Launcher output does not log private links or keys",
     "Overlay without private key reveals no battle",
+    "Relay preserves timed match state and deadline",
+    "Round markers render across independent application storage",
     "No script errors in local admin or private overlay",
     "Restart rotates private keys",
     "Old overlay link is revoked on restart"

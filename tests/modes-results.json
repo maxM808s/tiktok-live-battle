@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-12T14:39:43.943Z",
+  "checks": [
+    "Deadline ends first round, awards one win and pauses scoring",
+    "Expired round is finalized only once",
+    "Gifts after the deadline do not score",
+    "Next round resets scores and preserves replay protection",
+    "Pause freezes remaining time",
+    "Resume preserves the paused duration",
+    "Best of 3 finishes at two wins even after sides swap",
+    "Completed series survives save/reload",
+    "Completed match cannot accidentally restart",
+    "Ties award no win",
+    "Tied round replays at the same round number",
+    "Gift path enforces deadline before delayed timer callback",
+    "Best of 5 finishes at three wins",
+    "Running deadline survives reload",
+    "Language changes preserve countdown",
+    "Legacy settings migrate to untimed mode",
+    "Reject invalid durations, wins, deadlines, phases and inconsistent rounds"
+  ]
+}

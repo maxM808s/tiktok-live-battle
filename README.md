@@ -99,14 +99,30 @@ Normal use does not need Adapter input / diagnostics. Use Simulate gift. Do not 
 </details>
 
 <details>
-<summary>6. Battle — start, pause and reset</summary>
+<summary>6. Modes — timed rounds and best-of series</summary>
+
+Open **Modes** in the navigation. Choose **Untimed**, **Single timed round**, **Best of 3** (first to 2 wins) or **Best of 5** (first to 3 wins). Set 10–7,200 seconds per round, or use the 1/3/5/10-minute buttons. Click **Apply mode / reset match** to apply; this clears match scores and wins while preserving competitors, gifts and replay protection.
+
+- **Start battle** starts/resumes the countdown. **Pause** freezes the remaining time.
+- At zero, scoring stops and the round leader earns one win. **End round now** ends a round early.
+- **Prepare next round** resets round scores to starting values. Press Start when ready.
+- A tie awards no win. **Replay tied round** keeps the same round number.
+- The series finishes when a competitor reaches the required wins. **Reset match** starts a fresh series. Loading a competitor preset also resets the series.
+- Win markers follow competitor identities when swapping sides. Language/style changes preserve the timer and wins.
+
+Keep the dashboard open to publish round results. The countdown survives reloads; a running clock continues while the page is closed. Gifts are accepted when processed before the deadline; a streak completing afterward is not awarded to that round. Paused/late gifts stay in replay protection and are not reassigned to a later round.
+
+</details>
+
+<details>
+<summary>7. Battle — start, pause and reset</summary>
 
 | Button | Effect |
 |---|---|
 | Start battle | Start/resume scoring without resetting scores. |
 | Pause | Ignore completed gift events until resumed. |
-| Declare winner | Stop scoring and mark the leader. A tie has no leading crown. |
-| Reset scores | Apply starting scores. Pause first to avoid gifts during the reset. Mappings and duplicate protection stay. |
+| Declare winner / End round now | Stop scoring and mark the leader; timed modes also record the round result. |
+| Reset scores / Reset match | Untimed: apply starting scores. Timed: pause and clear the full series, timer and wins. Mappings and duplicate protection stay. |
 | Add points | Select a competitor and add a positive amount manually, including while paused. |
 | Simulate gift | Choose an assigned gift and quantity; labels show its competitor and points. Start the battle first. Tests change scores silently on the display. |
 
@@ -115,7 +131,7 @@ The bar follows the score ratio; zero versus zero starts at 50% / 50%. The crown
 </details>
 
 <details>
-<summary>7. Preview, overlay and backups</summary>
+<summary>8. Preview, overlay and backups</summary>
 
 - **Preview** shows the game; **Full-screen preview** enlarges it. Esc exits.
 - **Open display window** is for checking/window capture. It is not the private Link URL.

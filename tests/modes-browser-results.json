@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-12T14:41:35.847Z",
+  "checks": [
+    "Legacy untimed display has no round banner",
+    "Best of 3 shows two win markers per competitor",
+    "Real countdown ends round and updates win marker automatically",
+    "Next round clears round score",
+    "Paused countdown remains stable",
+    "Paused rounds ignore test gifts",
+    "Second win finishes series",
+    "Hebrew round and winner labels",
+    "Series result survives reload",
+    "Reset match clears wins",
+    "Mobile mode controls fit",
+    "No browser script errors"
+  ],
+  "errors": []
+}

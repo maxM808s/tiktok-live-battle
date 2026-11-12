@@ -6,6 +6,7 @@ These files are development checks, not application settings or private backups.
 | --- | --- |
 | Local updates, cleanup and rollback | updater.ps1 |
 | CMD/PowerShell source safety review | launcher-safety-results.json |
+| Round timing, series and localized display | modes.mjs, modes-browser.cjs |
 | Scoring and replay protection | core.mjs |
 | Import, appearance and privacy validation | security.mjs, privacy.mjs |
 | Gift assets, search and mappings | catalog-display.cjs, gift-slots.cjs |

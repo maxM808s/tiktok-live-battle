@@ -105,7 +105,9 @@ function Handle-Request($Stream) {
             })
             $custom = @(foreach ($gift in $data.custom) { Select-OverlayFields $gift @('id','name','coins','image') })
             $events = @(foreach ($event in $data.events) { Select-OverlayFields $event @('giftId','sender','delta','points','team','time','simulated') })
-            $safe = [ordered]@{version=1;lang=$data.lang;title=$data.title;brand=$data.brand;instructions=$data.instructions;logo=$data.logo;animations=$data.animations;running=$data.running;finished=$data.finished;appearance=$data.appearance;teams=$teams;custom=$custom;events=$events;seen=@();combos=@{};connection=@{session='overlay'}}
+            $match = $null
+            if ($null -ne $data.match) { $match = Select-OverlayFields $data.match @('mode','duration','round','remainingMs','deadline','phase','roundWinner','winner'); $match['wins'] = Select-OverlayFields $data.match.wins @('a','b') }
+            $safe = [ordered]@{version=1;match=$match;lang=$data.lang;title=$data.title;brand=$data.brand;instructions=$data.instructions;logo=$data.logo;animations=$data.animations;running=$data.running;finished=$data.finished;appearance=$data.appearance;teams=$teams;custom=$custom;events=$events;seen=@();combos=@{};connection=@{session='overlay'}}
             $snapshot = ConvertTo-Json -InputObject $safe -Depth 30 -Compress
             if ($snapshot -cne $script:Snapshot) { $script:Snapshot = $snapshot; $script:Revision++ }
             Reply-Text $Stream 200 '{"saved":true}'; return
