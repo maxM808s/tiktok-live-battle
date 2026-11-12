@@ -12,6 +12,8 @@ These files are development checks, not application settings or private backups.
 | Local relay authorization and synchronization | overlay-relay.cjs |
 | TikFinity normalization and mock connection | tikfinity.mjs, tikfinity-browser.cjs |
 
+The updater has both synthetic failure/recovery checks (updater-results.json) and a real GitHub archive check (updater-live-results.json), run in PowerShell 7 on Linux. The Windows CMD and PowerShell 5.1 path still needs the broadcast-PC test.
+
 Result JSON files describe their own scope and date where recorded. Hosted results cover the public site at test time. Screenshots are visual references and may show earlier designs. A passing simulated/browser test does not verify real TikFinity gifts, Windows PowerShell 5.1 or TikTok LIVE Studio on the broadcast PC.
 
 Never commit real private overlay URLs, credentials or user settings exports here.

@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-12T11:11:23.3598427Z",
+  "version": "1b617f0a8e408a45489ad92c1d30328334873d5b",
+  "realGitHubDownload": true,
+  "archiveValidation": true,
+  "inPlaceInstall": true,
+  "repeatIsNoOp": true,
+  "singleBackup": true,
+  "userFilePreserved": true,
+  "scope": "PowerShell 7 on Linux with the actual public GitHub API and archive; Windows 5.1 and interactive CMD launch remain unverified"
+}
