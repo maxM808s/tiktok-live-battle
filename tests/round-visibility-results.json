@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-12T14:50:26.929Z",
+  "checks": [
+    "Unapplied mode selection is clearly labeled",
+    "Start cannot silently use an unapplied selection",
+    "Modes panel shows the applied countdown",
+    "Modes panel shows the applied round",
+    "Reloaded embedded game preview shows rounds",
+    "Embedded game preview shows timer",
+    "Modes-panel Start runs the countdown",
+    "Modes-panel Pause freezes timer",
+    "No script errors"
+  ],
+  "errors": []
+}

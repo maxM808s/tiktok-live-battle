@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-12T14:51:02.818Z",
+  "checks": [
+    "Legacy relay warns when round state is missing",
+    "Verification uses authenticated read-only viewer key",
+    "Missing mode support does not stop score synchronization",
+    "Status messages reveal no keys",
+    "Updated relay confirms round support",
+    "Confirmed support avoids repeated snapshot reads"
+  ]
+}
