@@ -87,3 +87,28 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 
 .mode-countdown{margin:18px 0;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--field);display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}.mode-countdown[hidden]{display:none}.mode-countdown strong{font-size:42px;line-height:1.1;font-variant-numeric:tabular-nums;color:var(--ink)}.mode-countdown span{font-size:12px;color:var(--secondary)}#match-draft-notice{margin-top:18px}.preview-modes-link{width:100%;margin-top:10px;text-align:center}
 #overlay-status[data-state=outdated]{color:#9c5328;font-weight:650}[data-dashboard-mode=dark] #overlay-status[data-state=outdated]{color:#ffc483}
+
+/* Decorative motion is independent of portrait crop/zoom and scoring. */
+.game{--portrait-drift:.6cqw;--portrait-period:6s;--gift-period:3.8s;--gift-rise:.65cqw;--gift-turn:6deg}
+.game[data-motion=calm]{--portrait-drift:.3cqw;--portrait-period:9s;--gift-period:5.5s;--gift-rise:.35cqw;--gift-turn:3deg}
+.game[data-motion=energetic]{--portrait-drift:.95cqw;--portrait-period:4.5s;--gift-period:2.8s;--gift-rise:1cqw;--gift-turn:9deg}
+.game.portrait-motion .portrait{animation:portrait-float var(--portrait-period) ease-in-out infinite}.game.portrait-motion .team:nth-child(2) .portrait{animation-delay:-2s}
+@keyframes portrait-float{0%,100%{translate:0 0}50%{translate:0 calc(-1 * var(--portrait-drift))}}
+.game.gift-motion .pill img{animation:gift-sway var(--gift-period) ease-in-out infinite}.game.gift-motion .pill:nth-child(even) img{animation-delay:-1.3s}
+@keyframes gift-sway{0%,100%{translate:0 0;rotate:calc(-1 * var(--gift-turn))}50%{translate:0 calc(-1 * var(--gift-rise));rotate:var(--gift-turn)}}
+.game.ambient-motion .orb{animation:ambient-drift 22s ease-in-out infinite alternate}.game.ambient-motion .orb.two{animation-delay:-10s}
+@keyframes ambient-drift{from{translate:0 0}to{translate:10cqw -7cqw}}
+.game.ambient-motion .track{position:relative}.game.ambient-motion .track:after{content:'';pointer-events:none;position:absolute;inset:0 auto 0 -30%;width:22%;background:linear-gradient(90deg,transparent,#ffffff35,transparent);animation:bar-sweep 7s ease-in-out infinite}
+@keyframes bar-sweep{0%,25%{translate:0 0}85%,100%{translate:650% 0}}
+.game.leader-motion .team.is-leading .leader{animation:crown-float 3s ease-in-out infinite}
+@keyframes crown-float{0%,100%{translate:0 0;text-shadow:0 0 .5cqw #ffe49b30}50%{translate:0 -.35cqw;text-shadow:0 0 1.5cqw #ffe49b99}}
+.game .team{position:relative}.gift-shower{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none;border-radius:inherit}.gift-shower img{position:absolute;bottom:8%;width:9cqw;height:9cqw;object-fit:contain;opacity:0;animation:received-gift-rise 2.2s ease-out both;animation-delay:var(--particle-delay)}
+@keyframes received-gift-rise{0%{opacity:0;translate:0 0;scale:.6;rotate:-10deg}15%{opacity:1;scale:1}80%{opacity:.9}100%{opacity:0;translate:var(--particle-sway) -65cqw;scale:.85;rotate:15deg}}
+.game.still .track:after{animation:none!important;display:none}.game.still .gift-shower{display:none}
+@media(prefers-reduced-motion:reduce){.game .portrait,.game .pill img,.game .orb,.game .team.is-leading .leader,.game .track:after,.game .gift-shower img{animation:none!important;translate:none;rotate:none}.game .track:after,.game .gift-shower{display:none}}
+
+/* Keep decorative loops in phase across score/settings redraws. */
+.game.portrait-motion .portrait,.game.gift-motion .pill img,.game.ambient-motion .orb,.game.leader-motion .team.is-leading .leader,.game .vs-motion{animation-delay:var(--motion-phase,0s)}
+.game.portrait-motion .team:nth-child(2) .portrait{animation-delay:calc(var(--motion-phase,0s) - 2s)}
+.game.gift-motion .pill:nth-child(even) img{animation-delay:calc(var(--motion-phase,0s) - 1.3s)}
+.game.ambient-motion .orb.two{animation-delay:calc(var(--motion-phase,0s) - 10s)}

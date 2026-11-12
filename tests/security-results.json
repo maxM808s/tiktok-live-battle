@@ -13,6 +13,8 @@
     "Reject appearance CSS injection",
     "Reject unapproved font values",
     "Reject nonboolean design visibility",
+    "Reject arbitrary motion values",
+    "Require boolean gift effect flag",
     "Require boolean VS animation setting",
     "Reject unapproved display styles",
     "Reject VS color injection",
@@ -26,7 +28,8 @@
     "Reject structured event identifiers",
     "Normalize streak dictionary without a prototype",
     "Recover safely from malformed browser storage",
-    "Use prototype-free preset dictionaries"
+    "Use prototype-free preset dictionaries",
+    "Legacy disabled gift reactions do not silently enable showers"
   ],
-  "date": "2026-11-12T14:40:46.281Z"
+  "date": "2026-11-12T15:40:00.216Z"
 }
