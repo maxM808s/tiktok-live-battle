@@ -13,6 +13,12 @@
     "Reject appearance CSS injection",
     "Reject unapproved font values",
     "Reject nonboolean design visibility",
+    "Reject VS color injection",
+    "Reject unapproved VS shapes",
+    "Bound VS label length",
+    "Reject inherited font keys",
+    "Require boolean last-gift visibility",
+    "Require boolean reaction settings",
     "Keep uploaded and bundled images supported",
     "Allowlist event fields and escape text",
     "Reject structured event identifiers",
@@ -20,5 +26,5 @@
     "Recover safely from malformed browser storage",
     "Use prototype-free preset dictionaries"
   ],
-  "date": "2026-11-11T23:59:09.682Z"
+  "date": "2026-11-12T00:05:49.244Z"
 }

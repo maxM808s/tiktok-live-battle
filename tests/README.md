@@ -1,0 +1,16 @@
+# Verification records
+
+These files are development checks, not application settings or private backups.
+
+| Area | Check |
+| --- | --- |
+| Scoring and replay protection | core.mjs |
+| Import, appearance and privacy validation | security.mjs, privacy.mjs |
+| Gift assets, search and mappings | catalog-display.cjs, gift-slots.cjs |
+| Typography, themes, activity and VS controls | design.cjs, engagement.cjs, night-mode.cjs |
+| Local relay authorization and synchronization | overlay-relay.cjs |
+| TikFinity normalization and mock connection | tikfinity.mjs, tikfinity-browser.cjs |
+
+Result JSON files describe their own scope and date where recorded. Hosted results cover the public site at test time. Screenshots are visual references and may show earlier designs. A passing simulated/browser test does not verify real TikFinity gifts, Windows PowerShell 5.1 or TikTok LIVE Studio on the broadcast PC.
+
+Never commit real private overlay URLs, credentials or user settings exports here.

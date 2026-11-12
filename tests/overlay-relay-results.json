@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T19:52:23.668Z",
+  "date": "2026-11-12T00:07:07.772Z",
   "checks": [
     "Generate a cryptographic writer key",
     "Unauthenticated client cannot get overlay link",
@@ -20,7 +20,7 @@
     "Synchronize names and scores across independent browser contexts",
     "Synchronize Hebrew direction without shared storage",
     "Do not transmit replay history or stream session label",
-    "Hide sender data from snapshot when event display is disabled",
+    "Hide sender names while retaining enabled gift indicators",
     "State snapshots contain no relay credentials",
     "Launcher output does not log private links or keys",
     "Overlay without private key reveals no battle",

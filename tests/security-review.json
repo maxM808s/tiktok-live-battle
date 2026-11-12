@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-12T00:06:08.524Z",
+  "scope": "Current workspace text files only; reachable GitHub history was not rescanned in this pass. Pattern scan does not prove absence of every secret.",
+  "filesScanned": 52,
+  "credentialPatternMatches": [],
+  "publicRepositoryPathCheck": {
+    "paths": 206,
+    "suspiciousCredentialOrBackupPaths": []
+  },
+  "documentation": {
+    "tutorials": 2,
+    "expandableSections": 7,
+    "brokenLocalLinks": []
+  }
+}

@@ -4,7 +4,7 @@ For everyday use, see the [README](../README.md).
 
 ## Gift artwork
 
-The bundled library contains 80 observed gift entries. Metadata came from the [public catalog snapshot](https://github.com/antiops/tiktok-trending-data/blob/main/live-gift-details.json); artwork was retrieved from TikTok's CDN. Gift names and artwork belong to their respective owners. This tool is unofficial.
+The bundled library contains 154 observed gift entries. Metadata came from the [public catalog snapshot](https://github.com/antiops/tiktok-trending-data/blob/main/live-gift-details.json); artwork was retrieved from TikTok's CDN. Gift names and artwork belong to their respective owners. This tool is unofficial.
 
 Availability, IDs and coin values can vary or change. Verify them in your current TikFinity/TikTok setup before streaming.
 
