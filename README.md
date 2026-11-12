@@ -184,24 +184,6 @@ Keep private links and backups private. Do not expose local ports or disable bro
 
 </details>
 
-## Tutorial 3: How to update
-
-**Clone once, then update the same folder. No repeated ZIP downloads, VS Code or terminal commands needed.**
-
-**One-time setup**
-
-1. Install [GitHub Desktop](https://desktop.github.com/) and sign in.
-2. Choose **File → Clone repository → GitHub.com** and select **maxM808s/tiktok-live-battle**. If it is not listed, use the **URL** tab and enter `https://github.com/maxM808s/tiktok-live-battle`.
-3. Choose a new, empty folder on your PC and click **Clone**. Keep the branch set to **main**.
-4. Choose **Repository → Show in Explorer**. From now on, run **Start-Overlay.cmd** from this folder. Export settings from your old dashboard before switching; restore them in the new local dashboard if needed.
-
-**Every future update**
-
-1. Finish the broadcast, export your settings, and close the dashboard and launcher.
-2. Open GitHub Desktop and select **tiktok-live-battle → main**.
-3. Click **Fetch origin**, then **Pull origin** if it appears. If there is nothing to pull, you are up to date.
-4. Open the same folder and run **Start-Overlay.cmd**. Check your settings and copy the new private overlay link into LIVE Studio.
-
 **Important:** use GitHub Desktop for this folder, not Update-Game.cmd. If Desktop reports local changes or conflicts, stop and review them rather than discarding files blindly. Pulling includes Windows CMD/PowerShell scripts; review changes to those files in **History** before running them. Keep Windows Security enabled.
 
 Changes must be published to **main** before you can pull them. Browser settings stay separate from Git; keep private exports outside the repository. The hosted github.io dashboard only needs a refresh.
