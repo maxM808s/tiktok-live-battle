@@ -1,5 +1,6 @@
 // Design values use pixels on the 1080px-wide broadcast canvas.
 export const fontChoices={system:{label:'System · clean',css:'-apple-system, BlinkMacSystemFont, "Segoe UI", Arial, "Noto Sans Hebrew", sans-serif'},rounded:{label:'Friendly · Trebuchet',css:'"Trebuchet MS", Arial, sans-serif'},serif:{label:'Classic · Georgia',css:'Georgia, "Times New Roman", serif'},arial:{label:'Arial · neutral',css:'Arial, "Noto Sans Hebrew", sans-serif'},verdana:{label:'Verdana · wide',css:'Verdana, Arial, sans-serif'},tahoma:{label:'Tahoma · compact / Hebrew',css:'Tahoma, Arial, sans-serif'},impact:{label:'Impact · bold display',css:'Impact, "Arial Black", Arial, sans-serif'},mono:{label:'Monospace · technical',css:'"Courier New", Courier, monospace'},times:{label:'Times · editorial',css:'"Times New Roman", Times, serif'}};
+Object.assign(fontChoices,{black:{label:'Arial Black · heavyweight',css:'"Arial Black", Arial, "Noto Sans Hebrew", sans-serif'},condensed:{label:'Condensed · narrow headlines',css:'"Bahnschrift Condensed", "Arial Narrow", Impact, Arial, sans-serif'},humanist:{label:'Humanist · soft modern',css:'Candara, Calibri, "Segoe UI", Arial, sans-serif'},book:{label:'Book · elegant serif',css:'Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif'},hebrewSerif:{label:'David · Hebrew serif',css:'David, "Noto Serif Hebrew", Georgia, serif'},hebrewSans:{label:'Miriam · Hebrew sans',css:'Miriam, "Noto Sans Hebrew", Tahoma, Arial, sans-serif'}});
 export const designFields={
  vsSize:{label:'VS text',min:16,max:70,value:38},
  vsBadgeSize:{label:'VS badge',min:64,max:160,value:100},
@@ -38,6 +39,11 @@ export const battleStyles={
  sports:{label:'Stadium',description:'Red versus blue with compact squared panels and a scoreboard feel.',colors:['#ef4444','#2687ff'],values:{...designThemes.original,layoutStyle:'sports',panelA:'#ef4444',panelB:'#2687ff',background:'#07121b',glow:'#173d48',font:'tahoma',weight:900,titleSize:94,nameSize:48,scoreSize:110,portraitSize:367,vsSize:46,vsBadgeSize:120,vsStyle:'minimal',vsColor:'#ffffff',vsBackgroundColor:'#142333'}},
  minimal:{label:'Mono Minimal',description:'Quiet black-and-white panels, thin borders and crisp numbers.',colors:['#c4c4c4','#686868'],values:{...designThemes.monochrome,layoutStyle:'minimal',font:'system',weight:600,titleSize:82,nameSize:42,scoreSize:90,portraitSize:350,vsSize:34,vsBadgeSize:86,vsStyle:'minimal',vsColor:'#ffffff',vsBackgroundColor:'#222222'}}
 };
+Object.assign(battleStyles,{
+ poster:{label:'Bold Poster',description:'Hard-offset frames, oversized type and ticket-shaped gift labels.',colors:['#fb923c','#60a5fa'],values:{...battleStyles.sports.values,layoutStyle:'poster',font:'black',panelA:'#fb923c',panelB:'#60a5fa',background:'#15121b',glow:'#2b203a',vsStyle:'diamond',scoreSize:110}},
+ blueprint:{label:'Blueprint',description:'Technical grid, dashed portrait rings and instrument-style score displays.',colors:['#2dd4bf','#60a5fa'],values:{...battleStyles.minimal.values,layoutStyle:'blueprint',font:'mono',panelA:'#2dd4bf',panelB:'#60a5fa',background:'#04121e',glow:'#0e3144',panelColors:true,vsStyle:'minimal',scoreSize:100}},
+ editorial:{label:'Editorial',description:'Open columns, fine dividers, serif headlines and clean underlined scores.',colors:['#d4b895','#9daec9'],values:{...battleStyles.gold.values,layoutStyle:'editorial',font:'book',panelA:'#d4b895',panelB:'#9daec9',background:'#121318',glow:'#262731',titleSize:88,scoreSize:100,vsStyle:'minimal'}}
+});
 export function validateAppearance(v){
  let out=appearanceDefaults();if(v===undefined)return out;
  if(!record(v))throw Error('Invalid appearance settings');

@@ -42,3 +42,5 @@ New appearance controls use fixed font/shape lists, bounded sizes/text and valid
 Checks cover unsafe imports/rendering, duplicate scoring, connection cleanup, storage failures and private-overlay access. The local overlay was tested with separate browser profiles to confirm synchronization without shared storage. Credential-pattern scans found no matches within their recorded scope; that is not proof that every possible secret or private datum is absent.
 
 Real TikFinity traffic, Windows PowerShell execution and actual LIVE Studio behavior still require verification on the broadcast PC. Report suspected exposures privately without posting keys or private backups in a public issue.
+
+The latest design update adds only local CSS and fixed font stacks. Its scoped credential-pattern scan and validation summary are in [design security review](tests/design-security-review.json). No new external scripts, font services, or launcher commands were added.

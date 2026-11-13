@@ -26,3 +26,5 @@ Never commit real private overlay URLs, credentials or user settings exports her
 Broadcast window: `capture-window.cjs` verifies the dedicated popup, hidden controls, keyboard restore, fullscreen failure, same-browser language sync, 9:16 sizing, portrait fallback and catalog-loading errors. Windows capture selection still requires a test on the broadcast PC.
 
 Movement levels: `movement-buttons.cjs` covers the visible Off/Little/Medium/High controls, VS travel distance, checkbox synchronization, existing effect switches, reduced motion, score preservation and mobile fit.
+
+The styles browser checks cover all nine looks, Hebrew layout, preservation of game state, dark primary/upload controls, the bilingual font sample and mobile dialogs. `design-security-review.json` records the current-file credential scan scope; it is not an antivirus or full-history scan.

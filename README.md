@@ -18,7 +18,7 @@ Use **☾ Night mode** at the top for a black-and-white dashboard. The choice st
 
 For a private LIVE Studio link, use the **local dashboard opened by Start-Overlay.cmd**. Use one dashboard at a time. Edits save automatically; watch the save indicator. The summary strip shows battle, TikFinity socket and overlay status. Use its shortcut to reach battle controls, or **Backups** in the navigation to export settings. A connected socket still does not prove TikTok is LIVE.
 
-Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battle (reference-inspired), Studio Glass, Neon Arcade, Golden Arena, Stadium or Mono Minimal. Styles set colors, fonts, sizes and VS appearance; competitors, photos, scores, gifts and visibility settings stay unchanged. Fine-tune afterward under Text & style.
+Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battle (reference-inspired), Studio Glass, Neon Arcade, Golden Arena, Stadium, Mono Minimal, Bold Poster, Blueprint or Editorial. Styles set colors, fonts, sizes and VS appearance; competitors, photos, scores, gifts and visibility settings stay unchanged. Fine-tune afterward under Text & style.
 
 The preview also has **Reload preview** for a stuck preview and **Adjust movement** for a quick jump to animation controls. Reloading the preview does not reset the battle.
 
@@ -49,7 +49,8 @@ Your custom writing is not automatically translated. Optional competitor transla
 - **Text colors & background:** adjust individual colors, glow and panel colors. Turn **Use appearance colors for competitor panels** off to show each competitor's own saved gradient.
 - **VS badge & gift reactions:** choose Glass, Solid circle, Diamond or Minimal; edit its label, colors and text/badge sizes. Enable gift spotlights for a brief gift/quantity/points banner. Use **Gentle VS movement** for a subtle floating badge. The main animation switch and reduced-motion preference control motion.
 - **Last gift received:** shows the most recent real gift and time since receipt. Simulated gifts update scores but show no gift banner or sender message, and do not replace this indicator. Real gift messages show the sender when Recent gift sender is enabled.
-- **Fonts:** nine installed-font stacks with fallbacks; appearance can vary by PC, so preview English and Hebrew before LIVE.
+- **Structural styles:** Bold Poster uses square offset frames and ticket labels; Blueprint adds a technical grid, dashed rings and score strips; Editorial uses open columns, fine dividers and underlined scores. Portraits stay circular.
+- **Fonts:** 15 installed-font stacks with fallbacks; appearance can vary by PC. Use the bilingual font sample and game preview to check English, Hebrew and numbers before LIVE. Fonts are not downloaded from third-party services.
 - **Show / hide elements:** control branding, title, instructions, subtitles, sender, gifts and Points labels.
 - **Reset appearance** resets the design without erasing scores, names, photos or gift mappings.
 

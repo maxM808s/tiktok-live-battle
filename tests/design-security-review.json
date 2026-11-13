@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-13T10:37:47.585Z",
+  "scope": "Current runtime, Windows launch/update scripts and README; pattern scan, not antivirus or full-history audit",
+  "scanned": [
+    "admin.js",
+    "core.js",
+    "display.js",
+    "relay.js",
+    "overlay.js",
+    "tikfinity.js",
+    "admin.html",
+    "index.html",
+    "overlay.html",
+    "Start-Overlay.cmd",
+    "Start-Overlay.ps1",
+    "Update-Game.cmd",
+    "Update-Game.ps1",
+    "Restore-Game.cmd",
+    "README.md"
+  ],
+  "credentialPatternFindings": [],
+  "newExternalResources": false,
+  "validation": "30 security, 7 privacy, 22 chat checks passed. Fonts and style names remain allowlisted; no arbitrary CSS or font URL imports."
+}
