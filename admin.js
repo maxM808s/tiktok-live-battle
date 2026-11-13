@@ -63,7 +63,16 @@ $('#gift-dialog').addEventListener('keydown',e=>{if(e.key==='Escape'){e.preventD
 setInterval(()=>{if(matchSaveBlocked)return;if(advanceMatch(s)){if(commit()){status();toast(s.match.roundWinner==='tie'?'Round tied. Replay when ready.':'Round ended. Scoring stopped.')}else matchSaveBlocked=true}else matchStatus()},250);
 
 // Open a reusable, separately capturable game window without passing relay keys.
-$('#open-display').addEventListener('click',e=>{e.preventDefault();const height=Math.max(400,Math.min(1920,screen.availHeight-100)),width=Math.round(height*9/16);const win=window.open('index.html?capture=1','battle-display','popup=yes,width='+width+',height='+height);if(win){win.focus();toast('Game window opened. Choose Window Capture in LIVE Studio and keep this dashboard open.')}else toast('Popup blocked. Allow popups for this game, or right-click Broadcast window and open it in a new window.');});
+let broadcastWindow=null;
+$('#open-display').disabled=false;
+$('#open-display').addEventListener('click',()=>{
+ if(broadcastWindow&&!broadcastWindow.closed){broadcastWindow.focus();toast('Game window focused. Capture Game Capture in LIVE Studio, not the dashboard or desktop.');return}
+ const height=Math.max(400,Math.min(1920,screen.availHeight-100)),width=Math.round(height*9/16);
+ // A fresh browsing context avoids reusing an old named dashboard/browser tab.
+ broadcastWindow=window.open('index.html?capture=1','_blank','popup=yes,width='+width+',height='+height+',menubar=no,toolbar=no,location=no');
+ if(broadcastWindow){broadcastWindow.focus();toast('Separate game window opened. In LIVE Studio use Window Capture → Battle Studio — Game Capture. You can now return to this dashboard.');}
+ else toast('Popup blocked. Allow popups for this game in your browser, then click Open separate game window again.');
+});
 
 function syncFontSample(){const sample=$('#font-sample');if(sample)sample.style.fontFamily=fontChoices[s.appearance.font].css}
 function movementControls(){return '<section class="movement-controls" aria-label="Animation movement"><h3>Animation movement</h3><div class="movement-buttons" role="group" aria-label="Movement amount">'+[['off','Off'],['calm','Little'],['balanced','Medium'],['energetic','High']].map(([v,label])=>'<button type="button" data-action="movement" data-level="'+v+'" aria-pressed="'+(v==='off'?!s.animations:s.animations&&s.appearance.motionLevel===v)+'">'+label+'</button>').join('')+'</div><p class="muted">Changes movement distance and pace for portraits, gift icons, VS, crowns and background. Off stops animations without pausing scoring or the timer. Individual effect switches stay as you set them.</p>'+(matchMedia('(prefers-reduced-motion: reduce)').matches?'<p class="notice">Your browser requests reduced motion. Decorative animation stays off even when a level is selected.</p>':'')+'</section>'}

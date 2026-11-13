@@ -1,8 +1,10 @@
 {
-  "date": "2026-11-13T10:16:59.117Z",
+  "date": "2026-11-13T17:40:24.828Z",
   "checks": [
     "Dedicated broadcast popup has identifiable title",
     "Both competitors render",
+    "Repeated click focuses existing game without opening another window or reloading",
+    "Game window contains no dashboard controls",
     "Ready hides all setup controls",
     "C restores controls",
     "Fullscreen rejection gives usable fallback",
