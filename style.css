@@ -160,3 +160,12 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 .style-mini-poster .mini-team{border:2px solid var(--mini-a);border-radius:0;box-shadow:3px 3px 0 #fff;background:#171721}.style-mini-poster .mini-team b{font-style:italic}
 .style-mini-blueprint{background:repeating-linear-gradient(0deg,#0c293a 0,#0c293a 1px,#04121e 1px,#04121e 12px)}.style-mini-blueprint .mini-team{border:1px solid #66cfdf;background:#04121e;border-radius:0}.style-mini-blueprint .mini-team i{border-style:dashed}
 .style-mini-editorial .mini-team{background:transparent;border-radius:0;border-inline-end:1px solid #ffffff55;font-family:Georgia,serif}.style-mini-editorial .mini-track{height:2px}.style-mini-editorial .mini-team b{border-bottom:1px solid #fff}
+
+
+/* Connection status and assigned gifts have their own light-mode surfaces. */
+[data-dashboard-mode=dark] .dashboard #live-status{background:#222225;border-color:#414149;color:#d4d4dc}
+[data-dashboard-mode=dark] .dashboard #live-status[data-state=connected]{color:#8cddb4}
+[data-dashboard-mode=dark] .dashboard #live-status:is([data-state=error],[data-state=warning]){color:#ffd08a}
+[data-dashboard-mode=dark] .dashboard .mapping{background:#222225;border-color:#414149;color:#f5f5f7}
+[data-dashboard-mode=dark] .dashboard .mapping input{background:#171719;color:#f5f5f7;border-color:#55555f}
+[data-dashboard-mode=dark] .dashboard .mapping button{background:#323238;color:#e4e4eb;border-color:#55555f}
