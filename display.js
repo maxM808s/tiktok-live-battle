@@ -7,7 +7,7 @@ if(!document.body.dataset.relay){renderBattle();addEventListener('storage',e=>{i
 // Fit long labels within their boxes, then scale only if the full scene is too tall.
 function fitLayout(){if(currentDesign)for(let[k,v]of Object.entries(currentDesign))if(k.endsWith('Size'))el.style.setProperty('--'+k,(v*el.clientWidth/1080)+'px');let scene=el.querySelector('.scene');if(!scene)return;scene.style.transform='none';for(let node of el.querySelectorAll('.brand-text,.game h1,.team h2,.score,footer strong,.vs span')){
  node.style.fontSize='';let initial=parseFloat(getComputedStyle(node).fontSize),floor=initial*.35,lines=node.matches('.score,.vs span')?1:node.matches('footer strong')?3:2;
- for(let size=initial;size>=floor;size-=1){node.style.fontSize=size+'px';let style=getComputedStyle(node),line=parseFloat(style.lineHeight)||size*1.25;if(node.scrollWidth<=node.clientWidth+1&&node.scrollHeight<=line*lines+2)break}
+ for(let size=initial;size>=floor;size-=1){node.style.fontSize=size+'px';let style=getComputedStyle(node),line=parseFloat(style.lineHeight)||size*1.25;if(node.scrollWidth<=node.clientWidth+1&&node.scrollHeight-(parseFloat(style.paddingTop)||0)-(parseFloat(style.paddingBottom)||0)<=line*lines+2)break}
  }let css=getComputedStyle(el),available=el.clientHeight-parseFloat(css.paddingTop)-parseFloat(css.paddingBottom),scale=Math.min(1,available/Math.max(1,scene.scrollHeight));scene.style.transform='scale('+scale+')';el.dataset.layoutScale=scale.toFixed(3);
 }
 new ResizeObserver(fitLayout).observe(el);

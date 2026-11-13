@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13T10:38:25.346Z",
+  "date": "2026-11-13T10:40:07.835Z",
   "checks": [
     "Primary action uses dark surface",
     "Upload button uses dark surface",
@@ -29,9 +29,11 @@
     "Style gallery offers nine looks (blueprint)",
     "blueprint preserves competitors, scores, gifts and visibility",
     "blueprint fits Hebrew display",
+    "blueprint score remains large despite frame padding",
     "Style gallery offers nine looks (editorial)",
     "editorial preserves competitors, scores, gifts and visibility",
     "editorial fits Hebrew display",
+    "editorial score remains large despite frame padding",
     "Portrait frames remain circular",
     "Reference style has a wide percentage bar",
     "Style persists after reload",
