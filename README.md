@@ -171,15 +171,19 @@ Follow these steps in order on your broadcast PC.
 
 **5. Prepare TikFinity.** Open Desktop, sign in to your TikFinity account, enter your TikTok **@handle** in its setup and save. Use your handle rather than display name. Keep Desktop on this PC. Its LIVE connection needs an active broadcast; game simulation works offline. Never enter TikTok passwords, cookies or stream keys into the game.
 
-**6. Add the private overlay to LIVE Studio.** In the local dashboard, wait for overlay ready/synchronized and click **Copy private overlay link**. In LIVE Studio choose your scene → Sources → + / Add source → **Link** → paste it. If source/browser dimension fields appear, set the **render resolution to 1080 × 1920** once, then fit it to the vertical scene. Dragging a low-resolution source larger can make it blurry; if render-size fields are unavailable, inspect the source settings before stretching it. Labels vary by version. Do not use the dashboard/ordinary display URL or edit the private URL.
+**6. Choose how to show the game.**
 
-**7. Verify the picture.** Change a name or simulate a mapped gift and check that LIVE Studio updates. Then Pause/Reset the test scores. If the URL is rejected, try it in another browser on this PC and record the exact error; do not disable browser security.
+**Option A — Window Capture (no link to paste).** In the dashboard click **Broadcast window**. A separate window titled **Battle Studio — Game Capture** opens. Allow its popup if your browser blocks it. Click **Fullscreen** (or use F11) and **Ready · hide controls**. In LIVE Studio choose Sources → Add source → **Window Capture** and select that game window. Crop any browser borders and fit it to your vertical **1080 × 1920** scene. Keep the game window visible/unminimized and the dashboard open in the same browser/profile. Press **C** inside the game window to restore setup controls; they are visible on stream if shown. Check LIVE Studio’s preview after fullscreen because capture behavior varies by Windows/browser. A low-resolution window enlarged afterward can still blur.
+
+**Option B — Private overlay link.** In the local dashboard, wait for overlay ready/synchronized and click **Copy private overlay link**. In LIVE Studio choose your scene → Sources → + / Add source → **Link** → paste it. If source/browser dimension fields appear, set the **render resolution to 1080 × 1920** once, then fit it to the vertical scene. Dragging a low-resolution source larger can make it blurry; if render-size fields are unavailable, inspect the source settings before stretching it. Labels vary by version. Do not use the dashboard/ordinary display URL or edit the private URL.
+
+**7. Verify the picture before going LIVE.** Change a name or simulate a mapped gift and check that LIVE Studio updates. Check that the entire game fits, portraits/text are sharp, setup controls are hidden, and no dashboard or private link is captured. Then Pause/Reset the test scores. If the URL is rejected, try it in another browser on this PC and record the exact error; do not disable browser security.
 
 **8. Go LIVE and connect.** Start broadcasting from LIVE Studio when ready. In TikFinity Desktop, use **Connect to TikTok LIVE** and confirm the active channel. In the local game dashboard, open LIVE, set the session label and click **Connect TikFinity**. Allow local-network permission only for this trusted game if asked. You do not need a TikFinity Action per gift mapping. [Official TikFinity setup help](https://blog.tikfinity.com/tikfinity-setup/).
 
 **9. Start the real battle.** Click **Start battle**. Verify a small real mapped gift in Recent gift events and on the display, waiting for a streak to finish. A simulation/socket connection does not prove this real-gift test. Keep **LIVE Studio, TikFinity Desktop, launcher and local dashboard** open. Use Pause for interruptions and keep the same session label for reconnects.
 
-**10. Finish and return next time.** Declare the winner or pause, disconnect the game, export settings if wanted, and end the LIVE broadcast when ready. Stop the launcher after you finish displaying. Next time, run the launcher, use its new dashboard, load/check your matchup and repeat steps 8–9. **Replace LIVE Studio's old overlay URL after every launcher restart.**
+**10. Finish and return next time.** Declare the winner or pause, disconnect the game, export settings if wanted, and end the LIVE broadcast when ready. Stop the launcher after you finish displaying. Next time, run the launcher, use its new dashboard, load/check your matchup and repeat steps 8–9. **For Link sources, replace LIVE Studio's old overlay URL after every launcher restart. For Window Capture, reopen Broadcast window and verify the selected window.**
 
 <details>
 <summary>Troubleshooting setup and LIVE</summary>
@@ -198,6 +202,3 @@ Keep private links and backups private. Do not expose local ports or disable bro
 
 </details>
 
-**Important:** use GitHub Desktop for this folder, not Update-Game.cmd. If Desktop reports local changes or conflicts, stop and review them rather than discarding files blindly. Pulling includes Windows CMD/PowerShell scripts; review changes to those files in **History** before running them. Keep Windows Security enabled.
-
-Changes must be published to **main** before you can pull them. Browser settings stay separate from Git; keep private exports outside the repository. The hosted github.io dashboard only needs a refresh.

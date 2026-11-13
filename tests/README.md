@@ -22,3 +22,5 @@ The updater has both synthetic failure/recovery checks (updater-results.json) an
 Result JSON files describe their own scope and date where recorded. Hosted results cover the public site at test time. Screenshots are visual references and may show earlier designs. A passing simulated/browser test does not verify real TikFinity gifts, Windows PowerShell 5.1 or TikTok LIVE Studio on the broadcast PC.
 
 Never commit real private overlay URLs, credentials or user settings exports here.
+
+Broadcast window: `capture-window.cjs` verifies the dedicated popup, hidden controls, keyboard restore, fullscreen failure, same-browser language sync, 9:16 sizing, portrait fallback and catalog-loading errors. Windows capture selection still requires a test on the broadcast PC.

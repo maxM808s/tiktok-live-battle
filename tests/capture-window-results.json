@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-13T10:16:59.117Z",
+  "checks": [
+    "Dedicated broadcast popup has identifiable title",
+    "Both competitors render",
+    "Ready hides all setup controls",
+    "C restores controls",
+    "Fullscreen rejection gives usable fallback",
+    "Hebrew settings synchronize to separate window",
+    "Native 1080 × 1920 viewport preserves 9:16",
+    "Ordinary display stays free of setup controls",
+    "Failed portrait hides broken image and retains initial",
+    "Catalog failure shows recovery guidance instead of blank screen",
+    "Dashboard catalog failure explains recovery without changing settings"
+  ],
+  "actualWindowsLiveStudioVerified": false
+}
