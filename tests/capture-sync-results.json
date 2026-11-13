@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-13T17:51:12.720Z",
+  "checks": [
+    "Initial direct snapshot arrives",
+    "Two points reach game with storage notifications blocked and storage reads stale",
+    "Public chat keyword travels in sanitized direct snapshot",
+    "Language changes propagate",
+    "Dashboard reload reconnects existing game window",
+    "Untrusted message source cannot replace game",
+    "Reset reaches game"
+  ],
+  "actualLiveStudioVerified": false
+}

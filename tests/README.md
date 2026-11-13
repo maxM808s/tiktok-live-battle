@@ -28,3 +28,5 @@ Broadcast window: `capture-window.cjs` verifies the dedicated popup, hidden cont
 Movement levels: `movement-buttons.cjs` covers the visible Off/Little/Medium/High controls, VS travel distance, checkbox synchronization, existing effect switches, reduced motion, score preservation and mobile fit.
 
 The styles browser checks cover all nine looks, Hebrew layout, preservation of game state, dark primary/upload controls, the bilingual font sample and mobile dialogs. `design-security-review.json` records the current-file credential scan scope; it is not an antivirus or full-history scan.
+
+`capture-sync.cjs` blocks storage notifications and supplies stale storage to the game, then verifies direct score updates, reset, Hebrew, chat labels, dashboard reload recovery, and rejection of messages from an unrelated source.

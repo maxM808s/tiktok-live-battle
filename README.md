@@ -196,7 +196,8 @@ Follow these steps in order on your broadcast PC.
 |---|---|
 | Missing controls | Use the latest package and the local dashboard opened by its launcher. |
 | Copy link disabled | Keep the launcher open and wait for overlay ready. |
-| Frozen display | Check the launcher and sync status, then retry overlay sync. |
+| Frozen game window | Refresh the dashboard and close/reopen the game using Open separate game window. Both must use the same hosted/local address. The game receives direct snapshots and requests missed updates; keep both windows open and the game unminimized. |
+| Frozen private Link source | Check the launcher and sync status, then retry overlay sync. |
 | Gifts add no points | Confirm LIVE, TikFinity connection, Start battle, the mapped ID and completed streak. |
 | Another dashboard owns the connection | Disconnect/close the other scoring tab. |
 | Saving or capacity error | Stop scoring, export settings and resolve the reported error. |
