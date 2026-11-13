@@ -1,11 +1,12 @@
 {
-  "date": "2026-11-12T16:54:47.889Z",
+  "date": "2026-11-13T10:33:00.297Z",
   "checks": [
     "Disabled chat voting shows no labels",
     "Configured word appears under correct competitor",
-    "English label shows +1 point",
+    "Word value uses gift-style = 1",
+    "Keyword has no prefix or quotes",
     "Word label sits below gift icons",
-    "Hebrew +1 label translates",
+    "Hebrew word and = 1 remain side by side in RTL",
     "Configured word is escaped text",
     "Visibility toggle hides word labels",
     "Word visibility persists",

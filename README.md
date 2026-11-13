@@ -94,7 +94,7 @@ Already assigned gifts are disabled in the picker. Remove a mapping first to mov
 1. Open **Chat +1** and enter a different word or short phrase for each competitor. Leave one blank to disable that side's keyword.
 2. Check **Enable chat voting**, set the per-viewer cooldown (default **10 seconds**, shared across both competitors), and click **Apply chat voting**.
 3. Connect TikFinity and **Start battle**. A matching comment adds **exactly +1 point**. No separate TikFinity Action is needed.
-4. Enabled chat words and **+1 point** automatically appear beneath each competitor’s gifts. Hide/show them under **Text & appearance → Show / hide elements → Chat words & +1 labels**.
+4. Enabled chat words automatically appear as **word = 1** (for example, **אייזנקוט = 1**) beneath each competitor’s gifts. Hide/show them under **Text & appearance → Show / hide elements → Chat words & +1 labels**.
 
 Matching ignores case and surrounding/repeated spaces, but the whole message must match: `blue` matches ` BLUE `; `blue blue` and `blue!` do not. A viewer can vote again after the cooldown. Repeated message IDs, paused comments and late timed-round comments are not awarded on replay. Keywords follow competitors when swapping sides; changing keywords does not reset scores or rounds.
 
