@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-13T10:22:03.966Z",
+  "checks": [
+    "Portraits float",
+    "Authentic assigned gift icons sway",
+    "calm adjusts VS distance",
+    "calm button is selected",
+    "balanced adjusts VS distance",
+    "balanced button is selected",
+    "energetic adjusts VS distance",
+    "energetic button is selected",
+    "Off disables VS motion",
+    "Intensity changes motion speed",
+    "Individual portrait motion toggle works",
+    "Global animation switch disables continuous motion",
+    "Global checkbox synchronizes movement buttons",
+    "Reduced-motion disables decorative loops",
+    "Simulation adds points without a gift shower or message",
+    "Real gift shower is bounded to six images",
+    "Shower uses the actual received gift artwork",
+    "Motion does not alter score calculation",
+    "Gift shower cleans itself up",
+    "Motion settings persist after reload",
+    "Mobile motion controls fit",
+    "No browser script errors"
+  ],
+  "errors": []
+}

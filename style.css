@@ -69,7 +69,7 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 
 /* Gentle badge movement uses a separate translate so diamond styling stays intact. */
 .game .vs-motion{animation:vs-drift 4s ease-in-out infinite}
-@keyframes vs-drift{0%,100%{translate:0 -.45cqw}50%{translate:0 .45cqw}}
+@keyframes vs-drift{0%,100%{translate:0 calc(-1 * var(--vs-drift,.45cqw))}50%{translate:0 var(--vs-drift,.45cqw)}}
 .game .gift-message{display:flex;align-items:center;justify-content:center;gap:1.5cqw;min-width:0;text-align:start;line-height:1.45;overflow-wrap:anywhere}
 .game .gift-message img{width:7cqw;height:7cqw;object-fit:contain;flex-shrink:0}
 .game .gift-message>div{min-width:0}.gift-sender,.gift-name{font-weight:750}.gift-sender{color:#c5e8ff}.gift-message small{display:block;font-size:.8em;color:#d1d5e2;margin-top:.3cqw}
@@ -97,11 +97,11 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 .game.gift-motion .pill img{animation:gift-sway var(--gift-period) ease-in-out infinite}.game.gift-motion .pill:nth-child(even) img{animation-delay:-1.3s}
 @keyframes gift-sway{0%,100%{translate:0 0;rotate:calc(-1 * var(--gift-turn))}50%{translate:0 calc(-1 * var(--gift-rise));rotate:var(--gift-turn)}}
 .game.ambient-motion .orb{animation:ambient-drift 22s ease-in-out infinite alternate}.game.ambient-motion .orb.two{animation-delay:-10s}
-@keyframes ambient-drift{from{translate:0 0}to{translate:10cqw -7cqw}}
+@keyframes ambient-drift{from{translate:0 0}to{translate:var(--ambient-x,10cqw) var(--ambient-y,-7cqw)}}
 .game.ambient-motion .track{position:relative}.game.ambient-motion .track:after{content:'';pointer-events:none;position:absolute;inset:0 auto 0 -30%;width:22%;background:linear-gradient(90deg,transparent,#ffffff35,transparent);animation:bar-sweep 7s ease-in-out infinite}
 @keyframes bar-sweep{0%,25%{translate:0 0}85%,100%{translate:650% 0}}
 .game.leader-motion .team.is-leading .leader{animation:crown-float 3s ease-in-out infinite}
-@keyframes crown-float{0%,100%{translate:0 0;text-shadow:0 0 .5cqw #ffe49b30}50%{translate:0 -.35cqw;text-shadow:0 0 1.5cqw #ffe49b99}}
+@keyframes crown-float{0%,100%{translate:0 0;text-shadow:0 0 .5cqw #ffe49b30}50%{translate:0 calc(-1 * var(--crown-drift,.35cqw));text-shadow:0 0 1.5cqw #ffe49b99}}
 .game .team{position:relative}.gift-shower{position:absolute;inset:0;z-index:3;overflow:hidden;pointer-events:none;border-radius:inherit}.gift-shower img{position:absolute;bottom:8%;width:9cqw;height:9cqw;object-fit:contain;opacity:0;animation:received-gift-rise 2.2s ease-out both;animation-delay:var(--particle-delay)}
 @keyframes received-gift-rise{0%{opacity:0;translate:0 0;scale:.6;rotate:-10deg}15%{opacity:1;scale:1}80%{opacity:.9}100%{opacity:0;translate:var(--particle-sway) -65cqw;scale:.85;rotate:15deg}}
 .game.still .track:after{animation:none!important;display:none}.game.still .gift-shower{display:none}
@@ -121,3 +121,9 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 /* Setup controls live outside the scene and disappear completely when ready. */
 .capture-tools{position:fixed;z-index:1000;inset:auto 12px 12px;max-width:580px;margin-inline:auto;padding:18px;border:1px solid #64748b;border-radius:18px;background:#101827f5;color:#f8fafc;box-shadow:0 12px 60px #0009;font:14px/1.5 system-ui,sans-serif;text-align:left;max-height:85vh;overflow:auto;backdrop-filter:blur(16px)}
 .capture-tools[hidden]{display:none}.capture-tools strong{font-size:20px}.capture-tools p{margin:8px 0}.capture-tools div{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.capture-tools button{background:#fff;color:#111827;border:0;border-radius:10px;padding:10px 14px;cursor:pointer;font:600 14px system-ui}.capture-tools button:focus-visible{outline:3px solid #38bdf8;outline-offset:3px}.capture-tools small{color:#cbd5e1}.capture-status:empty{display:none}
+
+.movement-controls{margin:20px 0;padding:18px;border:1px solid var(--line,#64748b55);border-radius:16px}.movement-controls h3{margin:0 0 12px}.movement-buttons{display:flex;gap:8px;flex-wrap:wrap}.movement-buttons button{flex:1;min-width:65px}.movement-buttons [aria-pressed=true]{background:#1769e0;color:#fff;border-color:#1769e0;box-shadow:0 0 0 2px #1769e033}.movement-buttons button:focus-visible{outline:3px solid #38bdf8;outline-offset:3px}
+.game[data-motion=calm]{--vs-drift:.15cqw;--crown-drift:.12cqw;--ambient-x:3cqw;--ambient-y:-2cqw;--ambient-period:32s;--crown-period:5s;--vs-period:7s;--shine-period:11s}
+.game[data-motion=balanced]{--vs-drift:.45cqw;--crown-drift:.35cqw;--ambient-x:7cqw;--ambient-y:-5cqw;--ambient-period:22s;--crown-period:3s;--vs-period:4s;--shine-period:7s}
+.game[data-motion=energetic]{--vs-drift:.85cqw;--crown-drift:.65cqw;--ambient-x:10cqw;--ambient-y:-7cqw;--ambient-period:16s;--crown-period:2.5s;--vs-period:3s;--shine-period:5s}
+.game .vs-motion{animation-duration:var(--vs-period,4s)}.game.ambient-motion .orb{animation-duration:var(--ambient-period,22s)}.game.leader-motion .team.is-leading .leader{animation-duration:var(--crown-period,3s)}.game.ambient-motion .track:after{animation-duration:var(--shine-period,7s)}

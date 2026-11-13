@@ -24,3 +24,5 @@ Result JSON files describe their own scope and date where recorded. Hosted resul
 Never commit real private overlay URLs, credentials or user settings exports here.
 
 Broadcast window: `capture-window.cjs` verifies the dedicated popup, hidden controls, keyboard restore, fullscreen failure, same-browser language sync, 9:16 sizing, portrait fallback and catalog-loading errors. Windows capture selection still requires a test on the broadcast PC.
+
+Movement levels: `movement-buttons.cjs` covers the visible Off/Little/Medium/High controls, VS travel distance, checkbox synchronization, existing effect switches, reduced motion, score preservation and mobile fit.

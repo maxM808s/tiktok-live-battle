@@ -20,6 +20,8 @@ For a private LIVE Studio link, use the **local dashboard opened by Start-Overla
 
 Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battle (reference-inspired), Studio Glass, Neon Arcade, Golden Arena, Stadium or Mono Minimal. Styles set colors, fonts, sizes and VS appearance; competitors, photos, scores, gifts and visibility settings stay unchanged. Fine-tune afterward under Text & style.
 
+The preview also has **Reload preview** for a stuck preview and **Adjust movement** for a quick jump to animation controls. Reloading the preview does not reset the battle.
+
 Expand the section you need:
 
 <details open>
@@ -42,6 +44,7 @@ Your custom writing is not automatically translated. Optional competitor transla
 
 - Choose **Studio** for the restrained graphite/glass palette. Other presets include Original, Electric, Midnight, Black & Yellow, Orange & Black, Blue & Yellow, Crimson, Emerald, Ice Blue, Rose Gold and Black & White.
 - Presets coordinate portrait rings, panels, text and display accents while keeping scores and saved competitor gradients.
+- **Animation movement:** use the visible **Off / Little / Medium / High** buttons at the top of Text & appearance. They adjust travel distance and pace for portraits, gifts, VS, crowns and background. Off stops animation without pausing scores or timers. Individual effect switches remain unchanged, and browser reduced-motion settings take priority. The choice saves automatically and syncs to your game.
 - **Typography & sizes:** choose font/weight; use sliders or exact values for text, scores, gift values, labels, logo and portraits. **↺** resets one size. Long text can shrink to fit the vertical display.
 - **Text colors & background:** adjust individual colors, glow and panel colors. Turn **Use appearance colors for competitor panels** off to show each competitor's own saved gradient.
 - **VS badge & gift reactions:** choose Glass, Solid circle, Diamond or Minimal; edit its label, colors and text/badge sizes. Enable gift spotlights for a brief gift/quantity/points banner. Use **Gentle VS movement** for a subtle floating badge. The main animation switch and reduced-motion preference control motion.
