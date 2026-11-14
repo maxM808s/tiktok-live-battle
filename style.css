@@ -161,7 +161,6 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 .style-mini-blueprint{background:repeating-linear-gradient(0deg,#0c293a 0,#0c293a 1px,#04121e 1px,#04121e 12px)}.style-mini-blueprint .mini-team{border:1px solid #66cfdf;background:#04121e;border-radius:0}.style-mini-blueprint .mini-team i{border-style:dashed}
 .style-mini-editorial .mini-team{background:transparent;border-radius:0;border-inline-end:1px solid #ffffff55;font-family:Georgia,serif}.style-mini-editorial .mini-track{height:2px}.style-mini-editorial .mini-team b{border-bottom:1px solid #fff}
 
-
 /* Connection status and assigned gifts have their own light-mode surfaces. */
 [data-dashboard-mode=dark] .dashboard #live-status{background:#222225;border-color:#414149;color:#d4d4dc}
 [data-dashboard-mode=dark] .dashboard #live-status[data-state=connected]{color:#8cddb4}
@@ -169,3 +168,5 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 [data-dashboard-mode=dark] .dashboard .mapping{background:#222225;border-color:#414149;color:#f5f5f7}
 [data-dashboard-mode=dark] .dashboard .mapping input{background:#171719;color:#f5f5f7;border-color:#55555f}
 [data-dashboard-mode=dark] .dashboard .mapping button{background:#323238;color:#e4e4eb;border-color:#55555f}
+
+.monitor-scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.monitor-scores>div{padding:18px;background:var(--field);border:1px solid var(--line);border-radius:14px;min-width:0;overflow-wrap:anywhere}.monitor-scores strong{display:block;font-size:34px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--ink)}.monitor-scores small{color:var(--secondary);line-height:1.6}.readiness-item{font-size:13px;margin:10px 0;color:var(--ink)}

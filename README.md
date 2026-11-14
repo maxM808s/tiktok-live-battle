@@ -22,6 +22,8 @@ Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battl
 
 The preview also has **Reload preview** for a stuck preview and **Adjust movement** for a quick jump to animation controls. Reloading the preview does not reset the battle.
 
+**Match at a glance** shows current scores and gift/chat mappings. Expand **Before you go LIVE** for saved-setup checks; verify the real broadcast picture separately.
+
 Expand the section you need:
 
 <details open>
@@ -90,16 +92,16 @@ Already assigned gifts are disabled in the picker. Remove a mapping first to mov
 </details>
 
 <details>
-<summary>5. Chat +1 — choose voting words</summary>
+<summary>5. Chat voting — words and point values</summary>
 
-1. Open **Chat +1** and enter a different word or short phrase for each competitor. Leave one blank to disable that side's keyword.
-2. Check **Enable chat voting**, set the per-viewer cooldown (default **10 seconds**, shared across both competitors), and click **Apply chat voting**.
-3. Connect TikFinity and **Start battle**. A matching comment adds **exactly +1 point**. No separate TikFinity Action is needed.
-4. Enabled chat words automatically appear as **word = 1** (for example, **אייזנקוט = 1**) beneath each competitor’s gifts. Hide/show them under **Text & appearance → Show / hide elements → Chat words & +1 labels**.
+1. Open **Chat voting** and enter a different word or short phrase for each competitor. Leave one blank to disable that side's keyword.
+2. Set **Points** for each competitor (1–1,000,000). Check **Enable chat voting**, set the per-viewer cooldown (default **10 seconds**, shared across both competitors), and click **Apply chat voting**.
+3. Connect TikFinity and **Start battle**. A matching comment adds the **points configured for that competitor** (default 1). No separate TikFinity Action is needed.
+4. Enabled chat words automatically appear as **word = points** (for example, **אייזנקוט = 1**) beneath each competitor’s gifts. Hide/show them under **Text & appearance → Show / hide elements → Chat words & +1 labels**.
 
 Matching ignores case and surrounding/repeated spaces, but the whole message must match: `blue` matches ` BLUE `; `blue blue` and `blue!` do not. A viewer can vote again after the cooldown. Repeated message IDs, paused comments and late timed-round comments are not awarded on replay. Keywords follow competitors when swapping sides; changing keywords does not reset scores or rounds.
 
-Expand **Test a chat vote** for a silent +1 simulation. It is labeled TEST in Recent chat votes, bypasses the real-viewer cooldown, and creates no gift message or shower. Real chat integration must be checked on your broadcast PC; events without stable message/viewer IDs are rejected. Replay/cooldown storage is bounded; export a private backup if a capacity error appears.
+Expand **Test a chat vote** for a silent simulation using the configured points. It is labeled TEST in Recent chat votes, bypasses the real-viewer cooldown, and creates no gift message or shower. Real chat integration must be checked on your broadcast PC; events without stable message/viewer IDs are rejected. Replay/cooldown storage is bounded; export a private backup if a capacity error appears.
 
 </details>
 
