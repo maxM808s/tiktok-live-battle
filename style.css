@@ -170,3 +170,11 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 [data-dashboard-mode=dark] .dashboard .mapping button{background:#323238;color:#e4e4eb;border-color:#55555f}
 
 .monitor-scores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.monitor-scores>div{padding:18px;background:var(--field);border:1px solid var(--line);border-radius:14px;min-width:0;overflow-wrap:anywhere}.monitor-scores strong{display:block;font-size:34px;line-height:1.5;font-variant-numeric:tabular-nums;color:var(--ink)}.monitor-scores small{color:var(--secondary);line-height:1.6}.readiness-item{font-size:13px;margin:10px 0;color:var(--ink)}
+
+/* Compact leader badge, with reserved space to avoid portrait jumps. */
+.game .leader{display:flex;justify-content:center;align-items:center;min-height:7cqw;height:7cqw;margin-bottom:1cqw;font-weight:800;font-size:2.55cqw;line-height:1.1}
+.game .leader-badge{display:inline-flex;align-items:center;justify-content:center;gap:.9cqw;padding:1cqw 1.9cqw;max-width:96%;border:.18cqw solid #f7d67599;border-radius:10cqw;background:linear-gradient(135deg,#48361bf2,#211a14f2);color:#ffe6a1;box-shadow:0 .4cqw 1.4cqw #0004,inset 0 1px 0 #fff2;white-space:nowrap;letter-spacing:0}
+.game .leader-crown{flex-shrink:0;width:3.2cqw;height:2.8cqw;color:#ffd466;filter:drop-shadow(0 0 .35cqw #ffc95550)}
+.game .leader-winner{background:linear-gradient(135deg,#f8db88,#d7a83b);color:#201608;border-color:#fff0b6}.game .leader-winner .leader-crown{color:#65440c;filter:none}
+.game[data-look=blueprint] .leader-badge,.game[data-look=poster] .leader-badge{border-radius:.6cqw}
+.game[data-look=editorial] .leader-badge,.game[data-look=minimal] .leader-badge{background:#17171e;border-color:#c5b88e;box-shadow:none}
