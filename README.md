@@ -1,6 +1,6 @@
 # Battle Studio
 
-A customizable TikTok LIVE battle game with a clean dashboard, glass-style display, English/Hebrew support and 154 gift entries.
+A customizable TikTok LIVE battle game with a clean dashboard, glass-style display, English/Hebrew support and 314 gift entries.
 
 **[Download Windows package](https://github.com/maxM808s/tiktok-live-battle/archive/refs/heads/main.zip)** · [Open hosted dashboard](https://maxm808s.github.io/tiktok-live-battle/admin.html)
 
@@ -23,6 +23,10 @@ Use **✦ Styles** in the navigation to pick a complete display look: LIVE Battl
 The preview also has **Reload preview** for a stuck preview and **Adjust movement** for a quick jump to animation controls. Reloading the preview does not reset the battle.
 
 **Match at a glance** shows current scores and gift/chat mappings. Expand **Before you go LIVE** for saved-setup checks; verify the real broadcast picture separately.
+
+Use **Voting options → 4 options · grid** for a four-way vote. It pauses and resets the round, then adds options 3 and 4. Configure their names, portraits, multiple gifts, custom points and chat words exactly like the first two. The display uses a 2 × 2 grid and four-segment percentage bar. Four-way voting supports **Untimed** and **Single timed round**; best-of series use two competitors. Export before switching back to two, which removes options 3 and 4.
+
+**Local overlay users:** this release updates `Start-Overlay.ps1` to support four options. Close the launcher, review/pull the latest files in GitHub Desktop (or replace the extracted package), restart, and replace your private overlay URL. The protected updater may stop when it detects the changed launcher; this is expected.
 
 Expand the section you need:
 
@@ -85,7 +89,7 @@ Presets do not contain all general/appearance settings and are not included in s
 
 Already assigned gifts are disabled in the picker. Remove a mapping first to move that gift. Edit its points box to change its value; × removes it. You can also use the shared gallery by choosing a side, setting points and clicking a tile.
 
-**Coins are not game points.** A gift mapped to 10 points with quantity 3 adds 30 points. The 154-entry catalog contains observed metadata; check regional IDs, availability and current prices in TikTok/TikFinity.
+**Coins are not game points.** A gift mapped to 10 points with quantity 3 adds 30 points. The 314-entry catalog contains observed metadata; check regional IDs, availability and current prices in TikTok/TikFinity.
 
 **Expand library / import catalog** accepts a trusted compatible file. To add one gift yourself, supply its actual ID/name, optional observed coin value and authentic artwork, then click **Add uploaded gift** and assign it from the gallery. Never guess IDs or put private credentials in image URLs.
 

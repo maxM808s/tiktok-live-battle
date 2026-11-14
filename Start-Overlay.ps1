@@ -95,7 +95,7 @@ function Handle-Request($Stream) {
             $json = [Text.Encoding]::UTF8.GetString($body)
             if ($json.Length -gt 4000000) { Reply-Text $Stream 413 '{"error":"State too large"}'; return }
             $data = ConvertFrom-Json -InputObject $json -ErrorAction Stop
-            if ($data.version -ne 1 -or @($data.teams).Count -ne 2 -or $data.lang -notin @('en','he')) { throw 'Invalid state' }
+            if ($data.version -ne 1 -or @($data.teams).Count -notin @(2,4) -or $data.lang -notin @('en','he')) { throw 'Invalid state' }
             # Only rendering fields cross the application boundary. No replay keys/session info.
             $teams = @(foreach ($team in $data.teams) {
                 $selected = Select-OverlayFields $team @('id','name','en','he','photo','color','color2','x','y','zoom','score')
@@ -106,7 +106,7 @@ function Handle-Request($Stream) {
             $custom = @(foreach ($gift in $data.custom) { Select-OverlayFields $gift @('id','name','coins','image') })
             $events = @(foreach ($event in $data.events) { Select-OverlayFields $event @('giftId','sender','delta','points','team','time','simulated') })
             $match = $null
-            if ($null -ne $data.match) { $match = Select-OverlayFields $data.match @('mode','duration','round','remainingMs','deadline','phase','roundWinner','winner'); $match['wins'] = Select-OverlayFields $data.match.wins @('a','b') }
+            if ($null -ne $data.match) { $match = Select-OverlayFields $data.match @('mode','duration','round','remainingMs','deadline','phase','roundWinner','winner'); $winKeys = @('a','b'); if (@($data.teams).Count -eq 4) { $winKeys = @('a','b','c','d') }; $match['wins'] = Select-OverlayFields $data.match.wins $winKeys }
             $safe = [ordered]@{version=1;match=$match;lang=$data.lang;title=$data.title;brand=$data.brand;instructions=$data.instructions;logo=$data.logo;animations=$data.animations;running=$data.running;finished=$data.finished;appearance=$data.appearance;teams=$teams;custom=$custom;events=$events;seen=@();combos=@{};connection=@{session='overlay'}}
             $snapshot = ConvertTo-Json -InputObject $safe -Depth 30 -Compress
             if ($snapshot -cne $script:Snapshot) { $script:Snapshot = $snapshot; $script:Revision++ }

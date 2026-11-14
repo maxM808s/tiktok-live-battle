@@ -30,3 +30,5 @@ Movement levels: `movement-buttons.cjs` covers the visible Off/Little/Medium/Hig
 The styles browser checks cover all nine looks, Hebrew layout, preservation of game state, dark primary/upload controls, the bilingual font sample and mobile dialogs. `design-security-review.json` records the current-file credential scan scope; it is not an antivirus or full-history scan.
 
 `capture-sync.cjs` blocks storage notifications and supplies stale storage to the game, then verifies direct score updates, reset, Hebrew, chat labels, dashboard reload recovery, and rejection of messages from an unrelated source.
+
+Four-option voting: `four-options.cjs` covers four editors, third/fourth gift and chat scoring, direct window sync, persistence and mobile fit. The relay checks include four teams across independent browser storage. Catalog expansion records 160 additional downloaded WebP assets and their public metadata source; coin prices remain an observed snapshot.
