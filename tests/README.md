@@ -32,3 +32,5 @@ The styles browser checks cover all nine looks, Hebrew layout, preservation of g
 `capture-sync.cjs` blocks storage notifications and supplies stale storage to the game, then verifies direct score updates, reset, Hebrew, chat labels, dashboard reload recovery, and rejection of messages from an unrelated source.
 
 Four-option voting: `four-options.cjs` covers four editors, third/fourth gift and chat scoring, direct window sync, persistence and mobile fit. The relay checks include four teams across independent browser storage. Catalog expansion records 160 additional downloaded WebP assets and their public metadata source; coin prices remain an observed snapshot.
+
+`tikfinity-recovery.mjs` reproduces timed-out sockets, late callbacks, error-without-close retries, unstable connection backoff, stable recovery and cancellation. These are controlled socket tests; they do not establish the cause of a particular drop on the broadcast PC.

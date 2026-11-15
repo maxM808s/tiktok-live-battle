@@ -115,6 +115,7 @@ Expand **Test a chat vote** for a silent simulation using the configured points.
 - Use one **Stream session label** for the current broadcast. Keep it during reconnects; change it only for a genuinely new broadcast while disconnected.
 - **Connect TikFinity** connects to Desktop on this PC. **Reconnect** retries; **Disconnect** stops receiving. Refreshing does not automatically reconnect.
 - Connected means Desktop is reachable, not that TikTok is LIVE.
+- **Connection history** shows the latest 20 socket status changes this visit, including close codes and retry causes. Automatic retries use up to 30 seconds of backoff; brief reconnects do not reset it. A settings-save failure stops scoring and reports the reason. Keep this history visible if diagnosing repeated drops.
 - **Recent gift events** shows IDs, quantities, points and competitors. Tests are marked TEST; unmapped gifts award no points.
 - Streak gifts count when they finish. Completed events received during Pause remain ignored on replay. A streak finishing after resume can include earlier gifts; finish streaks before changing battle state for a clean boundary.
 

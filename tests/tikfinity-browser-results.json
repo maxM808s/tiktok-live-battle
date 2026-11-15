@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T19:33:29.466Z",
+  "date": "2026-11-15T23:29:39.335Z",
   "checks": [
     "Connect to documented local endpoint",
     "Partial streak does not score",
@@ -9,6 +9,8 @@
     "Paused battle rejects live gift",
     "Paused gift stays ignored after resume and replay",
     "Manual reconnect opens a fresh socket",
+    "Desktop socket closure automatically reconnects and records its close code",
+    "Reconnect replay does not double-score gifts",
     "Disconnect unlocks session field",
     "Storage failure disconnects without publishing unsaved score",
     "Storage failure remains visible",

@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-15T23:28:31.877Z",
+  "checks": [
+    "Timeout retires socket and ignores late callbacks",
+    "Error retries without a close event",
+    "Short connections preserve backoff and log close codes",
+    "Stable connection resets backoff",
+    "Manual disconnect cancels recovery"
+  ],
+  "actualTikFinityDesktopVerified": false
+}
