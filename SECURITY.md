@@ -44,3 +44,5 @@ Checks cover unsafe imports/rendering, duplicate scoring, connection cleanup, st
 Real TikFinity traffic, Windows PowerShell execution and actual LIVE Studio behavior still require verification on the broadcast PC. Report suspected exposures privately without posting keys or private backups in a public issue.
 
 The latest design update adds only local CSS and fixed font stacks. Its scoped credential-pattern scan and validation summary are in [design security review](tests/design-security-review.json). No new external scripts, font services, or launcher commands were added.
+
+The November design refresh validates imported winners against active options and handles chat history for removed competitors safely. New styles and four-option colors remain allowlisted/bounded; no external scripts, font providers or launcher changes were added. The scoped [refresh review](tests/refresh-security-review.json) records the current-file scan and its limits.

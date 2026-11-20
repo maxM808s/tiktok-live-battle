@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-14T15:51:53.186Z",
+  "date": "2026-11-20T10:11:06.620Z",
   "checks": [
     "Generate a cryptographic writer key",
     "Unauthenticated client cannot get overlay link",
@@ -29,6 +29,7 @@
     "Private overlay shows configured chat word and = 1 below gifts",
     "Chat +1 reaches private overlay without gift messages",
     "Private relay does not expose chat tracking or viewer identities",
+    "Classic Broadcast styling crosses the private relay",
     "Four options and fourth-option score synchronize through authenticated relay",
     "No script errors in local admin or private overlay",
     "Restart rotates private keys",

@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-15T23:28:31.877Z",
+  "date": "2026-11-20T10:06:59.666Z",
   "checks": [
     "Timeout retires socket and ignores late callbacks",
     "Error retries without a close event",

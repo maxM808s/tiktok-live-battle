@@ -29,7 +29,9 @@
     "Normalize streak dictionary without a prototype",
     "Recover safely from malformed browser storage",
     "Use prototype-free preset dictionaries",
-    "Legacy disabled gift reactions do not silently enable showers"
+    "Legacy disabled gift reactions do not silently enable showers",
+    "Reject imported winner referring to an inactive option",
+    "Historical removed-option labels render safely"
   ],
-  "date": "2026-11-12T16:44:36.785Z"
+  "date": "2026-11-20T10:10:01.255Z"
 }

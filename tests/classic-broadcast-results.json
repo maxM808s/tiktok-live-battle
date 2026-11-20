@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-20T10:10:43.628Z",
+  "checks": [
+    "Reference-inspired styles shown first: classicCards",
+    "classicCards removes ambient glow",
+    "classicCards uses solid panel surfaces",
+    "classicCards retains timed round",
+    "classicCards preserves circular portraits",
+    "classicCards preserves scores and configuration",
+    "Reference-inspired styles shown first: cleanArena",
+    "cleanArena removes ambient glow",
+    "cleanArena uses solid panel surfaces",
+    "cleanArena retains timed round",
+    "cleanArena preserves circular portraits",
+    "cleanArena preserves scores and configuration",
+    "Reference-inspired styles shown first: paperCards",
+    "paperCards removes ambient glow",
+    "paperCards uses solid panel surfaces",
+    "paperCards retains timed round",
+    "paperCards preserves circular portraits",
+    "paperCards preserves scores and configuration",
+    "Quick points reach fourth option",
+    "classicCards four-option grid fits",
+    "cleanArena four-option grid fits",
+    "paperCards four-option grid fits",
+    "Switching to two retains safe historical chat labels",
+    "New style picker fits mobile",
+    "Night status stays dark",
+    "No browser errors"
+  ],
+  "errors": []
+}

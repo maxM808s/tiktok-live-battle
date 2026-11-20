@@ -34,4 +34,6 @@ let withPrototype=JSON.parse(JSON.stringify(c.defaults()));withPrototype.combos=
 globalThis.localStorage={getItem:()=>JSON.stringify({version:1,teams:[]})};assert.equal(c.load().teams.length,2);checks.push('Recover safely from malformed browser storage');
 localStorage.getItem=()=>'{"__proto__":'+JSON.stringify(c.defaults().teams)+'}';let presets=c.loadPresets();assert.equal(Object.getPrototypeOf(presets),null);assert.equal(Object.hasOwn(presets,'__proto__'),true);checks.push('Use prototype-free preset dictionaries');
 assert.equal(c.validateAppearance({giftReactions:false}).giftRain,false);checks.push('Legacy disabled gift reactions do not silently enable showers');
+reject(s=>{s.match={...c.matchDefaults(),mode:'timed',phase:'finished',roundWinner:'c',winner:'c',wins:{a:0,b:0,c:1}};s.finished=true},'Reject imported winner referring to an inactive option');
+assert.equal(c.name(undefined,{lang:'he'}),'מתחרה קודם');checks.push('Historical removed-option labels render safely');
 console.log('PASS',checks.length,'security checks');fs.writeFileSync(new URL('security-results.json',import.meta.url),JSON.stringify({checks,date:new Date().toISOString()},null,2));

@@ -181,3 +181,55 @@ html[data-dashboard-mode=dark]{color-scheme:dark;color:#f5f5f7;background:#08080
 
 .game.four-options .arena{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4cqw 3cqw}.game.four-options .team{padding:1cqw 1.4cqw 3cqw;border-radius:4cqw;min-width:0}.game.four-options .portrait{width:23cqw;height:23cqw;max-width:100%;margin:0 auto 1cqw}.game.four-options .leader{height:5cqw;min-height:5cqw;font-size:2cqw}.game.four-options .leader-badge{padding:.6cqw 1.2cqw}.game.four-options .team h2{font-size:min(var(--nameSize),4cqw);margin:1cqw 0;line-height:1.2}.game.four-options .score{font-size:min(var(--scoreSize),7cqw);line-height:1.1;margin:.5cqw 0}.game.four-options .points{font-size:1.8cqw;margin-bottom:1cqw}.game.four-options .pill{padding:.8cqw 1cqw;font-size:2.4cqw;border-radius:5cqw}.game.four-options .pill img{width:4cqw;height:4cqw}.game.four-options .gift-pills{gap:.8cqw;flex-wrap:wrap;justify-content:center}.game.four-options .chat-word-pill{font-size:2cqw;margin:.7cqw auto 0;padding:.5cqw 1cqw}.game.four-options .vs{top:50%;left:50%;transform:translate(-50%,-50%);width:10cqw;height:10cqw;font-size:4cqw;z-index:5}.game.four-options .intro{margin-top:1cqw}.game.four-options h1{font-size:min(var(--titleSize),7cqw)}.game.four-options .title-line{margin:1cqw auto 3cqw}.game.four-options footer{margin-top:2cqw}.game.four-options footer strong{font-size:3cqw}.game.four-options .balance{margin-top:3cqw}.four-bar{display:flex;overflow:hidden;height:5cqw;border-radius:5cqw;direction:ltr}.four-bar>div{min-width:0;display:flex;align-items:center;justify-content:center;transition:flex .3s}.four-bar span{font:bold 2cqw system-ui;color:#fff;text-shadow:0 1px 3px #000;white-space:nowrap}.four-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:1cqw 2cqw;font-size:1.8cqw;margin-top:1cqw}.four-legend i{display:inline-block;width:1cqw;height:1cqw;border-radius:50%;margin-inline-end:.5cqw}
 .game.four-options .team{width:100%;max-width:none}.game.four-options .arena{width:100%}
+
+/* Reference-inspired broadcast cards: solid surfaces and restrained contrast. */
+.game.quiet-cards{padding:4cqw;background:var(--background);color:var(--titleColor)}
+.game.quiet-cards .orb{display:none}.game.quiet-cards .intro{margin-top:2.5cqw;color:var(--brandColor);letter-spacing:.18cqw;font-size:1.9cqw}
+.game.quiet-cards h1{margin:2cqw 0 1.5cqw;line-height:1.15;text-shadow:none}
+.game.quiet-cards .title-line{height:0;margin:0 auto 3cqw}
+.game.quiet-cards .arena{gap:2cqw;align-items:stretch}
+.game.quiet-cards .team{border:.5cqw solid #fff9;border-radius:4cqw;padding:2cqw 2cqw 4cqw;background:var(--team);box-shadow:0 .8cqw 0 #0002;backdrop-filter:none}
+.game.quiet-cards .portrait{width:min(var(--portraitSize),100%);border:.75cqw solid #fff;outline:0;box-shadow:0 .5cqw 0 #0002}
+.game.quiet-cards .leader{height:5.2cqw;min-height:5.2cqw;margin-bottom:1cqw}
+.game.quiet-cards .leader-badge{box-shadow:none;font-size:2.2cqw;padding:.6cqw 1.4cqw}
+.game.quiet-cards .team h2{margin:2cqw 0 1cqw;line-height:1.25;text-shadow:0 .2cqw 0 #0003}
+.game.quiet-cards .score{margin:.5cqw 0 0;font-variant-numeric:tabular-nums;letter-spacing:-.2cqw;line-height:1.1;text-shadow:0 .3cqw 0 #0002}
+.game.quiet-cards .points{font-size:2cqw;margin:.8cqw 0 2cqw;color:#ffffffc9}
+.game.quiet-cards .gift-pills{gap:1cqw}.game.quiet-cards .pill{background:#fff8e9;color:#293346;border:0;border-radius:2cqw;padding:1.4cqw 2cqw;box-shadow:0 .3cqw 0 #0002}
+.game.quiet-cards .chat-word-pill{background:transparent;border:1px solid #ffffff8c;border-radius:1.8cqw;margin-top:1.2cqw;color:#fff}
+.game.quiet-cards .vs{top:28%;border:.55cqw solid #fff;background:var(--vsBackgroundColor);box-shadow:0 .5cqw 0 #0003;backdrop-filter:none}
+.game.quiet-cards .balance{margin-top:2.5cqw}.game.quiet-cards .track{height:3.5cqw;border:.3cqw solid #fff9;border-radius:6cqw;box-shadow:none}
+.game.quiet-cards .percent{font-size:2.5cqw}.game.quiet-cards footer{margin-top:3cqw}.game.quiet-cards footer strong{display:block;background:#fff8e9;color:#293346;border-radius:2cqw;padding:1.6cqw 2cqw;line-height:1.4}
+.game.quiet-cards .round-banner{gap:1.5cqw;border:0;background:transparent;box-shadow:none;margin:0 auto 3cqw;padding:0;max-width:100%;display:grid;grid-template-columns:1fr auto 1fr}
+.game.quiet-cards .round-clock{grid-column:2;grid-row:1;background:#fff8e9;color:#273144;border-radius:2cqw;padding:.8cqw 2cqw;font-size:5cqw;min-width:18cqw;box-shadow:0 .3cqw 0 #0002}
+.game.quiet-cards .round-label{grid-column:1;grid-row:1;font-size:2.1cqw;line-height:1.5;border:1px solid #ffffff55;border-radius:4cqw;padding:1cqw}
+.game.quiet-cards .round-note{grid-column:3;grid-row:1;font-size:1.8cqw;line-height:1.5;color:inherit}
+.game.quiet-cards .round-wins{margin:0 0 1cqw}.game.quiet-cards .round-dot{width:2cqw;height:2cqw}
+.game.quiet-cards .hit .score{animation:quiet-score-pop .35s ease-out}@keyframes quiet-score-pop{50%{transform:scale(1.04)}}
+.game[data-look=cleanArena] .team{border-radius:1.5cqw;border-top-width:1cqw;background:color-mix(in srgb,var(--team),#162030 15%);box-shadow:none}
+.game[data-look=cleanArena] .score{padding:1cqw 0;border-block:1px solid #ffffff40;margin-bottom:1cqw;text-shadow:none}
+.game[data-look=cleanArena] .portrait{border-width:.45cqw}.game[data-look=cleanArena] .pill{border-radius:.7cqw}
+.game[data-look=cleanArena] .track{border-radius:0;height:4.5cqw}.game[data-look=cleanArena] footer strong{border-radius:.7cqw}
+.game[data-look=paperCards] .team{background:#fffcf5;border:.25cqw solid #c7beb0;box-shadow:0 .6cqw 0 #c7beb0}
+.game[data-look=paperCards] .portrait{border-color:var(--team);box-shadow:0 0 0 .5cqw #e3ded3}
+.game[data-look=paperCards] .team h2,.game[data-look=paperCards] .score{text-shadow:none}
+.game[data-look=paperCards] .points,.game[data-look=paperCards] .last-gift,.game[data-look=paperCards] footer p{color:#535c68}
+.game[data-look=paperCards] .pill{background:#eee9df;color:#202733;box-shadow:none;border:1px solid #d6cdbf}
+.game[data-look=paperCards] .chat-word-pill{color:#202733;border-color:#bcb3a5;background:#f8f4ec}
+.game[data-look=paperCards] .round-label{border-color:#bcb3a5}.game[data-look=paperCards] .round-clock{background:#fffcf5;border:1px solid #c7beb0;box-shadow:none}
+.game[data-look=paperCards] .round-dot{border-color:#6d624e}.game[data-look=paperCards] .round-dot.won{background:#b88b2b;border-color:#81621f;box-shadow:none}
+.game[data-look=paperCards] .live-dot{border-color:#bcb3a5;background:#fffcf5;color:#354050}
+.game[data-look=paperCards] footer strong{background:#fffcf5;border:1px solid #c7beb0}
+.game[data-look=paperCards] .event{background:#fffcf5;border-color:#c7beb0;color:#293346}.game[data-look=paperCards] .event .gift-sender{color:#245083}.game[data-look=paperCards] .event small{color:#535c68}
+.game.quiet-cards.four-options .portrait{width:24cqw;height:24cqw}.game.quiet-cards.four-options .team{padding:1cqw 1.4cqw 2cqw}
+.game.quiet-cards.four-options .team h2{margin:1cqw 0}.game.quiet-cards.four-options .points{font-size:1.6cqw;margin:.5cqw 0 1cqw}
+.game.quiet-cards.four-options .pill{padding:.6cqw 1cqw;border-radius:1.2cqw}.game.quiet-cards.four-options .vs{top:50%}
+.game.quiet-cards.four-options .leader{height:4.5cqw;min-height:4.5cqw}.game.quiet-cards.four-options .leader-badge{font-size:1.7cqw}
+.game.quiet-cards.four-options .round-banner{margin-bottom:2cqw}
+.style-mini-classicCards,.style-mini-cleanArena{background:#1b263b}.style-mini-classicCards .mini-team,.style-mini-cleanArena .mini-team{background:var(--mini-a);border:2px solid #fff;box-shadow:none}
+.style-mini-classicCards .mini-team:last-child,.style-mini-cleanArena .mini-team:last-child{background:var(--mini-b)}.style-mini-cleanArena .mini-team{border-radius:2px}
+.style-mini-paperCards{background:#eee9df;color:#202733}.style-mini-paperCards .mini-team,.style-mini-paperCards .mini-team:last-child{background:#fffcf5;color:#202733;border:1px solid #bcb3a5;box-shadow:0 3px 0 #c7beb0}
+.style-mini-paperCards .mini-team i{border-color:#45658b;background:#e4ded3}.style-mini-paperCards .mini-title{color:#202733}
+.quick-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.quick-points>div{min-width:0;padding:12px;background:var(--field);border-radius:12px;border:1px solid var(--line)}.quick-points bdi{display:block;overflow-wrap:anywhere;margin-bottom:10px}.quick-points .row{gap:5px}.quick-points button{padding:8px 10px;min-width:0!important;flex:1!important}@media(max-width:600px){.quick-points{grid-template-columns:1fr}}
+
+.game[data-look=paperCards] .event:empty{display:none}

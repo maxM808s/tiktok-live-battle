@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-20T10:11:25.493Z",
+  "scope": "Current runtime files, root documentation, Windows launcher/updater scripts and docs; excludes Git history, private browser storage and binary artwork",
+  "filesScanned": 21,
+  "files": [
+    "DEPLOY.md",
+    "README.md",
+    "Restore-Game.cmd",
+    "SECURITY.md",
+    "Start-Overlay.cmd",
+    "Start-Overlay.ps1",
+    "Update-Game.cmd",
+    "Update-Game.ps1",
+    "admin.html",
+    "admin.js",
+    "core.js",
+    "display.js",
+    "index.html",
+    "overlay.html",
+    "overlay.js",
+    "relay.js",
+    "style.css",
+    "tikfinity.js",
+    "docs/OVERLAY.md",
+    "docs/TECHNICAL.md",
+    "docs/TIKFINITY.md"
+  ],
+  "credentialPatternFindings": [],
+  "changesReviewed": [
+    "Fixed-list CSS styles, no external scripts or font services",
+    "Bounded and validated four-option appearance colors; legacy colors retained",
+    "Imported match winners must refer to active options",
+    "Removed-option historical chat labels render as escaped fallback text",
+    "Switch to two options disables chat voting when no active keywords remain",
+    "Quick-point controls use validated active team IDs and bounded numeric points"
+  ],
+  "checks": "32 security checks, 7 privacy checks, 17 round-mode checks and 22 chat checks passed",
+  "limitations": "Not an antivirus scan or an audit of all reachable Git history. Real TikFinity traffic and Windows LIVE Studio remain PC checks."
+}
